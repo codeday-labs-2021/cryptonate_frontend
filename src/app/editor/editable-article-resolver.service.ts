@@ -13,6 +13,7 @@ export class EditableArticleResolver implements Resolve<Article> {
     private userService: UserService
   ) { }
 
+  
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot

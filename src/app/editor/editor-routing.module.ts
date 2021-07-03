@@ -5,6 +5,7 @@ import { EditableArticleResolver } from './editable-article-resolver.service';
 import { AuthGuard } from '../core';
 import { SharedModule } from '../shared';
 
+
 const routes: Routes = [
   {
     path: '',

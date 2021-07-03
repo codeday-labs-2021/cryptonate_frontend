@@ -6,6 +6,7 @@ import { AuthGuard } from '../core';
 import { SharedModule } from '../shared';
 import { SettingsRoutingModule } from './settings-routing.module';
 
+
 @NgModule({
   imports: [
     SharedModule,

@@ -13,6 +13,7 @@ export class ArticleResolver implements Resolve<Article> {
     private userService: UserService
   ) {}
 
+  
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot

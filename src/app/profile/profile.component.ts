@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { User, UserService, Profile } from '../core';
 import { concatMap ,  tap } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile.component.html'

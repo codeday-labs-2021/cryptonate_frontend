@@ -7,6 +7,7 @@ import { AuthGuard } from '../core';
 import { SharedModule } from '../shared';
 import { EditorRoutingModule } from './editor-routing.module';
 
+
 @NgModule({
   imports: [SharedModule, EditorRoutingModule],
   declarations: [EditorComponent],

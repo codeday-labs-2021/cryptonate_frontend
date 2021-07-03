@@ -12,3 +12,4 @@ export interface Article {
   favoritesCount: number;
   author: Profile;
 }
+

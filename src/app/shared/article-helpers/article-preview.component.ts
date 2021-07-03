@@ -12,6 +12,7 @@ export class ArticlePreviewComponent {
   onToggleFavorite(favorited: boolean) {
     this.article['favorited'] = favorited;
 
+    
     if (favorited) {
       this.article['favoritesCount']++;
     } else {

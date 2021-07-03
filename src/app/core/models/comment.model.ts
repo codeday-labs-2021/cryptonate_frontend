@@ -6,3 +6,4 @@ export interface Comment {
   createdAt: string;
   author: Profile;
 }
+

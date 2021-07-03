@@ -7,3 +7,4 @@ import { Component } from '@angular/core';
 export class FooterComponent {
   today: number = Date.now();
 }
+

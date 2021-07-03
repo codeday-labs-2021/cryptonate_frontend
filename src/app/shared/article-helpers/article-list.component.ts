@@ -11,6 +11,7 @@ export class ArticleListComponent {
     private articlesService: ArticlesService
   ) {}
 
+  
   @Input() limit: number;
   @Input()
   set config(config: ArticleListConfig) {

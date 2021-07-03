@@ -7,3 +7,4 @@ export class MarkdownPipe implements PipeTransform {
     return marked(content, { sanitize: true });
   }
 }
+

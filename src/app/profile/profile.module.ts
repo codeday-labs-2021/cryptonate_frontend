@@ -8,6 +8,7 @@ import { ProfileResolver } from './profile-resolver.service';
 import { SharedModule } from '../shared';
 import { ProfileRoutingModule } from './profile-routing.module';
 
+
 @NgModule({
   imports: [
     SharedModule,

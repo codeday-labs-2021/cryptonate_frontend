@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { UserService } from '../core';
 import { map ,  take } from 'rxjs/operators';
 
+
 @Injectable()
 export class NoAuthGuard implements CanActivate {
   constructor(

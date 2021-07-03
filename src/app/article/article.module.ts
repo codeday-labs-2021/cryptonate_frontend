@@ -8,6 +8,7 @@ import { MarkdownPipe } from './markdown.pipe';
 import { SharedModule } from '../shared';
 import { ArticleRoutingModule } from './article-routing.module';
 
+
 @NgModule({
   imports: [
     SharedModule,

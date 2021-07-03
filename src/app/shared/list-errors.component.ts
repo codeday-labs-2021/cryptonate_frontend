@@ -9,6 +9,7 @@ import { Errors } from '../core';
 export class ListErrorsComponent {
   formattedErrors: Array<string> = [];
 
+  
   @Input()
   set errors(errorList: Errors) {
     this.formattedErrors = Object.keys(errorList.errors || {})

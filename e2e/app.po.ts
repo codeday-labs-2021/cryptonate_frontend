@@ -5,6 +5,7 @@ export class Ng2RealApp {
     return browser.get('/');
   }
 
+  
     getParagraphText() {
     return element(by.css('.logo-font')).getText();
   }

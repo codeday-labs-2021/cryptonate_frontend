@@ -8,6 +8,7 @@ import {
 
 import { UserService } from '../core';
 
+
 @Directive({ selector: '[appShowAuthed]' })
 export class ShowAuthedDirective implements OnInit {
   constructor(

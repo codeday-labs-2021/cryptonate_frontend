@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Profile, ProfilesService } from '../core';
 import { catchError } from 'rxjs/operators';
 
+
 @Injectable()
 export class ProfileResolver implements Resolve<Profile> {
   constructor(

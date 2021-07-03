@@ -4,3 +4,4 @@ export interface Profile {
   image: string;
   following: boolean;
 }
+

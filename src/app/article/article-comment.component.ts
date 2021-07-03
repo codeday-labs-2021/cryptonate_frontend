@@ -12,7 +12,6 @@ export class ArticleCommentComponent implements OnInit, OnDestroy {
     private userService: UserService
   ) {}
 
-  
   private subscription: Subscription;
 
   @Input() comment: Comment;

@@ -1,5 +1,4 @@
-## Cryptonate
+# Cryptonate
 
-## Team 
-
-# Kenenth Hu
+# Team 
+* Kenenth Hu

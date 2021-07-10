@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+/* Components */
+import * as websiteComponents from './website';
 
 import { AppComponent } from './app.component';
-import { AuthModule } from './auth/auth.module';
-import { HomeModule } from './home/home.module';
 import {
   FooterComponent,
   HeaderComponent,
@@ -15,16 +15,15 @@ import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent, FooterComponent, HeaderComponent],
+    AppComponent, FooterComponent, HeaderComponent, ...websiteComponents.components],
   imports: [
     BrowserModule,
     CoreModule,
     SharedModule,
-    HomeModule,
-    AuthModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[ ...websiteComponents.components]
 })
 export class AppModule {}

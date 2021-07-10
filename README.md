@@ -2,7 +2,9 @@
 
 # Team 
 * Kenenth Hu
-
+* Soumya Satheesan
+* Ken Wu
+* Brenda Hariyanto
 
 
 

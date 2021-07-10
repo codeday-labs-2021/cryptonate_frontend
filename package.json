@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build --prod  --base-href ./ && cp CNAME dist/CNAME",
+    "build": "ng build --aot --prod   --namedChunks=true --stats-json",
     "lint": "ng lint --force",
     "e2e": "ng e2e"
   },

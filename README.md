@@ -2,6 +2,7 @@
 
 # Team 
 * Kenenth Hu
+* Soumya Satheesan
 
 
 

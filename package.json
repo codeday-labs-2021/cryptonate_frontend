@@ -1,5 +1,4 @@
 {
-  
   "name": "cryptonate_frontend",
   "version": "1.0.0",
   "description": "",
@@ -7,7 +6,6 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod  --base-href ./ && cp CNAME dist/CNAME",
-
     "lint": "ng lint --force",
     "e2e": "ng e2e"
   },

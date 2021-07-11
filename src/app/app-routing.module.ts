@@ -13,7 +13,11 @@ const routes: Routes = [
 }, {
   path: 'about',
   component: websiteComponents.AboutComponent,
-}, { path: "**", redirectTo: "home" }
+}, {
+  path: 'admin',
+  component: websiteComponents.AdminComponent,
+},
+  { path: "**", redirectTo: "home" }
 ];
 
 @NgModule({

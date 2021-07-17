@@ -1,0 +1,17 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+  }
+
+  .btn-primary {
+    color: black;
+    background-color: #E5E9F2;
+    border-color: #E5E9F2;
+    border-radius: 10px;
+    font-family: Montserrat;
+    font-size: 13.4px;
+  }
+
+ 

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+
+    <title>CardCampaign</title>
+  </head>
+    <body>
+       
+            <img src="assets/images/circles.svg" alt="" class = "center">
+        <p></p>
+        
+            <form class="row needs-validation" novalidate>
+
+                <div class="p-3 col-sm-6">
+                    <label for="occupation" class="form-label">Occupation</label>
+                    <input type="text" class="form-control" id="occupation" required>
+                    
+                </div>
+
+                <div class="p-3 col-sm-6">
+                    <label for="name" class="form-label">Name of Organization, School, Company</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" required>
+                    <div id="nameHelp" class="form-text">Enter your full name if above does not apply to you</div>
+                </div>
+
+                <div class="p-3 col-sm-6">
+                    <label for="website" class="form-label">Website</label>
+                    <input type="text" class="form-control" id="website">
+                </div>
+
+                <div class="p-3 col-sm-6">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" required>
+                </div>
+
+                <div class="p-3 col-sm-6">
+                    <label for="socmed" class="form-label">Social Media</label>
+                    <input type="text" class="form-control" id="socmed" required>
+                </div>
+
+                <div class="p-3 col-sm-6">
+                    <label for="organizationEmail" class="form-label">Organization Email</label>
+                    <input type="text" class="form-control" id="organizationEmail" >
+                </div>
+
+            </form>
+            
+            <form class="row ">
+                <div class="p-3 col-md-6 offset-md-3">
+                <label for="aboutYourself" class="form-label">About Yourself</label>
+                <textarea class="form-control" id="aboutYourself" rows="3"></textarea>
+                </div>
+            </form>
+           
+            <div class="row justify-content-evenly">
+            <div class="p-3 col-6">
+                <a class="btn btn-primary" type="goBack" routerLink="/login">GO BACK TO MY PROFILE</a>
+              </div>
+
+              <div class="p-3 col-6">
+                <a class="btn btn-primary" type="continue" routerLink="/Fundraise/Details">CONTINUE</a>
+              </div>
+            </div>
+       
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>

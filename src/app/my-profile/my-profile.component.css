@@ -1,0 +1,52 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*{
+    font-family:'Bebas Neue', cursive;;
+    font-weight: 400;
+}
+
+.name{
+    padding-top:3%;
+    padding-bottom:3%;
+    align-items: flex-start;
+    
+    font-size: 96px;
+    color: #E5E9F2;
+    letter-spacing:8px;
+    transition: 0.5s;
+}
+.hero{
+  padding-left: 15%;
+  padding-bottom: 12%;
+}
+.hero img{
+    width: 55%;
+    transition: width 0.5s;
+}   
+.hero img:hover{
+    width: 62%;
+}
+
+.campaign{
+    pointer-events: none;
+    font-size: 85px;
+}
+.rounded-start {
+    border-bottom-left-radius: 0.25rem !important;
+    border-top-left-radius: 0.25rem !important;
+  }
+
+.campaign-page img{
+    padding:1px;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+  }
+
+.donate{
+    pointer-events: none;
+    font-size: 85px;
+}

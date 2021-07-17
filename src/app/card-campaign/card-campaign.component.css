@@ -10,7 +10,7 @@
     transition: width 0.6s ease;
   }
   
-  card {
+   .card {
       position: relative;
       display: flex;
       flex-direction: column;
@@ -20,9 +20,16 @@
       background-clip: border-box;
       border: 1px solid rgba(0, 0, 0, 0.125);
       border-radius: 10px;
+      transition:0.5s;
      
     }
+.card:hover{
+  transform: scale(1.05);
+}
 
+a{
+  text-decoration: none;
+}
    h5{
     font-family: Montserrat;
     font-weight: 700;
@@ -43,3 +50,17 @@
     background-color: #3373A7;
     border-color: #0d6efd;
   }
+
+.card-text{
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 13px;
+  color: #173F5F;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+h2{
+  margin-top: 6%;
+}

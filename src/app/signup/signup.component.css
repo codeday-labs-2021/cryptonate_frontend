@@ -3,8 +3,8 @@
     background-image: url("/assets/images/SignUpBackground.svg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+    position: absolute;
+    left: 0px;
     width: 1440px;
     height: 1024px;
 }
@@ -40,31 +40,38 @@ input[type=text], input[type=password]
 .buttonSignUp
 {
     margin: 12px 0px;
+    transition: 0.5s;
+}
+
+.buttonSignUp:hover
+{
+    transform: scale(1.05);
 }
 
 .ques{
-    margin-top: 12px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 29px;
+margin-top: 16px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 29px;
+letter-spacing: -0.02em;
+color: #BD903C;
+}
+    
+hero-container .sign-up
+{
+    display: flex;
+    align-items: center;
+}
+
+.Log-In a{
+    
+    list-style: none;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
     letter-spacing: -0.02em;
-    color: #BD903C;
-    }
-    
-    hero-container .sign-up
-    {
-        display: flex;
-        align-items: center;
-    }
-    
-    .Log-In a{
-        list-style: none;
-        text-decoration: none;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700;
-        font-size: 18px;
-        letter-spacing: -0.02em;
-        color: #D9B51C;
-    }
+    color: #D9B51C;
+}

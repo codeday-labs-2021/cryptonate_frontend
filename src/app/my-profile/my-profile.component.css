@@ -6,47 +6,118 @@
     font-weight: 400;
 }
 
-.name{
+h1{
     padding-top:3%;
     padding-bottom:3%;
-    align-items: flex-start;
-    
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%,-50%);
+    color: #3373A7;
+    text-shadow:4px 4px rgba(19, 40, 99, 0.26);
     font-size: 96px;
-    color: #E5E9F2;
+
     letter-spacing:8px;
     transition: 0.5s;
 }
-.hero{
-  padding-left: 15%;
-  padding-bottom: 12%;
+
+.donation-page{
+    background-color: #E5E9F2;
+    padding: 5%;
+    margin-top: 6%;
 }
+
+.campaign-page{
+    
+    background-color: #f1e1c2e7;
+    padding: 5%;
+}
+
+.background-h
+{
+    position: relative;
+    background-color: #d7eafa;
+    margin-top: 6%;
+    margin-bottom: 6%;
+  
+}
+.hero{
+    padding-top:20%;
+  padding-left: 15%;
+  padding-bottom: 10%;
+}
+
 .hero img{
     width: 55%;
-    transition: width 0.5s;
-}   
+    transition: 0.5s;
+}  
+
 .hero img:hover{
-    width: 62%;
+    transform: scale(1.1);
 }
 
 .campaign{
+    margin-bottom: 2%;
     pointer-events: none;
     font-size: 85px;
+
+    color: #be913c;
+    text-shadow:5px 5px white;
 }
+    
+
 .rounded-start {
     border-bottom-left-radius: 0.25rem !important;
     border-top-left-radius: 0.25rem !important;
-  }
+}
 
-.campaign-page img{
-    padding:1px;
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius:1rem;  
 }
 
 .card-body {
     flex: 1 1 auto;
-    padding: 1rem 1rem;
-  }
+    padding: 1rem;
+}
+
+a{
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+a:hover{
+    transform: scale(1.05);
+}
+
+h3{
+    font-family: "Montserrat", sans-serif;
+    color: #173F5F;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 2.7rem;
+    margin-left: -2%;
+}
+
+.campaign-page img{
+    padding:10px;
+}
+
+.donation-page img{
+    padding:10px;
+}
 
 .donate{
     pointer-events: none;
     font-size: 85px;
+    color: #3373A7;
+    text-shadow:4px 4px rgba(19, 40, 99, 0.26);
+
 }

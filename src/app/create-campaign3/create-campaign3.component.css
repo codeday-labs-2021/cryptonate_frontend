@@ -33,3 +33,23 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
 
+  img{
+    margin-top: 6%;
+  }
+
+
+.myButtons{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 7%;
+  margin-bottom:5%;
+  align-items: center;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #91AFC8;
+  border-color: #91AFC8;
+}

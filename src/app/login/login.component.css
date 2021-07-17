@@ -1,13 +1,19 @@
+*{
+    padding:0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
 .header-container{
-    background: #E5E5E5;
     background-image:url("/assets/images/Background.svg");
-    background-position: center;
+    background-position:center;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+    background-size:contain;
+    position: absolute;
+    left: 0px;
     width: 1440px;
     height: 1024px;
 }
+
 
 .hero-container
 {
@@ -40,13 +46,20 @@ input[type=text], input[type=password]
 .buttonLogIn
 {
     margin: 12px 0px;
+    transition: 0.5s;
+    
+}
+
+.buttonLogIn:hover
+{
+    transform: scale(1.05);
 }
 
 .ques{
 margin-top: 12px;
 font-family: Montserrat;
 font-style: normal;
-font-weight: bold;
+font-weight: 400;
 font-size: 20px;
 line-height: 29px;
 letter-spacing: -0.02em;
@@ -63,8 +76,12 @@ hero-container .sign-up
     list-style: none;
     text-decoration: none;
     font-family: "Montserrat", sans-serif;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 18px;
     letter-spacing: -0.02em;
     color: #D9B51C;
+}
+.sign-up a:hover{
+   
+    color: #a08303;
 }

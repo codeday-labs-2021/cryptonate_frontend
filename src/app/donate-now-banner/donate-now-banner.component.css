@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+h1{
+    font-family:'Bebas Neue', cursive;;
+    font-weight: 400;
+    font-size: 90px;
+    align-items: center;
+    margin-top: 4%;
+    margin-bottom: 1%;
+    color:#173F5F;
+}
+
+.container{
+    position: absolute;
+    display: block;
+    text-align: center;
+}
+
+.btn-primary {
+    color: #fff;
+    font-weight: 700;
+    font-family: "Monsterrat",sans-serif;
+    background-color: #3373A7;
+    border-color: #3373A7;
+    margin-bottom:6% ;
+   
+}
+
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #91AFC8;
+    border-color: #91AFC8;
+  }
+
+

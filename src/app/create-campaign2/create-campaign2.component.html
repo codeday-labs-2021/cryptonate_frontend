@@ -1,0 +1,49 @@
+<img src="assets/images/circles1.svg" alt="" class="center">
+<p></p>
+<form class="row ">
+
+  <div class="p-3 col-md-6 offset-md-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" required>
+  </div>
+
+  <div class="p-3 col-md-6 offset-md-3">
+
+    <label for="calendar">End Date:</label>
+    <input type="date" class="form-control" id="calendar" name="calendar">
+
+  </div>
+
+  <div class="p-3 col-md-6 offset-md-3">
+    <label for="goal" class="form-label">Goal</label>
+    <div class="input-group mb-3">
+      <span class="input-group-text">$</span>
+      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+      <span class="input-group-text">.00</span>
+    </div>
+  </div>
+
+  <div class="p-3 col-md-6 offset-md-3">
+    <select class="form-select" aria-label="Tags">
+      <option selected>Choose Tag</option>
+      <option value="1">Tag 1</option>
+      <option value="2">Tag 2</option>
+      <option value="3">Tag 3</option>
+    </select>
+  </div>
+
+  <div class="p-3 col-md-6 offset-md-3">
+    <label for="Description" class="form-label">Description</label>
+    <textarea class="form-control" id="description" rows="3"></textarea>
+  </div>
+</form>
+
+
+<div class="myButtons">
+  <li>
+    <a class="btn btn-primary" type="goBack" routerLink="/Fundraise">GO BACK</a>
+  </li>
+  <li>
+    <a class="btn btn-primary" type="continue" routerLink="/Fundraise/Picture">CONTINUE</a>
+  </li>
+</div>

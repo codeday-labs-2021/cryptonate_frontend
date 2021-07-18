@@ -15,6 +15,8 @@ import { HomeComponent } from './home/home.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+import * as Layout from './_layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     CreateCampaign3Component,
     HomeComponent,
     MyProfileComponent,
-    NavbarComponent
+    NavbarComponent,
+    ...Layout.layouts
   ],
   imports: [
     BrowserModule,
@@ -37,13 +40,15 @@ import { NavbarComponent } from './navbar/navbar.component';
       { path: 'login', component: LoginComponent },
       { path: 'signup', component:  SignupComponent},
       { path: 'Donate', component:  CardCampaignComponent},
-      { path: 'Fundraise', component:  CreateCampaignComponent},
-      { path: 'Fundraise/Details', component:  CreateCampaign2Component},
-      { path: 'Fundraise/Picture', component:  CreateCampaign3Component},
+      { path: 'Fundraise', component:  Layout.MainLayoutComponent,
+    children:[{
+      path:'',
+      component:CreateCampaignComponent
+    } ,
+     { path: 'Details', component:  CreateCampaign2Component},
+      { path: 'Picture', component:  CreateCampaign3Component}
+    ]},
       { path: 'Profile', component:  MyProfileComponent},
-      
-
-
     ])
   ],
   providers: [],

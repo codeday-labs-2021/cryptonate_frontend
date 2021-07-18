@@ -18,6 +18,9 @@
     <div class="container">
         <h2 class = "text-center">DISPLAYING CAMPAIGNS</h2>
         <div class="row">
+            <ng-container *ngFor="let compaign of campaigns; let i = index;">
+                {{compaign.title}}
+            </ng-container>
             <div class="col-md-4 py-4">
                 <a class="card">
                     <img src="assets/images/pic.jpg" class="card-img-top" alt="...">

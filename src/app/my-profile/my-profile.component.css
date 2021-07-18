@@ -23,22 +23,25 @@ h1{
 
 .donation-page{
     background-color: #E5E9F2;
-    padding: 5%;
+    background-image: linear-gradient(white,#E5E9F2);
+    padding: 3%;
     margin-top: 6%;
 }
 
 .campaign-page{
     
     background-color: #f1e1c2e7;
-    padding: 5%;
+    background-image: linear-gradient(white,#f1e1c2e7,white);
+    padding: 3%;
 }
 
 .background-h
 {
     position: relative;
     background-color: #d7eafa;
+    background-image: linear-gradient(#d7eafa,white);
     margin-top: 6%;
-    margin-bottom: 6%;
+    margin-bottom: 3%;
   
 }
 .hero{

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { PageScrollService } from 'ngx-page-scroll-core';
+
 
 @Component({
   selector: 'app-my-profile',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any) { }
 
   ngOnInit(): void {
+    this.pageScrollService.scroll({
+      document: this.document,
+      scrollTarget: '.theEnd',});
   }
 
 }

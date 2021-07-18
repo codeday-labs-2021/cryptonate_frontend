@@ -16,75 +16,131 @@
     
 
     <div class="container">
-        <h2 class = "text-center">DISPLAYING CAMPAIGNS</h2>
+        <h2 class = "text-center">CAMPAIGNS</h2>
+
+
         <div class="row">
-            <ng-container *ngFor="let compaign of campaigns; let i = index;">
-                {{compaign.title}}
-            </ng-container>
-            <div class="col-md-4 py-4">
-                <a class="card">
-                    <img src="assets/images/pic.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">First Campaign Description. Edit this</p>
-                        <h6>$1300 of $1500 raised</h6>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <p></p>
-                        
-                        <a href="#" class="btn btn-primary">Donate Now</a>
-                    </div>
-                </a>
-         </div>
-            <div class="col-md-4 py-4">
-                <a class="card">
-                    <img src="assets/images/pic.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">First Campaign Description. Edit this later</p>
-                        <h6>$1300 of $1500 raised</h6>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <p></p>
-                        
-                        <a href="#" class="btn btn-primary">Donate Now</a>
-                    </div>
-                </a>
-         </div>
-            <div class="col-md-4 py-4">
-                <a class="card">
-                    <img src="assets/images/pic.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">First Campaign Description. Edit this lateashdjbJKHBDHABSHDBJkbjhdsbjhbbjbjbjhbjbjbjhbjhbbhbhhkkbbhhbhhbbjsdbfsbjdbfjkbajksfbksbdkjfjbksdr</p>
-                        <h6>$1300 of $1500 raised</h6>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <p></p>
-                        
-                        <a href="#" class="btn btn-primary">Donate Now</a>
-                    </div>
-                </a>
-        </div>
-        <div class="col-md-4">
-            <a class="card">
-                <img src="assets/images/pic.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">First Campaign Description. Edit this later</p>
-                    <h6>$1300 of $1500 raised</h6>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p></p>
+            <div class="col-2">
+
+           
                     
-                    <a href="#" class="btn btn-primary">Donate Now</a>
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        FILTER CAUSES
+                      </a>
+                      <ul class="dropdown-menu " aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Cause 1
+                            </label>
+                        </li>
+
+                        <li class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Cause 2
+                            </label>
+                        </li>
+
+                        <li class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Cause 3
+                            </label>
+                        </li>
+
+                        <li class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Cause 4
+                            </label>
+                        </li>
+
+                        <li class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Cause 5
+                            </label>
+                        </li>
+                        
+                      </ul>
+          
+                 
+
+
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-md-6 py-4">
+                        <a class="card">
+                            <img src="assets/images/pic.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">First Campaign Description. Edit this</p>
+                                <h6>$1300 of $1500 raised</h6>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p></p>
+                                
+                                <a href="#" class="btn btn-primary">Donate Now</a>
+                            </div>
+                        </a>
+                 </div>
+                    <div class="col-md-6 py-4">
+                        <a class="card">
+                            <img src="assets/images/pic.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">First Campaign Description. Edit this later</p>
+                                <h6>$1300 of $1500 raised</h6>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p></p>
+                                
+                                <a href="#" class="btn btn-primary">Donate Now</a>
+                            </div>
+                        </a>
+                 </div>
+                    <div class="col-md-6 py-4">
+                        <a class="card">
+                            <img src="assets/images/pic.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">First Campaign Description. Edit this lateashdjbJKHBDHABSHDBJkbjhdsbjhbbjbjbjhbjbjbjhbjhbbhbhhkkbbhhbhhbbjsdbfsbjdbfjkbajksfbksbdkjfjbksdr</p>
+                                <h6>$1300 of $1500 raised</h6>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p></p>
+                                
+                                <a href="#" class="btn btn-primary">Donate Now</a>
+                            </div>
+                        </a>
                 </div>
-            </a>
-    </div>
+                <div class="col-md-6 py-4">
+                    <a class="card">
+                        <img src="assets/images/pic.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">First Campaign Description. Edit this later</p>
+                            <h6>$1300 of $1500 raised</h6>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p></p>
+                            
+                            <a href="#" class="btn btn-primary">Donate Now</a>
+                        </div>
+                    </a>
+            </div>
+
+
+
+            </div>
+          </div>
+       
      </div>
 </div>
     <!-- Optional JavaScript; choose one of the two! -->

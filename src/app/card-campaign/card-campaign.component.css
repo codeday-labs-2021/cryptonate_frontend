@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .progress-bar {
     display: flex;
     flex-direction: column;
@@ -63,4 +65,44 @@ a{
 
 h2{
   margin-top: 6%;
+  font-family:'Bebas Neue', cursive;;
+  font-weight: 400;
+  font-size: 100px;
+  color: #173F5F;
+  background: rgba(135, 164, 189, 0.4);
+  
+  
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #91AFC8;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px  rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  padding-right: 4%;
+  color: #173F5F;
+  font-family: "Monsterrat",sans-serif;
+  font-weight: 700;
+  font-size:20px ;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: #91AFC8;
 }

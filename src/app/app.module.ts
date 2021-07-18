@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CardCampaignComponent } from './card-campaign/card-campaign.component';
@@ -14,13 +13,16 @@ import { CreateCampaign3Component } from './create-campaign3/create-campaign3.co
 import { HomeComponent } from './home/home.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { DonateNowBannerComponent } from './donate-now-banner/donate-now-banner.component';
+
 
 import * as Layout from './_layout';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
     LoginComponent,
     SignupComponent,
     CardCampaignComponent,
@@ -30,12 +32,15 @@ import * as Layout from './_layout';
     HomeComponent,
     MyProfileComponent,
     NavbarComponent,
-    ...Layout.layouts
+    ...Layout.layouts,
+    DonateNowBannerComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    NgxPageScrollCoreModule,
+    NgxPageScrollModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: 'signup', component:  SignupComponent},
@@ -49,6 +54,7 @@ import * as Layout from './_layout';
       { path: 'Picture', component:  CreateCampaign3Component}
     ]},
       { path: 'Profile', component:  MyProfileComponent},
+      { path: 'Home', component:  DonateNowBannerComponent},
     ])
   ],
   providers: [],

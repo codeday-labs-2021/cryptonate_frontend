@@ -40,22 +40,7 @@ import * as Layout from './_layout';
     ReactiveFormsModule,
     AppRoutingModule,
     NgxPageScrollCoreModule,
-    NgxPageScrollModule,
-    RouterModule.forRoot([
-      { path: 'login', component: LoginComponent },
-      { path: 'signup', component:  SignupComponent},
-      { path: 'Donate', component:  CardCampaignComponent},
-      { path: 'Fundraise', component:  Layout.MainLayoutComponent,
-    children:[{
-      path:'',
-      component:CreateCampaignComponent
-    } ,
-     { path: 'Details', component:  CreateCampaign2Component},
-      { path: 'Picture', component:  CreateCampaign3Component}
-    ]},
-      { path: 'Profile', component:  MyProfileComponent},
-      { path: 'Home', component:  DonateNowBannerComponent},
-    ])
+    NgxPageScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

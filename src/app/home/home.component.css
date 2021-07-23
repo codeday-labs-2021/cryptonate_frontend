@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*{
+    font-family:'Bebas Neue', cursive;
+    font-weight: 400;
+}
+
+h1{
+    color:#173F5F;
+    padding-bottom: 2%;
+    font-size: 96px;
+    text-align: center;
+
+}
+
+.how-it-works{
+        text-align: center;
+        padding-top: 6%;
+        padding-bottom: 6%;
+      
+}
+
+.testi{
+    background-color:#F5EA92 ;
+    padding:4.8%;
+    text-align: center;
+}
+.top{
+    color:#F5EA92;
+    font-size: 96px;
+}
+
+.top-campaigns{
+    background-color: #173F5F;
+    
+    padding: 6%;
+    padding-left: 8% !important;
+    padding-right: 8% !important;
+}
+
+h2{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color:#173F5F;
+}
+
+h3{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 700;
+    color:#173F5F;
+}
+
+h4{
+    font-family: "Montserrat",sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color:#BD903C;
+}
+
+
+.testi{
+    text-decoration: none;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+}

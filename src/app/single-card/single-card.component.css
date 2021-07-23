@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+h1{
+    font-family:'Bebas Neue', cursive;;
+    font-weight: 400;
+    font-size:96px;
+    color:#173F5F;
+padding-top: 2.8%;
+
+}
+
+h2{
+    color:#173F5F;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.info-card{
+    padding-top: 4%;
+    padding-bottom: 5%;
+}
+
+.my-card{
+    margin:auto;
+    width:100%;
+}
+
+
+.progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #91AFC8;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #3373A7;
+    transition: width 0.6s ease;
+    padding-bottom: 5%;
+    padding-top: 5%;
+  }
+  
+   .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: #fff;
+      background-clip: border-box;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 10px;
+
+    }
+
+.my-card{
+    padding-top: 2.5%;
+    padding-bottom: 1.5%;
+}
+a{
+  text-decoration: none;
+}
+   h5{
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 26.66px;
+    color:#BD903C;
+    padding-top: 4%;
+    padding-bottom: 6%;
+
+   }
+
+
+   h6
+   {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 26.66px;
+    color:#173F5F;
+    padding-top: 8%;
+    padding-bottom:8%;
+   }
+
+   
+   .btn-primary {
+    color: #fff;
+    background-color: #3373A7;
+    border-color: #0d6efd;
+    font-family: "Montserrat";
+    font-weight: 400;
+    
+    
+  }
+
+
+
+.card-text{
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 13px;
+  color: #173F5F;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  padding-right: 4%;
+  color: #173F5F;
+  font-family: "Monsterrat",sans-serif;
+  font-weight: 700;
+  font-size:20px ;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #91AFC8;
+    border-color: #91AFC8;
+  }

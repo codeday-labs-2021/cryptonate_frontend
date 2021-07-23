@@ -1,0 +1,61 @@
+.wrapper-1,.wrapper-2,.wrapper-3{
+    position:relative;
+   
+}
+
+.Mission,.vision,.contact-us{
+    
+    position:absolute;
+    top: 6%;
+    left: 4%;
+    padding-bottom: 5%;
+    
+   
+}
+
+
+
+.Mission h1{
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 120px;
+    color: white;
+    text-shadow:5px 3px rgba(13, 23, 51, 0.603);
+    
+    
+}
+
+.vision h1, .contact-us h1{
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 130px;
+    color: black;
+}
+
+.Mission p {
+    animation-duration: 3s;
+    animation-name: slidein;
+    font-size: 75px;
+    color: white;
+    text-shadow:5px 3px rgba(13, 23, 51, 0.603);
+    
+  }
+
+.vision p,.contact-us p{
+    animation-duration: 3s;
+    animation-name: slidein;
+    font-size: 85px;
+    color: black;
+}
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }

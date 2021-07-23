@@ -8,6 +8,9 @@ import { CreateCampaign2Component } from './create-campaign2/create-campaign2.co
 import { CreateCampaign3Component } from './create-campaign3/create-campaign3.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { DonateNowBannerComponent } from './donate-now-banner/donate-now-banner.component';
+import { HomeComponent } from './home/home.component';
+import { SingleCardComponent } from './single-card/single-card.component';
+import { AboutComponent } from './about/about.component';
 import * as Layout from './_layout';
 
 const routes: Routes = [
@@ -26,9 +29,12 @@ const routes: Routes = [
         { path: 'Picture', component:  CreateCampaign3Component}
       ]},
   { path: 'Profile', component:  MyProfileComponent},
-  { path: 'Home', component:  DonateNowBannerComponent},
+  { path: 'Home', component:  HomeComponent},
+  { path: 'Single', component:  SingleCardComponent},
+  {path: 'About', component: AboutComponent},
   { path: '', redirectTo: 'Home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'Home' } 
+  { path: '**', redirectTo: 'Home' }
+
 ];
 
 @NgModule({

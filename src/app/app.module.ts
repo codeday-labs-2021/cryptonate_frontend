@@ -19,6 +19,10 @@ import { DonateNowBannerComponent } from './donate-now-banner/donate-now-banner.
 
 
 import * as Layout from './_layout';
+import { CardComponent } from './card/card.component';
+import { SingleCardComponent } from './single-card/single-card.component';
+import { AboutComponent } from './about/about.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import * as Layout from './_layout';
     MyProfileComponent,
     NavbarComponent,
     ...Layout.layouts,
-    DonateNowBannerComponent
+    DonateNowBannerComponent,
+    CardComponent,
+    SingleCardComponent,
+    AboutComponent,
+
   ],
   imports: [
     BrowserModule,

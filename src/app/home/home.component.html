@@ -1,1 +1,66 @@
-<p>home works!</p>
+<img src="assets/images/hero.svg" class="img-fluid" alt="...">
+
+<div class="how-it-works">
+    <h1 class="title">HOW IT WORKS</h1>
+    <div class="container">
+        <div class="row align-items-start">
+          <div class="col">
+            <a class="find" href="#">
+                <img src="assets/images/create.png" alt="">
+            </a>
+            <h3>Find a Campaign</h3>
+            <h4>Browse campaigns to find one you want to support.</h4>
+          </div>
+
+          <div class="col">
+            <a class="choose" href="#">
+                <img src="assets/images/create.png" alt="">
+            </a>
+            <h3>Choose a donation option</h3>
+            <h4>Pay one-time or monthly with Ethereum wallet.</h4>
+          </div>
+
+          <div class="col">
+          <a class="repeat" href="#">
+                <img src="assets/images/create.png" alt="">
+            </a>
+            <h3>Repeat</h3>
+            <h4>Keep supporting campaigns</h4>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="testi">
+    <div class="container">
+        <div class="row align-items-start">
+          <div class="col">
+            <h1>40+</h1>
+            <h2>Campaigns supported</h2>
+          </div>
+
+          <div class="col">
+           <h1>20K</h1>
+            <h2>Users making a difference</h2>
+          </div>
+
+          <div class="col">
+           <h1>$32M</h1>
+            <h2>Raised for Charities</h2>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="top-campaigns">
+    <h1 class="top">TOP CAMPAIGNS</h1>
+    <div class="row">           
+        <app-card class="col-md-6 py-4" *ngFor="let campaign of campaigns"
+            [campaign]="campaign" 
+        >  
+        </app-card> 
+    </div>
+</div>
+
+<app-donate-now-banner></app-donate-now-banner>
+

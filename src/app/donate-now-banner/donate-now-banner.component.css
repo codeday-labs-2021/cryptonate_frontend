@@ -9,8 +9,9 @@ h1{
     color:#173F5F;
 }
 
-.container{
+.container-fluid{
     position: absolute;
+    bottom: 10;
     display: block;
     text-align: center;
 }

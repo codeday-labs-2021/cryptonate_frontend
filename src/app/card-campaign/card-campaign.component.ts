@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CAMPAIGNS } from '../campaigns';
 
 @Component({
   selector: 'app-card-campaign',
@@ -6,26 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-campaign.component.css']
 })
 export class CardCampaignComponent implements OnInit {
-
-  campaigns=[{
-    title:"CodeDay Fundraiser",
-    descr:"",
-    imageUrl:"",
-    endDate:"",
-    fund:0
-  },{
-    title:"CodeDay Fundraiser",
-    descr:"",
-    imageUrl:"",
-    endDate:"",
-    fund:0
-  },{
-    title:"CodeDay Fundraiser",
-    descr:"",
-    imageUrl:"",
-    endDate:"",
-    fund:0
-  }];
+campaigns = CAMPAIGNS;
   constructor() { }
 
   ngOnInit(): void {

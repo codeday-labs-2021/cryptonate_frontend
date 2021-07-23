@@ -1,0 +1,61 @@
+<img src="assets/images/hero.svg" class="img-fluid" alt="...">
+
+<div class="how-it-works">
+    <h1 class="title">HOW IT WORKS</h1>
+    
+    <ul>
+        <li>
+            <a class="find" href="#">
+                <img src="assets/images/create.png" alt="">
+            </a>
+            <h3>Find a Campaign</h3>
+            <h4>Browse campaigns to find one you want to support.</h4>
+        </li>
+
+        <li>
+            <a class="choose" href="#">
+                <img src="assets/images/create.png" alt="">
+            </a>
+            <h3>Choose a donation option</h3>
+            <h4>Pay one-time or monthly with Ethereum wallet.</h4>
+        </li>
+
+        <li>
+            <a class="repeat" href="#">
+                <img src="assets/images/create.png" alt="">
+            </a>
+            <h3>Repeat</h3>
+            <h4>Keep supporting campaigns</h4>
+        </li>
+    </ul>
+</div>
+
+<div class="testi">
+    <ul>
+        <li>
+            <h1>40+</h1>
+            <h2>Campaigns supported</h2>
+        </li>
+
+        <li>
+            <h1>20K</h1>
+            <h2>Users making a difference</h2>
+        </li>
+
+        <li>
+            <h1>$32M</h1>
+            <h2>Raised for Charities</h2>
+        </li>
+    </ul>
+</div>
+
+<div class="top-campaigns">
+    <h1 class="top">TOP CAMPAIGNS</h1>
+    <div class="row">           
+        <app-card class="col-md-6 py-4" *ngFor="let campaign of campaigns"
+            [campaign]="campaign" 
+        >  
+        </app-card> 
+    </div>
+</div>
+

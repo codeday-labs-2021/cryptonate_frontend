@@ -11,6 +11,13 @@ campaigns = CAMPAIGNS;
   constructor() { }
 
   ngOnInit(): void {
+    //call backend APIs 
+    // save into campaigns and display campaigns 
+  }
+
+  filter(condition:string){
+
+
   }
 
 }

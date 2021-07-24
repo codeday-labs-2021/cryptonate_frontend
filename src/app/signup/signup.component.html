@@ -1,19 +1,23 @@
 <div class="header-container">
     <div class="wrapper">
         <header>
-                <div class="hero-container">
+                <div class="hero-container" [formGroup]="registerForm">
                     <div class="Logo">
                         <img src="assets/images/SignUpLogo.svg" alt="">
                     </div>
                     <div class="text-box">
-                    <input type="text" placeholder="First Name" name="first" required>
-                    <input type="text" placeholder="Last Name" name="last" required>
-                    <input type="text" placeholder="Enter Email Adress" name="email" required>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <input type="text"  class="form-control" placeholder="First Name" name="first" formControlName="firstname"
+                    [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" >
+                    <div class="error-msg" *ngIf="submitted && f.firstname.errors ">
+                            First Name is required
+                    </div>
+                    <input type="text"  class="form-control" placeholder="Last Name" name="last" formControlName="lastname">
+                    <input type="text"  class="form-control" placeholder="Enter Email Adress" name="email" formControlName="email">
+                    <input type="password"  class="form-control" placeholder="Enter Password" name="psw" formControlName="password">
                     </div>
 
                     <div class="buttonSignUp">
-                        <a href="#"> 
+                        <a (click)="register()"> 
                             <img class = "signup" src="assets/images/SignUpButton.svg"> 
                         </a>
                     </div>

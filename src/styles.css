@@ -8,3 +8,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+#main-bg {
+    background-image: url("./assets/images/hero.svg"); 
+    padding: 150px 0 130px 0;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    width: 100%;
+    height: 700px;
+  }

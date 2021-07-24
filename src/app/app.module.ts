@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +20,7 @@ import { DonateNowBannerComponent } from './donate-now-banner/donate-now-banner.
 
 
 import * as Layout from './_layout';
+import * as Service from './_services';
 import { CardComponent } from './card/card.component';
 import { SingleCardComponent } from './single-card/single-card.component';
 import { AboutComponent } from './about/about.component';
@@ -48,9 +50,12 @@ import { AboutComponent } from './about/about.component';
     ReactiveFormsModule,
     AppRoutingModule,
     NgxPageScrollCoreModule,
-    NgxPageScrollModule
+    NgxPageScrollModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    Service.AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -75,3 +75,7 @@ hero-container .sign-up
     letter-spacing: -0.02em;
     color: #D9B51C;
 }
+
+.error-msg{
+    color:red;
+}

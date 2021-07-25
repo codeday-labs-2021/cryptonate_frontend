@@ -1,10 +1,11 @@
-<h1>TITLE</h1>
+<div *ngIf="campaign">
+<h1>{{campaign.title}}</h1>
 
 <div class="my-card">
     <div class="card mb-3" style="max-width: 940px;">
         <div class="row g-0">
           <div class="col-md-6">
-            <img src="assets/images/photo-single.svg" class="img-fluid rounded-start" alt="...">
+            <img src={{campaign.imageUrl}} class="img-fluid rounded-start" alt="...">
           </div>
           <div class="col-md-6">
             <div class="card-body">
@@ -29,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-              <h5> $249 raised</h5>
+              <h5> $ {{campaign.fund}} raised</h5>
 
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -46,11 +47,12 @@
 
 <div class="description">
     <h1>DESCRIPTION</h1>
-    <h2>Description of the campaign bla bla bla I mean its crazy. We finished each other sandwiches. I never meant someone who thinks dso much like me. Jinnx! Jinx again. Our mental sychronization, can have the same explanation. You and I, we're just meant to be </h2>
+    <h2>{{campaign.descr}}</h2>
 </div>
 
 <div class="organizer">
 <h1>ORGANIZER</h1>
 <h3>John Adams</h3>
 <h3 class="detail-name"> occupation</h3>
+</div>
 </div>

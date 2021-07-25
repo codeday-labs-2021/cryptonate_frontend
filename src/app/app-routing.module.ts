@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component:  SignupComponent},
   { path: 'Donate', component:  CardCampaignComponent},
+  { path: 'Campaign/:campaignId', component: SingleCardComponent },
   { 
     path: 'Fundraise', 
     component:  Layout.MainLayoutComponent,

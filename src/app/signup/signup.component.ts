@@ -7,6 +7,7 @@ import {
 } from "@angular/forms";
 
 import {AuthService} from './../_services';
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -18,15 +19,15 @@ export class SignupComponent implements OnInit {
   submitted = false;
   constructor(
     private formBuilder:FormBuilder,
-    private AuthSrv:AuthService
+    private AuthSrv:AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
       firstname:["",Validators.required],
       lastname:["",Validators.required],
-      email:["",
-      Validators.required],
+      email:["", Validators.required],
       password:["",Validators.required],
     });
   }
@@ -35,30 +36,28 @@ export class SignupComponent implements OnInit {
     return this.registerForm.controls;
   }
 
-  inValid(){
-    this.registerForm.invalid;
-  }
-
   async register(){
     this.submitted = true;
-    console.log("register before");
+    console.log("=====================","before registration");
+
     if(this.registerForm.invalid){
       return;
     }
-    console.log("register after");
+    console.log("=====================","after registration");
 
     let values =this.registerForm.value;
 
-    const res = this.AuthSrv.sginup(values.firstname,
+    const res = this.AuthSrv.signup(values.firstname,
       values.lastname,values.email,values.password);
-      
-      res.subscribe(res=>{
+
+      res.subscribe(res => {
         console.log("=====================",res);
 
-        
-        if (res['result'] == 'successful') {
-          localStorage.setItem("user",JSON.stringify(res["data"]));
+        //TODO check if works
+        if (res['message'] === null) { //if there is no error message
+          localStorage.setItem("user",JSON.stringify(res));
 
+          this.router.navigate(["/login"]);
         }
       })
   }

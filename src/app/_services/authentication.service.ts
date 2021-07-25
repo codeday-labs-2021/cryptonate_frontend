@@ -9,15 +9,19 @@ import { environment } from '../../environments/environment';
 export class AuthService {
     constructor(private http: HttpClient) { }
 
-
-    sginup(firstname:string, lastname:string, email:string, password:string){
+    signup(firstname:string, lastname:string, email:string, password:string){
         return this.http.post<any>(`${environment.apiUrl}/api/users/signup`,{
-            firstname,
-            lastname,
+            first_name: firstname,
+            last_name: lastname,
             email,
             password
         })
     }
 
-  
+    login(email:string, password:string) {
+      return this.http.post<any>(`${environment.apiUrl}/api/users/login`,{
+          email,
+          password
+      }, {withCredentials: true});
+    }
 }

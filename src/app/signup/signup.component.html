@@ -6,22 +6,34 @@
                         <img src="assets/images/SignUpLogo.svg" alt="">
                     </div>
                     <div class="text-box">
-                    <input type="text"  class="form-control" placeholder="First Name" name="first" formControlName="firstname"
-                    [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" >
-                    <div class="error-msg" *ngIf="submitted && f.firstname.errors ">
-                            First Name is required
-                    </div>
-                    <input type="text"  class="form-control" placeholder="Last Name" name="last" formControlName="lastname">
-                    <input type="text"  class="form-control" placeholder="Enter Email Adress" name="email" formControlName="email">
-                    <input type="password"  class="form-control" placeholder="Enter Password" name="psw" formControlName="password">
+                      <input type="text"  class="form-control" placeholder="First Name" name="first" formControlName="firstname"
+                      [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" >
+                      <div class="error-msg" *ngIf="submitted && f.firstname.errors ">
+                        First name is required
+                      </div>
+                      <input type="text"  class="form-control" placeholder="Last Name" name="last" formControlName="lastname"
+                      [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" >
+                      <div class="error-msg" *ngIf="submitted && f.lastname.errors ">
+                        Last name is required
+                      </div>
+                      <input type="text"  class="form-control" placeholder="Enter Email Address" name="email" formControlName="email"
+                      [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
+                      <div class="error-msg" *ngIf="submitted && f.email.errors ">
+                        Email is required
+                      </div>
+                      <input type="password"  class="form-control" placeholder="Enter Password" name="psw" formControlName="password"
+                      [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
+                      <div class="error-msg" *ngIf="submitted && f.password.errors ">
+                        Password is required
+                      </div>
                     </div>
 
                     <div class="buttonSignUp">
-                        <a (click)="register()"> 
-                            <img class = "signup" src="assets/images/SignUpButton.svg"> 
+                        <a (click)="register()">
+                            <img class = "signup" src="assets/images/SignUpButton.svg">
                         </a>
                     </div>
-                    
+
                     <div class="ques">
                         <p>Already have an account?</p>
                     </div>
@@ -30,6 +42,7 @@
                         <a [routerLink]="['/login']">LOGIN</a>
                     </div>
                 </div>
-            
+
         </header>
     </div>
+</div>

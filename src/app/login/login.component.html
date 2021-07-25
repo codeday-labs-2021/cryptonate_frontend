@@ -1,31 +1,34 @@
 
 <div class="header-container">
-    
-        
-                <div class="hero-container">
-                    <div class="Logo">
-                        <img src="assets/images/Logo.svg" alt="">
-                    </div>
-                    <div class="text-box">
-                    <input type="text" placeholder="Enter Email Adress" name="email" required>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
-                    </div>
+  <div class="hero-container" [formGroup]="loginForm">
+      <div class="Logo">
+          <img src="assets/images/Logo.svg" alt="">
+      </div>
+      <div class="text-box">
+      <input formControlName="email" type="text" placeholder="Enter Email Address" name="email" required
+      [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
+        <div class="error-msg" *ngIf="submitted && f.email.errors ">
+          Email is required
+        </div>
+      <input formControlName="password" type="password" placeholder="Enter Password" name="psw" required
+      [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
+        <div class="error-msg" *ngIf="submitted && f.password.errors ">
+          Password is required
+        </div>
+      </div>
 
-                    <div class="buttonLogIn">
-                        <a href="#"> 
-                            <img class = "login" src="assets/images/LogInButton.svg"> 
-                        </a>
-                    </div>
-                    
-                    <div class="ques">
-                        <p>Don't have an account?</p>
-                    </div>
+      <div class="buttonLogIn">
+          <a (click)="submit()">
+              <img class = "login" src="assets/images/LogInButton.svg">
+          </a>
+      </div>
 
-                    <div class="sign-up">
-                        <a [routerLink]="['/signup']">Sign up</a>
-                    </div>
-                </div>
-            
-        
-    
+      <div class="ques">
+          <p>Don't have an account?</p>
+      </div>
+
+      <div class="sign-up">
+          <a [routerLink]="['/signup']">Sign up</a>
+      </div>
+  </div>
 </div>

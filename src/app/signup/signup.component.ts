@@ -38,12 +38,10 @@ export class SignupComponent implements OnInit {
 
   async register(){
     this.submitted = true;
-    console.log("=====================","before registration");
 
     if(this.registerForm.invalid){
       return;
     }
-    console.log("=====================","after registration");
 
     let values =this.registerForm.value;
 
@@ -51,12 +49,7 @@ export class SignupComponent implements OnInit {
       values.lastname,values.email,values.password);
 
       res.subscribe(res => {
-        console.log("=====================",res);
-
-        //TODO check if works
-        if (res['message'] === null) { //if there is no error message
-          localStorage.setItem("user",JSON.stringify(res));
-
+        if (!res['message']) { //if there is no error message
           this.router.navigate(["/login"]);
         }
       })

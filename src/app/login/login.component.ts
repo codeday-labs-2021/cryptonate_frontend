@@ -36,22 +36,21 @@ export class LoginComponent implements OnInit {
 
   submit(): void {
     this.submitted = true;
-    console.log("=====================","before login");
 
     if(this.loginForm.invalid){
+      //TODO: show error for invalid login or signup on frontend
       return;
     }
-    console.log("=====================","after login");
 
     let values =this.loginForm.value;
 
     const res = this.AuthSrv.login(values.email,values.password);
 
     res.subscribe(res => {
-      if (res['message'] == "Authentication successful") {
+      if (res['message'] != "Authentication failed") {
         localStorage.setItem("user",JSON.stringify(res));
 
-        this.router.navigate(["/"]);
+        this.router.navigate(["/Profile"]);
       }
     })
   }

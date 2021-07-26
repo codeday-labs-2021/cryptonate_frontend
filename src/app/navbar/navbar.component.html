@@ -22,10 +22,22 @@
           </li>
         </ul>
 
+        <!--TODO: show logout button and my profile if user is already logged in-->
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a class="btn btn-primary me-md-2" type="button" [routerLink]="['/login']">Log In</a>
-            <a class="btn btn-primary" type="button" [routerLink]="['/signup']">Sign Up</a>
-          </div>
+          <a class="btn btn-primary me-md-2" type="button" [routerLink]="['/login']">Log In</a>
+          <a class="btn btn-primary" type="button" [routerLink]="['/signup']">Sign Up</a>
+
+          <ul  class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">My Cryptonate</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">My Profile</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/Profile']">My Dashboard</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" (click)="logout()">Log Out</a></li>
+            </ul>
+          </ul>
+        </div>
+
       </div>
     </div>
   </nav>

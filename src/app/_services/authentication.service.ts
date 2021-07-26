@@ -24,4 +24,8 @@ export class AuthService {
           password
       }, {withCredentials: true});
     }
+
+    logout() {
+      return this.http.get<any>(`${environment.apiUrl}/api/users/logout`, {withCredentials: true});
+    }
 }

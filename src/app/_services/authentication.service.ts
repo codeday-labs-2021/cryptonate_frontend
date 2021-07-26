@@ -28,4 +28,9 @@ export class AuthService {
     logout() {
       return this.http.get<any>(`${environment.apiUrl}/api/users/logout`, {withCredentials: true});
     }
+
+    isLoggedIn(): boolean {
+      return !!localStorage.getItem("user");
+    }
+
 }

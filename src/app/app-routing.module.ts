@@ -12,14 +12,15 @@ import { HomeComponent } from './home/home.component';
 import { SingleCardComponent } from './single-card/single-card.component';
 import { AboutComponent } from './about/about.component';
 import * as Layout from './_layout';
+import {AuthGuard} from "./guards/auth.guard";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component:  SignupComponent},
   { path: 'Donate', component:  CardCampaignComponent},
   { path: 'Campaign/:campaignId', component: SingleCardComponent },
-  { 
-    path: 'Fundraise', 
+  {
+    path: 'Fundraise',
     component:  Layout.MainLayoutComponent,
     children:[
       {
@@ -29,7 +30,7 @@ const routes: Routes = [
       { path: 'Details', component:  CreateCampaign2Component},
         { path: 'Picture', component:  CreateCampaign3Component}
       ]},
-  { path: 'Profile', component:  MyProfileComponent},
+  { path: 'Profile', component:  MyProfileComponent, canActivate: [AuthGuard]},
   { path: 'Home', component:  HomeComponent},
   { path: 'Single', component:  SingleCardComponent},
   {path: 'About', component: AboutComponent},

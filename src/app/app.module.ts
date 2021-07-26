@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from "@angular/common/http";
+import {HttpClientModule, HttpClient, HttpInterceptor, HTTP_INTERCEPTORS} from "@angular/common/http";
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +24,8 @@ import * as Service from './_services';
 import { CardComponent } from './card/card.component';
 import { SingleCardComponent } from './single-card/single-card.component';
 import { AboutComponent } from './about/about.component';
-
+import {AuthGuard} from "./guards/auth.guard";
+import {AddHeaderInterceptor} from "./interceptors/interceptor";
 
 @NgModule({
   declarations: [
@@ -54,7 +55,13 @@ import { AboutComponent } from './about/about.component';
     HttpClientModule
   ],
   providers: [
-    Service.AuthService
+    Service.AuthService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AddHeaderInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

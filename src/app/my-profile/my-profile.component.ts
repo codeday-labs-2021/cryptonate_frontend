@@ -19,4 +19,6 @@ export class MyProfileComponent implements OnInit {
       scrollTarget: '.theEnd',});
   }
 
+
+  firstName = JSON.parse(<string>localStorage.getItem("user"))["user"]["first_name"];
 }

@@ -33,4 +33,9 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem("user");
+  }
+
 }

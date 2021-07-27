@@ -12,7 +12,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: "root",
 })
 export class Web3Service {
-  private web3: Web3 = null;
+  private web3: Web3 = new Web3();
   private contract: any;
   private contractAddress = "";
 

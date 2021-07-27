@@ -55,6 +55,7 @@ import { CampaignService } from './campaign.service';
   ],
   providers: [
     Service.AuthService,
+    Service.Web3Service,
     CampaignService,
     AuthGuard,
     {

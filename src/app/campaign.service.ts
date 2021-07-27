@@ -3,10 +3,11 @@ import { HttpClient } from "@angular/common/http";
 import { Campaign } from "./campaigns";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import {environment} from "../environments/environment";
 
 @Injectable()
 export class CampaignService{
-    private _url: string="http://localhost:3000/api/campaigns";
+    private _url: string= `${environment.apiUrl}/api/campaigns`;
     constructor(private http:HttpClient){}
 
     getCampaign():Observable<Campaign[]>{

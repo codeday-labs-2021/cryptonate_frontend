@@ -17,8 +17,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { DonateNowBannerComponent } from './donate-now-banner/donate-now-banner.component';
-
-
 import * as Layout from './_layout';
 import * as Service from './_services';
 import { CardComponent } from './card/card.component';
@@ -26,6 +24,7 @@ import { SingleCardComponent } from './single-card/single-card.component';
 import { AboutComponent } from './about/about.component';
 import {AuthGuard} from "./guards/auth.guard";
 import {AddHeaderInterceptor} from "./interceptors/interceptor";
+import { CampaignService } from './campaign.service';
 
 @NgModule({
   declarations: [
@@ -56,6 +55,7 @@ import {AddHeaderInterceptor} from "./interceptors/interceptor";
   ],
   providers: [
     Service.AuthService,
+    CampaignService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,

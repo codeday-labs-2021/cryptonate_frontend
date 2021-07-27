@@ -11,6 +11,7 @@ import { DonateNowBannerComponent } from './donate-now-banner/donate-now-banner.
 import { HomeComponent } from './home/home.component';
 import { SingleCardComponent } from './single-card/single-card.component';
 import { AboutComponent } from './about/about.component';
+import { CampaignService } from './campaign.service';
 import * as Layout from './_layout';
 import {AuthGuard} from "./guards/auth.guard";
 
@@ -18,7 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component:  SignupComponent},
   { path: 'Donate', component:  CardCampaignComponent},
-  { path: 'Campaign/:campaignId', component: SingleCardComponent },
+  { path: 'Campaign/:campaign._id', component: SingleCardComponent },
   {
     path: 'Fundraise',
     component:  Layout.MainLayoutComponent,

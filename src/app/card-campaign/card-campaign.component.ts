@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CAMPAIGNS } from '../campaigns';
+import { Router } from '@angular/router';
+import { Campaign } from '../campaigns';
+import { CampaignService } from '../campaign.service';
 
 @Component({
   selector: 'app-card-campaign',
@@ -7,17 +9,16 @@ import { CAMPAIGNS } from '../campaigns';
   styleUrls: ['./card-campaign.component.css']
 })
 export class CardCampaignComponent implements OnInit {
-campaigns = CAMPAIGNS;
-  constructor() { }
+public campaigns:any[] = [];
+_id !: string;
+//campaigns = CAMPAIGNS;
+  constructor(private _campaignService: CampaignService,
+    private router:Router) { }
 
   ngOnInit(): void {
     //call backend APIs 
     // save into campaigns and display campaigns 
+    this._campaignService.getCampaign()
+      .subscribe(data => this.campaigns = data);
   }
-
-  filter(condition:string){
-
-
-  }
-
 }

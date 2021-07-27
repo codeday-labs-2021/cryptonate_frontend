@@ -21,4 +21,8 @@ export class CampaignService{
             .find(campaign => campaign._id === id))
         );
     }
+
+    getUserCampaigns():Observable<Campaign[]>{
+      return this.http.get<Campaign[]>(`${environment.apiUrl}/api/users/campaigns`);
+    }
 }

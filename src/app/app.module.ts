@@ -25,9 +25,12 @@ import { AboutComponent } from './about/about.component';
 import {AuthGuard} from "./guards/auth.guard";
 import {AddHeaderInterceptor} from "./interceptors/interceptor";
 import { CampaignService } from './campaign.service';
+import { DonationCardComponent } from './donation-card/donation-card.component';
+import {DonationService} from "./donation/donation.service";
 
 @NgModule({
   declarations: [
+    DonationCardComponent,
     AppComponent,
     LoginComponent,
     SignupComponent,
@@ -43,6 +46,7 @@ import { CampaignService } from './campaign.service';
     CardComponent,
     SingleCardComponent,
     AboutComponent,
+    DonationCardComponent,
 
   ],
   imports: [
@@ -56,6 +60,7 @@ import { CampaignService } from './campaign.service';
   providers: [
     Service.AuthService,
     CampaignService,
+    DonationService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,

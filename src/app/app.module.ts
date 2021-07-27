@@ -59,6 +59,7 @@ import {DonationService} from "./donation/donation.service";
   ],
   providers: [
     Service.AuthService,
+    Service.Web3Service,
     CampaignService,
     DonationService,
     AuthGuard,

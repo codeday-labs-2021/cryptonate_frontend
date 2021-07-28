@@ -24,7 +24,7 @@ export class CampaignService{
     return this.http.get<Campaign[]>(this._url,httpOptions);
     }
 
-    
+
     getCampaign():Observable<Campaign[]>{
         return this.http.get<Campaign[]>(this._url);
     }
@@ -33,10 +33,10 @@ export class CampaignService{
         console.log("campaign found");
         return this.getCampaign()
         .pipe(
-            map((campaigns: Campaign[]) => 
+            map((campaigns: Campaign[]) =>
             campaigns.find(campaign => campaign._id === id))
         );
-        
+
     }
 
     getUserCampaigns():Observable<Campaign[]>{

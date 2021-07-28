@@ -1,0 +1,64 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Profile</title>
+  </head>
+  <body>
+
+
+
+   <div class="background-h">
+    <h1>HI, {{firstName}}!</h1>
+
+    <div class="hero">
+        <div class="row">
+          <div class="col-sm-6">
+            <a pageScroll href=#camp>
+                <img class = "myCampaign" src="assets/images/myCampaign.svg">
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <a pageScroll href="#don">
+                <img class = "myDonation" src="assets/images/myDonation.svg">
+            </a>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+
+
+  <div id="camp" class="campaign-page">
+    <h2 class ="campaign">MY CAMPAIGNS</h2>
+
+    <app-card class="col-md-6 py-4" *ngFor="let campaign of userCampaigns"
+              [campaign]="campaign"
+    >
+    </app-card>
+  </div>
+
+  <div id="don" class="donation-page">
+    <h2  class="donate">MY DONATIONS</h2>
+
+    <div class="row">
+      <app-donation-card class="col-md-6 py-4" *ngFor="let donation of userDonations"
+                [donation]="donation"
+      >
+      </app-donation-card>
+    </div>
+
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+  <app-donate-now-banner></app-donate-now-banner>
+</html>

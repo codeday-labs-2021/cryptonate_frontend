@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       if (res['message'] != "Authentication failed") {
         localStorage.setItem("user",JSON.stringify(res));
 
-        this.router.navigate(["/Profile"]);
+        this.router.navigate(["/Dashboard"]);
       }
     })
   }

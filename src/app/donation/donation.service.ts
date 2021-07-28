@@ -11,4 +11,8 @@ export class DonationService{
   getUserDonations():Observable<Donation[]>{
     return this.http.get<Donation[]>(`${environment.apiUrl}/api/users/donations`);
   }
+
+  getCampaignDonations():Observable<Donation[]>{
+    return this.http.get<Donation[]>(`${environment.apiUrl}/api/campaign/donations`);
+  }
 }

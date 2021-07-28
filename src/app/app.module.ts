@@ -28,6 +28,7 @@ import { CampaignService } from './campaign.service';
 import { FormsModule } from '@angular/forms';
 import { DonationCardComponent } from './donation-card/donation-card.component';
 import {DonationService} from "./donation/donation.service";
+import { UserService } from './user.services';
 
 @NgModule({
   declarations: [
@@ -47,9 +48,7 @@ import {DonationService} from "./donation/donation.service";
     CardComponent,
     SingleCardComponent,
     AboutComponent,
-    FormsModule
     DonationCardComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -63,6 +62,7 @@ import {DonationService} from "./donation/donation.service";
     Service.AuthService,
     Service.Web3Service,
     CampaignService,
+    UserService,
     DonationService,
     AuthGuard,
     {

@@ -12,7 +12,7 @@ import { CreateCampaignComponent } from './create-campaign/create-campaign.compo
 import { CreateCampaign2Component } from './create-campaign2/create-campaign2.component';
 import { CreateCampaign3Component } from './create-campaign3/create-campaign3.component';
 import { HomeComponent } from './home/home.component';
-import { MyProfileComponent } from './my-profile/my-profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
@@ -29,6 +29,7 @@ import { FormsModule } from '@angular/forms';
 import { DonationCardComponent } from './donation-card/donation-card.component';
 import {DonationService} from "./donation/donation.service";
 import { UserService } from './user.services';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { UserService } from './user.services';
     CreateCampaign2Component,
     CreateCampaign3Component,
     HomeComponent,
-    MyProfileComponent,
+    DashboardComponent,
     NavbarComponent,
     ...Layout.layouts,
     DonateNowBannerComponent,
@@ -49,9 +50,12 @@ import { UserService } from './user.services';
     SingleCardComponent,
     AboutComponent,
     DonationCardComponent,
+    MyProfileComponent,
+
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     NgxPageScrollCoreModule,
@@ -60,7 +64,6 @@ import { UserService } from './user.services';
   ],
   providers: [
     Service.AuthService,
-    Service.Web3Service,
     CampaignService,
     UserService,
     DonationService,

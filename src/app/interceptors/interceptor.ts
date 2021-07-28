@@ -11,8 +11,6 @@ export class AddHeaderInterceptor implements HttpInterceptor {
     if(localStorage.getItem("user")) {
       const jwt = JSON.parse(<string>localStorage.getItem("user"))["jwt"];
 
-      console.log("=================", jwt);
-
       // Clone the request to add the new header
       const clonedRequest = req.clone({ headers: req.headers.append('Authorization', `Bearer ${jwt}`) });
 

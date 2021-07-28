@@ -1,64 +1,53 @@
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>Profile</title>
-  </head>
-  <body>
-
-
-
-   <div class="background-h">
-    <h1>HI, {{firstName}}!</h1>
-
-    <div class="hero">
-        <div class="row">
-          <div class="col-sm-6">
-            <a pageScroll href=#camp>
-                <img class = "myCampaign" src="assets/images/myCampaign.svg">
-            </a>
-          </div>
-          <div class="col-sm-6">
-            <a pageScroll href="#don">
-                <img class = "myDonation" src="assets/images/myDonation.svg">
-            </a>
-          </div>
-        </div>
+<h5>My Profile</h5>
+<form [formGroup]="profileForm">
+    <label for="profileFirstName">First Name</label>
+    <input formControlName="profileFirstName" id="profileFirstName" type="text" [readonly]="readonly" class="form-control" required
+           [ngClass]="{ 'is-invalid': submitted && f.profileFirstName.errors }" >
+    <div class="error-msg" *ngIf="submitted && f.profileFirstName.errors ">
+      First name is required
     </div>
-  </div>
-
-
-
-
-  <div id="camp" class="campaign-page">
-    <h2 class ="campaign">MY CAMPAIGNS</h2>
-
-    <app-card class="col-md-6 py-4" *ngFor="let campaign of userCampaigns"
-              [campaign]="campaign"
-    >
-    </app-card>
-  </div>
-
-  <div id="don" class="donation-page">
-    <h2  class="donate">MY DONATIONS</h2>
-
-    <div class="row">
-      <app-donation-card class="col-md-6 py-4" *ngFor="let donation of userDonations"
-                [donation]="donation"
-      >
-      </app-donation-card>
+    <label for="profileLastName">Last Name</label>
+    <input formControlName="profileLastName" id="profileLastName" type="text" [readonly]="readonly" class="form-control" required
+           [ngClass]="{ 'is-invalid': submitted && f.profileLastName.errors }" >
+    <div class="error-msg" *ngIf="submitted && f.profileLastName.errors ">
+      Last name is required
+    </div>
+    <label for="profileEmail">Email</label>
+    <input formControlName="profileEmail" id="profileEmail" type="text" [readonly]="readonly" class="form-control" required
+           [ngClass]="{ 'is-invalid': submitted && f.profileEmail.errors }" >
+    <div class="error-msg" *ngIf="submitted && f.profileEmail.errors ">
+      Email is required
     </div>
 
-  </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <label for="profileAbout">About</label>
+    <textarea formControlName="profileAbout" id="profileAbout" cols="30" rows="10" [readonly]="readonly" class="form-control" ></textarea>
 
-  </body>
-  <app-donate-now-banner></app-donate-now-banner>
-</html>
+    <br>
+    <label for="profileLocation">Location</label>
+    <input formControlName="profileLocation" id="profileLocation" type="text" [readonly]="readonly" class="form-control" >
+
+    <label for="profileOccupation">Occupation</label>
+    <input formControlName="profileOccupation" id="profileOccupation" type="text" [readonly]="readonly" class="form-control" >
+
+    <label for="profileOrganization">Organization</label>
+    <input formControlName="profileOrganization" id="profileOrganization" type="text" [readonly]="readonly" class="form-control" >
+
+
+    <label for="profileOrganizationEmail">Organization Email</label>
+    <input formControlName="profileOrganizationEmail" id="profileOrganizationEmail" type="text" [readonly]="readonly" class="form-control" >
+
+
+    <label for="profileSocialMedia">Social Media URL</label>
+    <input formControlName="profileSocialMedia" id="profileSocialMedia" type="text" [readonly]="readonly" class="form-control" >
+
+
+    <label for="profileWebsite">Website URL</label>
+    <input formControlName="profileWebsite" id="profileWebsite" type="text" [readonly]="readonly" class="form-control" >
+
+    <br>
+  <button type="submit" class="btn btn-primary" *ngIf="readonly" (click)="toggleReadOnly()">Edit</button>
+  <button type="submit" class="btn btn-primary" *ngIf="!readonly" (click)="save()">Save</button>
+</form>
+
+
+

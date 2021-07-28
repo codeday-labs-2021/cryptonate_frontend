@@ -31,6 +31,12 @@ const routes: Routes = [
       { path: 'Details', component:  CreateCampaign2Component},
         { path: 'Picture', component:  CreateCampaign3Component}
       ]},
+      {
+        path: 'Admin',
+        component:  Layout.MainLayoutComponent,
+        children:[
+        
+          ]},
   { path: 'Profile', component:  MyProfileComponent, canActivate: [AuthGuard]},
   { path: 'Home', component:  HomeComponent},
   { path: 'Single', component:  SingleCardComponent},

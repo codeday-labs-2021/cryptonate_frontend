@@ -3,6 +3,7 @@ import { HttpClient,HttpHeaders} from "@angular/common/http";
 import { Campaign } from "./campaigns";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import {environment} from "../environments/environment";
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -11,8 +12,7 @@ const httpOptions = {
 }
 @Injectable()
 export class CampaignService{
-    private _url: string="http://localhost:3000/api/campaigns";
-
+    private _url: string= `${environment.apiUrl}/api/campaigns`;
     constructor(private http:HttpClient){}
 
     getEvents(){
@@ -37,5 +37,9 @@ export class CampaignService{
             campaigns.find(campaign => campaign._id === id))
         );
         
+    }
+
+    getUserCampaigns():Observable<Campaign[]>{
+      return this.http.get<Campaign[]>(`${environment.apiUrl}/api/users/campaigns`);
     }
 }

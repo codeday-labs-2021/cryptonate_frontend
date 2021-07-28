@@ -26,9 +26,12 @@ import {AuthGuard} from "./guards/auth.guard";
 import {AddHeaderInterceptor} from "./interceptors/interceptor";
 import { CampaignService } from './campaign.service';
 import { FormsModule } from '@angular/forms';
+import { DonationCardComponent } from './donation-card/donation-card.component';
+import {DonationService} from "./donation/donation.service";
 
 @NgModule({
   declarations: [
+    DonationCardComponent,
     AppComponent,
     LoginComponent,
     SignupComponent,
@@ -45,6 +48,7 @@ import { FormsModule } from '@angular/forms';
     SingleCardComponent,
     AboutComponent,
     FormsModule
+    DonationCardComponent,
 
   ],
   imports: [
@@ -57,7 +61,9 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [
     Service.AuthService,
+    Service.Web3Service,
     CampaignService,
+    DonationService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,

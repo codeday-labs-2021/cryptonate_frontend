@@ -30,8 +30,8 @@
           <ul  *ngIf="isLoggedIn()" class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">My Cryptonate</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">My Profile</a></li>
-              <li><a class="dropdown-item" [routerLink]="['/Profile']">My Dashboard</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/Profile']">My Profile</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/Dashboard']">My Dashboard</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" (click)="logout()">Log Out</a></li>
             </ul>

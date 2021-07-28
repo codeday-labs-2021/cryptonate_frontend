@@ -1,38 +1,38 @@
 <img src="assets/images/circles.svg" alt="" class="center">
 <p></p>
 
-<form class="row needs-validation" novalidate>
+<form #userPost="ngForm" class="row needs-validation" novalidate>
 
     <div class="p-3 col-sm-6">
         <label for="occupation" class="form-label">Occupation</label>
-        <input type="text" class="form-control" id="occupation" required>
+        <input type="text" class="form-control" id="occupation" name="occupation" ngModel required>
 
     </div>
 
     <div class="p-3 col-sm-6">
         <label for="name" class="form-label">Name of Organization, School, Company</label>
-        <input type="text" class="form-control" id="name" aria-describedby="nameHelp" required>
+        <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name" ngModel required>
         <div id="nameHelp" class="form-text">Enter your full name if above does not apply to you</div>
     </div>
 
     <div class="p-3 col-sm-6">
         <label for="website" class="form-label">Website</label>
-        <input type="text" class="form-control" id="website">
+        <input type="text" class="form-control" id="website" name="website" ngModel>
     </div>
 
     <div class="p-3 col-sm-6">
         <label for="location" class="form-label">Location</label>
-        <input type="text" class="form-control" id="location" required>
+        <input type="text" class="form-control" id="location" name="location" ngModel required>
     </div>
 
     <div class="p-3 col-sm-6">
         <label for="socmed" class="form-label">Social Media</label>
-        <input type="text" class="form-control" id="socmed" required>
+        <input type="text" class="form-control" id="socmed" name="socmed" ngModel required>
     </div>
 
     <div class="p-3 col-sm-6">
         <label for="organizationEmail" class="form-label">Organization Email</label>
-        <input type="text" class="form-control" id="organizationEmail">
+        <input type="text" class="form-control" id="organizationEmail" name="organizationEmail" ngModel >
     </div>
 
 </form>

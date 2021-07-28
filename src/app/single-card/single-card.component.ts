@@ -1,7 +1,9 @@
 import {Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute} from '@angular/router'
+import {Router, ActivatedRoute, ParamMap} from '@angular/router'
 import {Campaign} from '../campaigns';
 import { CampaignService } from '../campaign.service';
+import { Observable } from 'rxjs';
+import { UserService } from '../user.services';
 
 @Component({
   selector: 'app-single-card',
@@ -9,18 +11,32 @@ import { CampaignService } from '../campaign.service';
   styleUrls: ['./single-card.component.css']
 })
 export class SingleCardComponent implements OnInit {
-  campaign !: Campaign;
-  _id : String ='';
-  constructor(private route: ActivatedRoute,private router: Router, private _campaignService:CampaignService) { }
+  campaign:any;
+  user:string='';
+  //user:any;
+  _id : string ='';
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+     private _campaignService:CampaignService, 
+     private _userService:UserService) { }
   //public campaigns = [];
   //constructor(private _campaignService:CampaignService){}
  
     ngOnInit() {
       
-      // First get the product id from the current route.
-      //const routeParams = this.route.snapshot.paramMap;
-      const campaignIdFromRoute = String(this.route.snapshot.paramMap.get('_id'));
+      // First get the campaign id from the current route.
+      const routeParams = this.route.snapshot.paramMap;
+      const campaignIdFromRoute = String(routeParams.get('_id'));
+ 
+     // console.log(campaignIdFromRoute);
       this.getCampaignById(campaignIdFromRoute);
+     // this.getUserById(this.userId);
+
+      
+
+      //this.route.paramMap.subscribe((params: ParamMap) => 
+      //  this._id = params.get('_id'));
+
       
       // Find the product that correspond with the id provided in route.
      // this.campaign = CAMPAIGNS.find(campaign => campaign.author_id === campaignIdFromRoute);
@@ -29,13 +45,21 @@ export class SingleCardComponent implements OnInit {
      // .subscribe(data => this.campaigns = data);
 
   }
+ 
+  // getUserById(id:string){
+  //   this._userService.getUserById(id).subscribe(
+  //     data => this.user=data
+  //   );
+  // }
 
   getCampaignById(id:string){
-    this._campaignService.getCampaignById(id).subscribe({next: data => this.campaign = data});
-    console.log(this.campaign.title);
-    console.log("im test");
-    if(this.campaign!=undefined) console.log(this.campaign._id);
-    console.log("im here");
+    this._campaignService.getCampaignById(id).subscribe(
+      data => this.getCampaignUser(data));
+  }
+
+  getCampaignUser(campaign: Campaign|undefined):void{
+    this.campaign = campaign;
+    this.user = campaign.author_id;
   }
 }
   

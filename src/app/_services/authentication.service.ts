@@ -9,10 +9,10 @@ import { environment } from '../../environments/environment';
 export class AuthService {
     constructor(private http: HttpClient) { }
 
-    signup(firstname:string, lastname:string, email:string, password:string){
+    signup(first_name:string, last_name:string, email:string, password:string){
         return this.http.post<any>(`${environment.apiUrl}/api/users/signup`,{
-            first_name: firstname,
-            last_name: lastname,
+            first_name,
+            last_name,
             email,
             password
         })

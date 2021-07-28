@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component:  SignupComponent},
   { path: 'Donate', component:  CardCampaignComponent},
-  { path: 'Campaign/:campaign._id', component: SingleCardComponent },
+  { path: 'Campaign/:_id', component: SingleCardComponent },
   {
     path: 'Fundraise',
     component:  Layout.MainLayoutComponent,

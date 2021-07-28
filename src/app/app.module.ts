@@ -25,6 +25,7 @@ import { AboutComponent } from './about/about.component';
 import {AuthGuard} from "./guards/auth.guard";
 import {AddHeaderInterceptor} from "./interceptors/interceptor";
 import { CampaignService } from './campaign.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CampaignService } from './campaign.service';
     CardComponent,
     SingleCardComponent,
     AboutComponent,
+    FormsModule
 
   ],
   imports: [

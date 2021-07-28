@@ -19,6 +19,6 @@ _id !: string;
     //call backend APIs 
     // save into campaigns and display campaigns 
     this._campaignService.getCampaign()
-      .subscribe(data => this.campaigns = data);
+      .subscribe(campaigns => this.campaigns = campaigns);
   }
 }

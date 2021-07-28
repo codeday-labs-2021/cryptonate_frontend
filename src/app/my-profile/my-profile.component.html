@@ -1,47 +1,48 @@
 <h5>My Profile</h5>
 <form [formGroup]="profileForm">
     <label for="profileFirstName">First Name</label>
-    <input formControlName="profileFirstName" id="profileFirstName" type="text" [readonly]="readonly" class="form-control" value="{{firstName}}" required
+    <input formControlName="profileFirstName" id="profileFirstName" type="text" [readonly]="readonly" class="form-control" required
            [ngClass]="{ 'is-invalid': submitted && f.profileFirstName.errors }" >
     <div class="error-msg" *ngIf="submitted && f.profileFirstName.errors ">
       First name is required
     </div>
     <label for="profileLastName">Last Name</label>
-    <input formControlName="profileLastName" id="profileLastName" type="text" [readonly]="readonly" class="form-control" value="{{lastName}}" required
+    <input formControlName="profileLastName" id="profileLastName" type="text" [readonly]="readonly" class="form-control" required
            [ngClass]="{ 'is-invalid': submitted && f.profileLastName.errors }" >
     <div class="error-msg" *ngIf="submitted && f.profileLastName.errors ">
       Last name is required
     </div>
     <label for="profileEmail">Email</label>
-    <input formControlName="profileEmail" id="profileEmail" type="text" [readonly]="readonly" class="form-control" value="{{email}}" required
+    <input formControlName="profileEmail" id="profileEmail" type="text" [readonly]="readonly" class="form-control" required
            [ngClass]="{ 'is-invalid': submitted && f.profileEmail.errors }" >
     <div class="error-msg" *ngIf="submitted && f.profileEmail.errors ">
       Email is required
     </div>
+
     <label for="profileAbout">About</label>
-    <textarea id="profileAbout" cols="30" rows="10" [readonly]="readonly" class="form-control" value="{{about}}"></textarea>
+    <textarea formControlName="profileAbout" id="profileAbout" cols="30" rows="10" [readonly]="readonly" class="form-control" ></textarea>
 
     <br>
     <label for="profileLocation">Location</label>
-    <input id="profileLocation" type="text" [readonly]="readonly" class="form-control" value="{{location}}">
+    <input formControlName="profileLocation" id="profileLocation" type="text" [readonly]="readonly" class="form-control" >
 
     <label for="profileOccupation">Occupation</label>
-    <input id="profileOccupation" type="text" [readonly]="readonly" class="form-control" value="{{occupation}}">
+    <input formControlName="profileOccupation" id="profileOccupation" type="text" [readonly]="readonly" class="form-control" >
 
     <label for="profileOrganization">Organization</label>
-    <input id="profileOrganization" type="text" [readonly]="readonly" class="form-control" value="{{organization}}">
+    <input formControlName="profileOrganization" id="profileOrganization" type="text" [readonly]="readonly" class="form-control" >
 
 
     <label for="profileOrganizationEmail">Organization Email</label>
-    <input id="profileOrganizationEmail" type="text" [readonly]="readonly" class="form-control" value="{{organizationEmail}}">
+    <input formControlName="profileOrganizationEmail" id="profileOrganizationEmail" type="text" [readonly]="readonly" class="form-control" >
 
 
     <label for="profileSocialMedia">Social Media URL</label>
-    <input id="profileSocialMedia" type="text" [readonly]="readonly" class="form-control" value="{{socialMediaUrl}}">
+    <input formControlName="profileSocialMedia" id="profileSocialMedia" type="text" [readonly]="readonly" class="form-control" >
 
 
     <label for="profileWebsite">Website URL</label>
-    <input id="profileWebsite" type="text" [readonly]="readonly" class="form-control" value="{{websiteUrl}}">
+    <input formControlName="profileWebsite" id="profileWebsite" type="text" [readonly]="readonly" class="form-control" >
 
     <br>
   <button type="submit" class="btn btn-primary" *ngIf="readonly" (click)="toggleReadOnly()">Edit</button>

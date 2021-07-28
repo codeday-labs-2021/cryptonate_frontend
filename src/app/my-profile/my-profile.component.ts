@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "../user.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 
 @Component({
@@ -34,9 +34,17 @@ export class MyProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.profileForm = this.formBuilder.group({
-      profileEmail:["", Validators.required],
-      profileFirstName:["",Validators.required],
-      profileLastName:["",Validators.required],
+      profileEmail:[this.email, Validators.required],
+      profileFirstName:[this.firstName, Validators.required],
+      profileLastName:[this.lastName, Validators.required],
+
+      profileOccupation: new FormControl(this.occupation),
+      profileOrganization: new FormControl(this.organization),
+      profileLocation: new FormControl(this.location),
+      profileSocialMedia: new FormControl(this.socialMediaUrl),
+      profileWebsite: new FormControl(this.websiteUrl),
+      profileOrganizationEmail: new FormControl(this.organizationEmail),
+      profileAbout: new FormControl(this.about)
     });
   }
 
@@ -56,6 +64,8 @@ export class MyProfileComponent implements OnInit {
 
     let values =this.profileForm.value;
 
+    console.log(values);
+
     const res = this.UserSrv.updateUser(
       values.profileFirstName,
       values.profileLastName,
@@ -70,14 +80,11 @@ export class MyProfileComponent implements OnInit {
     );
 
     res.subscribe(res => {
-      if (res['message'] === null) {
+      if (!res['message']) {
         localStorage.setItem("user",JSON.stringify(res));
+        this.toggleReadOnly();
       }
-
-      this.router.navigate(["/Profile"]);
-    })
-
-    this.toggleReadOnly();
+    });
   }
 
 }

@@ -24,7 +24,7 @@ export class UserService {
     organization_email: string,
     about: string
     ){
-    return this.http.patch<any>(`${environment.apiUrl}/api/_id`,{
+    return this.http.patch<any>(`${environment.apiUrl}/api/users/${this._id}`,{
       first_name,
       last_name,
       email,

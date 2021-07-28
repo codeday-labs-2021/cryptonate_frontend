@@ -4,7 +4,7 @@ const Web3Utils = require('web3-utils');
 import { Contract } from "web3-eth-contract";
 import { Observable } from "rxjs";
 import { environment } from '../../environments/environment';
-const contractAbi = require("./contractABI.json");
+//const contractAbi = require("./contractABI.json");
 declare var window: any;
 import { BehaviorSubject } from 'rxjs';
 
@@ -54,10 +54,10 @@ export class Web3Service {
 
   loadContract() {
     if (this.web3) {
-      this.contract = new this.web3.eth.Contract(
-        contractAbi,
-        this.contractAddress
-      );
+      // this.contract = new this.web3.eth.Contract(
+      //   contractAbi,
+      //   this.contractAddress
+      // );
       return true;
     }
     return false;

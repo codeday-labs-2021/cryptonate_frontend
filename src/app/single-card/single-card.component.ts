@@ -3,7 +3,7 @@ import {Router, ActivatedRoute, ParamMap} from '@angular/router'
 import {Campaign} from '../campaigns';
 import { CampaignService } from '../campaign.service';
 import { Observable } from 'rxjs';
-import { UserService } from '../user.services';
+import { UserServices } from '../user.services';
 
 @Component({
   selector: 'app-single-card',
@@ -18,7 +18,7 @@ export class SingleCardComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private router: Router,
      private _campaignService:CampaignService, 
-     private _userService:UserService) { }
+     private _userService:UserServices) { }
   //public campaigns = [];
   //constructor(private _campaignService:CampaignService){}
  

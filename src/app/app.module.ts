@@ -28,7 +28,8 @@ import { CampaignService } from './campaign.service';
 import { FormsModule } from '@angular/forms';
 import { DonationCardComponent } from './donation-card/donation-card.component';
 import {DonationService} from "./donation/donation.service";
-import { UserService } from './user.services';
+import { UserService } from './user.service';
+import { UserServices } from './user.services';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 
 @NgModule({
@@ -66,6 +67,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
     Service.AuthService,
     CampaignService,
     UserService,
+    UserServices,
     DonationService,
     AuthGuard,
     {

@@ -6,7 +6,7 @@ import { map } from "rxjs/operators";
 import {environment} from "../environments/environment";
 
 @Injectable()
-export class UserService{
+export class UserServices{
 
     private _url: string= `${environment.apiUrl}/api/users`;
     constructor(private http:HttpClient){}

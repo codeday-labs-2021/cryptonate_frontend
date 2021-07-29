@@ -37,4 +37,25 @@ export class UserService {
       about
     });
   }
+
+createCampaign(
+  occupation: string,
+  organization: string,
+  location: string,
+  social_media_url: string,
+  website_url: string,
+  organization_email: string,
+  about: string
+  ){
+  return this.http.patch<any>(`${environment.apiUrl}/api/users/${this._id}`,{
+    occupation,
+    organization,
+    location,
+    social_media_url,
+    website_url,
+    organization_email,
+    about
+  });
+}
+
 }

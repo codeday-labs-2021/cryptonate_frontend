@@ -3,7 +3,7 @@ import { HttpClient,HttpHeaders} from "@angular/common/http";
 import { User } from "./user";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import {environment} from "../environments/environment";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class UserServices{
@@ -20,10 +20,10 @@ export class UserServices{
         console.log("user found");
         return this.getUser()
         .pipe(
-            map((users: User[]) => 
+            map((users: User[]) =>
             users.find(user => user._id === id))
         );
-        
+
     }
 
     //get User by AUTHOR ID

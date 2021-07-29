@@ -1,11 +1,11 @@
 *{
-   
+
     color: #173F5F;
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     text-decoration: none;
-  
+
 }
 .btn-primary {
     color: #fff;
@@ -13,8 +13,15 @@
     ;
     border-color: #3373A7;
   }
-  .btn-primary:hover {
-    color: #fff;
-    background-color: #91AFC8;
-    border-color: #91AFC8;
-  }
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #91AFC8;
+  border-color: #91AFC8;
+}
+
+.navbar-text {
+  font-weight: 600;
+  color: #3373A7;
+}
+

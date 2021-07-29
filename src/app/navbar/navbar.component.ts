@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../_services";
 import {Router} from "@angular/router";
+import {ApiService} from "../api/api.service";
 
 @Component({
   selector: 'app-navbar',
@@ -10,13 +11,16 @@ import {Router} from "@angular/router";
 
 
 export class NavbarComponent implements OnInit {
+  usd: string;
 
   constructor(
     private AuthSrv:AuthService,
+    private ApiSrv:ApiService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.getConversionRate();
   }
 
   logout() {
@@ -36,6 +40,11 @@ export class NavbarComponent implements OnInit {
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem("user");
+  }
+
+  getConversionRate() {
+    this.ApiSrv.getEthUsdConversion()
+      .subscribe(data => console.log(data));
   }
 
 }

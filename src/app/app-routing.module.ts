@@ -24,6 +24,7 @@ const routes: Routes = [
   {
     path: 'Fundraise',
     component:  Layout.MainLayoutComponent,
+    canActivate: [AuthGuard],
     children:[
       {
           path:'',

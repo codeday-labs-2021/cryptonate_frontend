@@ -2,8 +2,7 @@ import {Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router'
 import {Campaign} from '../campaigns';
 import { CampaignService } from '../campaign.service';
-import { Observable } from 'rxjs';
-import { UserServices } from '../user.services';
+import { UserServices} from "../user/user.services";
 
 @Component({
   selector: 'app-single-card',
@@ -17,27 +16,28 @@ export class SingleCardComponent implements OnInit {
   _id : string ='';
   constructor(private route: ActivatedRoute,
     private router: Router,
-     private _campaignService:CampaignService, 
+     private _campaignService:CampaignService,
      private _userService:UserServices) { }
+
   //public campaigns = [];
   //constructor(private _campaignService:CampaignService){}
- 
+
     ngOnInit() {
-      
+
       // First get the campaign id from the current route.
       const routeParams = this.route.snapshot.paramMap;
       const campaignIdFromRoute = String(routeParams.get('_id'));
- 
+
      // console.log(campaignIdFromRoute);
       this.getCampaignById(campaignIdFromRoute);
      // this.getUserById(this.userId);
 
-      
 
-      //this.route.paramMap.subscribe((params: ParamMap) => 
+
+      //this.route.paramMap.subscribe((params: ParamMap) =>
       //  this._id = params.get('_id'));
 
-      
+
       // Find the product that correspond with the id provided in route.
      // this.campaign = CAMPAIGNS.find(campaign => campaign.author_id === campaignIdFromRoute);
 
@@ -45,7 +45,7 @@ export class SingleCardComponent implements OnInit {
      // .subscribe(data => this.campaigns = data);
 
   }
- 
+
   // getUserById(id:string){
   //   this._userService.getUserById(id).subscribe(
   //     data => this.user=data
@@ -62,4 +62,3 @@ export class SingleCardComponent implements OnInit {
     this.user = campaign.author_id;
   }
 }
-  

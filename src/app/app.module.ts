@@ -28,9 +28,10 @@ import { CampaignService } from './campaign.service';
 import { FormsModule } from '@angular/forms';
 import { DonationCardComponent } from './donation-card/donation-card.component';
 import {DonationService} from "./donation/donation.service";
-import { UserService } from './user.service';
-import { UserServices } from './user.services';
+import {UserService} from "./user/user.service";
+import {UserServices} from "./user/user.services";
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import {ApiService} from "./api/api.service";
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
     UserService,
     UserServices,
     DonationService,
+    ApiService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,

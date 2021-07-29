@@ -73,6 +73,11 @@
             "development": {
               "browserTarget": "cryptonate-angular:build:development"
             }
+
+          },
+          "options": {
+            "browserTarget": "angular-app:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "defaultConfiguration": "development"
         },

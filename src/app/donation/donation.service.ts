@@ -17,4 +17,10 @@ export class DonationService{
     return this.http.get<Donation[]>(`${environment.apiUrl}/api/campaigns/${id}/donations`);
   }
 
+  postDonation(campaign_id: string, amount_donated: number){
+    return this.http.post<any>(`${environment.apiUrl}/api/donations`,{
+      campaign_id, amount_donated
+    });
+  }
+
 }

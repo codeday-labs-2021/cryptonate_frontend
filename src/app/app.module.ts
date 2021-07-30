@@ -32,6 +32,7 @@ import {UserService} from "./user/user.service";
 import {UserServices} from "./user/user.services";
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import {ApiService} from "./api/api.service";
+import { MakeDonationComponent } from './make-donation/make-donation.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import {ApiService} from "./api/api.service";
     AboutComponent,
     DonationCardComponent,
     MyProfileComponent,
+    MakeDonationComponent,
 
   ],
   imports: [

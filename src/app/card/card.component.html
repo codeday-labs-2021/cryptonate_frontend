@@ -9,6 +9,6 @@
             <div class="progress-bar" role="progressbar"  [style]="currentPercentage()" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <p></p>
-        <a href="#" class="btn btn-primary">Donate Now</a>
+        <a [routerLink]="['/MakeDonation', campaign._id]" class="btn btn-primary">Donate Now</a>
     </div>
 </a>

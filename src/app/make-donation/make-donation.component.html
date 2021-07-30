@@ -1,0 +1,24 @@
+<div class="header-container">
+  <div class="hero-container" [formGroup]="makeDonationForm">
+    <h1>Make a donation to: {{campaignToDonateTo.title}}</h1>
+    <div class="row">
+      <h4>Your account: 0xsdflkadsjlkfad    Balance: 3 ETH</h4>
+    </div>
+    <div class="text-box">
+      <input class="row" formControlName="amount" type="text" placeholder="Amount" required
+             [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" >
+      <div class="error-msg" *ngIf="submitted && f.amount.errors ">
+        Amount is required
+      </div>
+      <input class="row" formControlName="recipientAddress"  placeholder="Recipient address"  required
+             [ngClass]="{ 'is-invalid': submitted && f.recipientAddress.errors }" >
+      <div class="error-msg" *ngIf="submitted && f.recipientAddress.errors ">
+        Recipient address is required
+      </div>
+    </div>
+
+    <div class="buttonSendCrypto">
+      <a (click)="sendCrypto()" class="btn btn-primary me-md-2" type="button" >Send Crypto</a>
+    </div>
+  </div>
+</div>

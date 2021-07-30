@@ -25,3 +25,7 @@
   color: #3373A7;
 }
 
+.active {
+  font-weight: 600;
+}
+

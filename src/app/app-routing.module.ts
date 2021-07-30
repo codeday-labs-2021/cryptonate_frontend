@@ -17,6 +17,7 @@ import {AuthGuard} from "./guards/auth.guard";
 import {MyProfileComponent} from "./my-profile/my-profile.component";
 import {MakeDonationComponent} from "./make-donation/make-donation.component";
 
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component:  SignupComponent},

@@ -34,6 +34,8 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { MyCampaignCardComponent } from './my-campaign-card/my-campaign-card.component';
 import {ApiService} from "./api/api.service";
 import { MakeDonationComponent } from './make-donation/make-donation.component';
+import { AdminCampaignsComponent } from './website/admin-campaigns/admin-campaigns.component';
+import { AdminUsersComponent } from './website/admin-users/admin-users.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { MakeDonationComponent } from './make-donation/make-donation.component';
     MyProfileComponent,
     MyCampaignCardComponent,
     MakeDonationComponent,
+    AdminCampaignsComponent,
+    AdminUsersComponent,
 
   ],
   imports: [

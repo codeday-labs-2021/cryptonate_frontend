@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../_services';
 import { FormGroup, FormControl ,FormBuilder } from '@angular/forms';
-import { UserService } from '../user.service';
+import { UserService } from '../user/user.service';
 
 
 @Component({
@@ -24,8 +24,8 @@ export class CreateCampaignComponent implements OnInit {
 
   campaignUser: FormGroup = new FormGroup({});
 
-  constructor(private formBuilder:FormBuilder, 
-    private auth: AuthService, 
+  constructor(private formBuilder:FormBuilder,
+    private auth: AuthService,
     private userService:UserService,
      private rout:Router) { }
 
@@ -41,14 +41,14 @@ export class CreateCampaignComponent implements OnInit {
     });
   }
 
-  onSubmit(){ 
+  onSubmit(){
     this.submitted=true;
     console.log(this.campaignUser.get('socmed').value);
     let values = this.campaignUser.value;
     console.log(values);
 
     const data = this.userService.createCampaign(
-        values.occupation, 
+        values.occupation,
         values.name,
         values.location,
         values.socmed,
@@ -56,7 +56,7 @@ export class CreateCampaignComponent implements OnInit {
         values.organizationEmail,
         values.about
     );
-      
+
     data.subscribe(data =>
       {if(!data['message']) {
       localStorage.setItem("user",JSON.stringify(data));

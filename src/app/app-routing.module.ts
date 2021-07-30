@@ -15,6 +15,7 @@ import { CampaignService } from './campaign.service';
 import * as Layout from './_layout';
 import {AuthGuard} from "./guards/auth.guard";
 import {MyProfileComponent} from "./my-profile/my-profile.component";
+import {MakeDonationComponent} from "./make-donation/make-donation.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   {
     path: 'Fundraise',
     component:  Layout.MainLayoutComponent,
+    canActivate: [AuthGuard],
     children:[
       {
           path:'',
@@ -40,6 +42,7 @@ const routes: Routes = [
           ]},
   { path: 'Dashboard', component:  DashboardComponent, canActivate: [AuthGuard]},
   { path: 'Profile', component:  MyProfileComponent, canActivate: [AuthGuard]},
+  { path: 'MakeDonation/:_id', component: MakeDonationComponent},
   { path: 'Home', component:  HomeComponent},
   { path: 'Single', component:  SingleCardComponent},
   { path: 'About', component: AboutComponent},

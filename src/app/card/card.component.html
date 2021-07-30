@@ -6,9 +6,9 @@
         <h6>Raised: ${{totalDonationsReceived}}</h6>
         <h6>Goal: ${{campaign.goal}}</h6>
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" role="progressbar"  [style]="currentPercentage()" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <p></p>
-        <a href="#" class="btn btn-primary">Donate Now</a>
+        <a [routerLink]="['/MakeDonation', campaign._id]" class="btn btn-primary">Donate Now</a>
     </div>
 </a>

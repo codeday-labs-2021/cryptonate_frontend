@@ -13,19 +13,27 @@ export class CardComponent implements OnInit {
   @Input() campaign!: Campaign;
   donations: Observable<Donation[]>;
   totalDonationsReceived = 0;
+  progress = 0;
   constructor(private donationService: DonationService) { }
 
   ngOnInit(): void {
     this.calculateCurrentDonationAmountOfCampaign();
   }
 
-  calculateCurrentDonationAmountOfCampaign() {
+  async calculateCurrentDonationAmountOfCampaign(){
     this.donations = this.donationService.getCampaignDonations(this.campaign._id);
-    this.donations.forEach(donationList => {
+    await this.donations.forEach(donationList => {
       donationList.forEach(donation => {
         this.totalDonationsReceived += donation["amount_donated"];
       })
-    })
+    });
+
+    this.progress = this.totalDonationsReceived/this.campaign.goal;
+  }
+
+  currentPercentage() {
+    if(this.progress > 100) this.progress = 100;
+    return `width: ${this.progress}%`
   }
 
 }

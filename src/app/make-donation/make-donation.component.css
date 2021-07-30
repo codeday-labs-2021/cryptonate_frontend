@@ -1,0 +1,8 @@
+*{
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.error-msg{
+  color:darkred;
+}

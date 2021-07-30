@@ -9,24 +9,29 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" [routerLink]="['/Home']">Home</a>
+            <a class="nav-link" aria-current="page" [routerLink]="['/Home']" [routerLinkActive]="['active']">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" [routerLink]="['/About']">About</a>
+            <a class="nav-link" aria-current="page" [routerLink]="['/About']" [routerLinkActive]="['active']">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" [routerLink]="['/Donate']">Donate</a>
+            <a class="nav-link" aria-current="page" [routerLink]="['/Donate']" [routerLinkActive]="['active']">Donate</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" [routerLink]="['/Fundraise']">Fundraise</a>
+            <a class="nav-link" aria-current="page" [routerLink]="['/Fundraise']" [routerLinkActive]="['active']">Fundraise</a>
+          </li>
+          <li class="navbar-text">
+              1 ETH = {{usd}} USD
           </li>
         </ul>
 
-        <!--TODO: show logout button and my profile if user is already logged in-->
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+
           <a *ngIf="!isLoggedIn()" class="btn btn-primary me-md-2" type="button" [routerLink]="['/login']">Log In</a>
           <a *ngIf="!isLoggedIn()" class="btn btn-primary" type="button" [routerLink]="['/signup']">Sign Up</a>
 
+          <a *ngIf="isLoggedIn()" class="btn btn-primary me-md-2" type="button">Connect MetaMask Wallet</a>
           <ul  *ngIf="isLoggedIn()" class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">My Cryptonate</a>
             <ul class="dropdown-menu">

@@ -13,6 +13,8 @@ const httpOptions = {
 @Injectable()
 export class CampaignService{
     private _url: string= `${environment.apiUrl}/api/campaigns`;
+    _id = JSON.parse(<string>localStorage.getItem("user"))["user"]["_id"];
+
     constructor(private http:HttpClient){}
 
     getEvents(){
@@ -42,4 +44,22 @@ export class CampaignService{
     getUserCampaigns():Observable<Campaign[]>{
       return this.http.get<Campaign[]>(`${environment.apiUrl}/api/users/campaigns`);
     }
+
+    createCampaign(
+    title: string,
+    description:string,
+    tags: string[],
+    date_end: Date,
+    goal: number,
+    image_url: string
+        ){
+        return this.http.post<any>(`${environment.apiUrl}/api/campaigns`,{
+          title,
+          description,
+          tags,
+          date_end,
+          goal,
+          image_url
+        },{withCredentials: true});
+      }
 }

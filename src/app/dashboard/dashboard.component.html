@@ -40,10 +40,10 @@
   <div id="camp" class="campaign-page">
     <h2 class ="campaign">MY CAMPAIGNS</h2>
 
-    <app-card class="col-md-6 py-4" *ngFor="let campaign of userCampaigns"
-              [campaign]="campaign"
+    <app-my-campaign-card class="col-md-6 py-4" *ngFor="let campaign of userCampaigns"
+              [campaign]="campaign" [routerLink]="['/Campaign', campaign._id]"
     >
-    </app-card>
+    </app-my-campaign-card>
   </div>
 
   <div id="don" class="donation-page">

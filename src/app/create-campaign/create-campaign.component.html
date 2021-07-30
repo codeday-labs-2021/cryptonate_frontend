@@ -37,19 +37,19 @@
 
 
 
-    <form class="row ">
+    
         <div class="p-3 col-md-6 offset-md-3">
             <label for="aboutYourself" class="form-label">About Yourself</label>
             <textarea formControlName="about" class="form-control" id="about" rows="3"></textarea>
         </div>
-    </form>
+    
 
     <div class="myButtons">
         <li>
             <a class="btn btn-primary" type="goBack" routerLink="/login">GO BACK TO MY PROFILE</a>
         </li>
         <li>
-            <button class="btn btn-primary" (click)="onSubmit()" type="continue">CONTINUE</button>
+            <button class="btn btn-primary" (click)="onSubmit()" type="continue" routerLink="/Fundraise/Details">CONTINUE</button>
         </li>
     </div>
 

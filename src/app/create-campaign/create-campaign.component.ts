@@ -3,14 +3,14 @@ import { Router } from '@angular/router';
 import { AuthService } from '../_services';
 import { FormGroup, FormControl ,FormBuilder } from '@angular/forms';
 import { UserService } from '../user.service';
-import { User } from '../user';
+
+
 @Component({
   selector: 'app-create-campaign',
   templateUrl: './create-campaign.component.html',
   styleUrls: ['./create-campaign.component.css']
 })
 export class CreateCampaignComponent implements OnInit {
-
 
   submitted = false;
 

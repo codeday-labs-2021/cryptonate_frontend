@@ -1,16 +1,16 @@
 <img src="assets/images/circles1.svg" alt="" class="center">
 <p></p>
-<form class="row ">
+<form [formGroup]="campaignDetail" class="row ">
 
   <div class="p-3 col-md-6 offset-md-3">
     <label for="title" class="form-label">Title</label>
-    <input type="text" class="form-control" id="title" required>
+    <input formControlName="title" type="text" class="form-control" id="title" required>
   </div>
 
   <div class="p-3 col-md-6 offset-md-3">
 
     <label for="calendar">End Date:</label>
-    <input type="date" class="form-control" id="calendar" name="calendar">
+    <input formControlName="date" type="date" class="form-control" id="calendar" name="calendar">
 
   </div>
 
@@ -18,25 +18,33 @@
     <label for="goal" class="form-label">Goal</label>
     <div class="input-group mb-3">
       <span class="input-group-text">$</span>
-      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+      <input formControlName="goal" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
       <span class="input-group-text">.00</span>
     </div>
   </div>
 
   <div class="p-3 col-md-6 offset-md-3">
-    <select class="form-select" aria-label="Tags">
-      <option selected>Choose Tag</option>
-      <option value="1">Tag 1</option>
-      <option value="2">Tag 2</option>
-      <option value="3">Tag 3</option>
+    <label for= "navbarDarkDropdownMenuLink">Tags</label>
+    <select class="nav-link dropdown-toggle form-select" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     </select>
+    <ul class="dropdown-menu " id="drop" aria-labelledby="navbarDarkDropdownMenuLink">
+
+
+<div *ngFor='let tag of tags' >
+  <input type="checkbox"  [value]="tag.value" (change)='onCheckChange($event,tag.value)' id="tagsCheckbox">
+      <label for="tagsCheckbox"> {{tag.name}}</label>
+</div>
+   
+    
+
+  </ul>
   </div>
 
   <div class="p-3 col-md-6 offset-md-3">
     <label for="Description" class="form-label">Description</label>
-    <textarea class="form-control" id="description" rows="3"></textarea>
+    <textarea formControlName="description" class="form-control" id="description" rows="3"></textarea>
   </div>
-</form>
+
 
 
 <div class="myButtons">
@@ -44,6 +52,8 @@
     <a class="btn btn-primary" type="goBack" routerLink="/Fundraise">GO BACK</a>
   </li>
   <li>
-    <a class="btn btn-primary" type="continue" routerLink="/Fundraise/Picture">CONTINUE</a>
+    <button class="btn btn-primary" (click)="onSubmit()" type="continue">CONTINUE</button>
   </li>
 </div>
+
+</form>

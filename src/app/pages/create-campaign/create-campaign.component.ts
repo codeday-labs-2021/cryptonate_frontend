@@ -13,13 +13,14 @@ export class CreateCampaignComponent implements OnInit {
 
   submitted = false;
 
-  occupation = JSON.parse(<string>localStorage.getItem("user"))["user"]["occupation"];
-  organization = JSON.parse(<string>localStorage.getItem("user"))["user"]["organization"];
-  location = JSON.parse(<string>localStorage.getItem("user"))["user"]["location"];
-  socialMediaUrl = JSON.parse(<string>localStorage.getItem("user"))["user"]["social_media_url"];
-  websiteUrl = JSON.parse(<string>localStorage.getItem("user"))["user"]["website_url"];
-  organizationEmail = JSON.parse(<string>localStorage.getItem("user"))["user"]["organization_email"];
-  about = JSON.parse(<string>localStorage.getItem("user"))["user"]["about"];
+  // wrong
+  // occupation = JSON.parse(<string>localStorage.getItem("user"))["user"]["occupation"];
+  // organization = JSON.parse(<string>localStorage.getItem("user"))["user"]["organization"];
+  // location = JSON.parse(<string>localStorage.getItem("user"))["user"]["location"];
+  // socialMediaUrl = JSON.parse(<string>localStorage.getItem("user"))["user"]["social_media_url"];
+  // websiteUrl = JSON.parse(<string>localStorage.getItem("user"))["user"]["website_url"];
+  // organizationEmail = JSON.parse(<string>localStorage.getItem("user"))["user"]["organization_email"];
+  // about = JSON.parse(<string>localStorage.getItem("user"))["user"]["about"];
   
   currentUser:any = null;
   campaignUser: FormGroup = new FormGroup({});
@@ -36,16 +37,20 @@ export class CreateCampaignComponent implements OnInit {
     if(userData){
       this.currentUser =userData["user"];
     }
+    else{
+      // no user data 
+      return;
+    }
  // let userData  = JSON.parse(<string>localStorage.getItem("user"))["user"]["_id"];
 
      this.campaignUser = this.formBuilder.group({
-      name: new FormControl(this.organization),
-      occupation: new FormControl(this.occupation),
-      location: new FormControl(this.location),
-      socmed: new FormControl(this.socialMediaUrl),
-      website: new FormControl(this.websiteUrl),
-      organizationEmail: new FormControl(this.organizationEmail),
-      about: new FormControl(this.about),
+      name: new FormControl( this.currentUser.name?this.currentUser.name:''),
+      occupation: new FormControl( this.currentUser.occupation?this.currentUser.occupation:''),
+      location: new FormControl( this.currentUser.location?this.currentUser.location:''),
+      socmed: new FormControl( this.currentUser.socialMediaUrl?this.currentUser.socialMediaUrl:''),
+      website: new FormControl( this.currentUser.websiteUrl?this.currentUser.websiteUrl:''),
+      organizationEmail: new FormControl( this.currentUser.organizationEmail?this.currentUser.organizationEmail:''),
+      about: new FormControl( this.currentUser.about?this.currentUser.about:''),
     });
   }
 

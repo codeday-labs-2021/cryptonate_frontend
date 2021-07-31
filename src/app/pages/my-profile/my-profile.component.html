@@ -1,3 +1,4 @@
+<div class="container" style="margin-top: 60px;">
 <h5>My Profile</h5>
 <form [formGroup]="profileForm">
     <label for="profileFirstName">First Name</label>
@@ -48,6 +49,7 @@
   <button type="submit" class="btn btn-primary" *ngIf="readonly" (click)="toggleReadOnly()">Edit</button>
   <button type="submit" class="btn btn-primary" *ngIf="!readonly" (click)="save()">Save</button>
 </form>
+</div>
 
 
 

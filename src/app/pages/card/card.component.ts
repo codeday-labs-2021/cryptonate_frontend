@@ -14,6 +14,7 @@ export class CardComponent implements OnInit {
   donations: Observable<Donation[]>;
   totalDonationsReceived = 0;
   progress = 0;
+  defualtImg ="./assets/images/donation.png";
   constructor(private donationService: DonationService) { }
 
   ngOnInit(): void {

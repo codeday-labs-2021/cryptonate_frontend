@@ -11,7 +11,7 @@ import {ApiService} from "../../_services/api.service";
 
 
 export class NavbarComponent implements OnInit {
-  usd: string;
+  ethPrice: string="0";
 
   constructor(
     private AuthSrv:AuthService,
@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-   // this.getConversionRate();
+    this.getConversionRate();
   }
 
   logout() {
@@ -44,7 +44,12 @@ export class NavbarComponent implements OnInit {
 
   getConversionRate() {
     this.ApiSrv.getEthUsdConversion()
-      .subscribe(data => console.log(data));
+      .subscribe(res => {
+        if(res["result"]=='successful'){
+          localStorage.setItem("ETHPRICE", res["data"]);
+          this.ethPrice = res["data"];
+        }
+      });
   }
 
 }

@@ -5,7 +5,9 @@ import {Donation} from "../_models/donation.model";
 import {environment} from "../../environments/environment";
 import {Campaign} from "../_models/campaigns.model";
 
-@Injectable()
+@Injectable({
+  providedIn: "root",
+})
 export class DonationService{
   constructor(private http:HttpClient){}
 

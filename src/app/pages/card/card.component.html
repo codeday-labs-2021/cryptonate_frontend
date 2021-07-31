@@ -1,5 +1,7 @@
 <a class="card">
-    <img src= {{campaign.image_url}} class="card-img-top" alt="...">
+    <img  src= "{{campaign.image_url }}"
+    onerror="this.src='assets/images/donation.png'"
+     class="card-img-top img" alt="...">
     <div class="card-body">
         <h5 class="card-title">{{campaign.title}}</h5>
         <p class="card-text">{{campaign.description}}</p>

@@ -20,7 +20,7 @@ import * as Layout from './_layout';
 import * as AdminContainer from './admin';
 import * as Pages from './pages';
 import * as Components from './_components';
-
+import {Web3Service} from './_services/web3.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +41,7 @@ import * as Components from './_components';
   ],
   providers: [
   ...WebSiteServices.services,
+  Web3Service,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,

@@ -10,7 +10,9 @@ const httpOptions = {
         'Content-Type':  'application/json',
     })
 }
-@Injectable()
+@Injectable({
+    providedIn: "root",
+  })
 export class CampaignService{
     private _url: string= `${environment.apiUrl}/api/campaigns`;
    // _id = JSON.parse(<string>localStorage.getItem("user"))["user"]["_id"];

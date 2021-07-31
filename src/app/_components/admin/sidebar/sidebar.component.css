@@ -1,0 +1,112 @@
+  .sidebar {
+  height: 100%;
+    /* width: 200px; */
+  position: absolute;
+  transition: left 0.3s ease;
+  left: -260px;
+  top: 0;
+  z-index: 111;
+  overflow: auto;
+}
+  .sidebar > div {
+  border-bottom: 1px solid;
+}
+  .sidebar > div:last-child {
+  border-bottom: none;
+}
+  .sidebar .sidebar-profile .user-picture {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+  .sidebar .sidebar-profile .user-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+  .sidebar .sidebar-profile .profile-details .name {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+  .sidebar .sidebar-profile .profile-details .role {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+  .sidebar .sidebar-search {
+  display: none;
+}
+  .sidebar .sidebar-menu > div {
+  padding: 0 1.5rem;
+}
+  .sidebar .sidebar-menu .menu-header {
+  padding: 0 1.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+  .sidebar .sidebar-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+  .sidebar .sidebar-menu ul li {
+  display: block;
+}
+  .sidebar .sidebar-menu ul li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 1.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0px;
+  font-weight: 600;
+}
+  .sidebar .sidebar-menu ul li a i {
+  font-size: 1rem;
+}
+  .sidebar .sidebar-menu ul li a span {
+  color: inherit;
+  margin-left: 1rem;
+}
+@media (min-width: 768px) {
+    .sidebar {
+    position: static;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .pinned-sidebar .navbar-header {
+    width: 70px !important;
+  }
+  .pinned-sidebar .navbar-header span {
+    display: none !important;
+  }
+  .pinned-sidebar .sidebar {
+    width: 70px;
+  }
+  .pinned-sidebar .sidebar .sidebar-profile .user-picture {
+    width: 40px;
+    height: 40px;
+  }
+  .pinned-sidebar .sidebar .profile-details,
+.pinned-sidebar .sidebar .menu-header,
+.pinned-sidebar .sidebar .view-source {
+    display: none;
+  }
+  .pinned-sidebar .sidebar .sidebar-menu ul a {
+    padding: 0.5rem;
+    justify-content: center;
+  }
+  .pinned-sidebar .sidebar .sidebar-menu ul a span {
+    display: none;
+  }
+}
+.toggeled-sidebar .sidebar {
+  left: 0;
+}

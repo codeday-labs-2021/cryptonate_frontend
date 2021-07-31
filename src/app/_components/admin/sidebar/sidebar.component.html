@@ -1,0 +1,50 @@
+<aside class="sidebar shadow-sm">
+  <div class="sidebar-search pt-1 pb-1 pl-3 pr-3">
+    <input type="search" class="form-control rounded-pill" name="search" placeholder="Search ...">
+  </div>
+  <nav class="sidebar-menu pt-3 pb-3">
+    <div class="menu-header mt-3 mb-2">
+      Components
+    </div>
+    <ul class="menu-items">
+      <li>
+        <a (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Logout</span>
+
+        </a>
+      </li>
+      <li>
+        <a  [routerLink]="['/Home']" routerLinkActive="active">
+          <i class="fa fa-tv"></i>
+          <span>User Panel</span>
+        
+        </a>
+      </li>
+      <li>
+        <a  routerLink="/Admin/Dashboard" routerLinkActive="active">
+          <i class="fa fa-tv"></i>
+          <span>Dashboard</span>
+        
+        </a>
+      </li>
+
+      <li>
+        <a  routerLink="/Admin/Users" routerLinkActive="active">
+          <i class="fa fa-user"></i>
+          <span>Users</span>
+      
+        </a>
+      </li>
+      <li>
+        <a  routerLink="/Admin/Campaigns" routerLinkActive="active">
+          <i class="fa fa-square"></i>
+          <span>Campaigns</span>
+        
+        </a>
+      </li>
+ 
+    </ul>
+ 
+  </nav>
+</aside>

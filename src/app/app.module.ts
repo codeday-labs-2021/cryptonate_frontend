@@ -1,66 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule, HttpClient, HttpInterceptor, HTTP_INTERCEPTORS} from "@angular/common/http";
+import {HttpClientModule, 
+  HttpClient, 
+  HttpInterceptor, 
+  HTTP_INTERCEPTORS} from "@angular/common/http";
 import { RouterModule } from '@angular/router';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { CardCampaignComponent } from './card-campaign/card-campaign.component';
-import { CreateCampaignComponent } from './create-campaign/create-campaign.component';
-import { CreateCampaign2Component } from './create-campaign2/create-campaign2.component';
-import { CreateCampaign3Component } from './create-campaign3/create-campaign3.component';
-import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
-import { NgxPageScrollModule } from 'ngx-page-scroll';
-import { DonateNowBannerComponent } from './donate-now-banner/donate-now-banner.component';
-import * as Layout from './_layout';
-import * as Service from './_services';
-import { CardComponent } from './card/card.component';
-import { SingleCardComponent } from './single-card/single-card.component';
-import { AboutComponent } from './about/about.component';
+
 import {AuthGuard} from "./guards/auth.guard";
 import {AddHeaderInterceptor} from "./interceptors/interceptor";
-import { CampaignService } from './campaign.service';
 import { FormsModule } from '@angular/forms';
-import { DonationCardComponent } from './donation-card/donation-card.component';
-import {DonationService} from "./donation/donation.service";
-import {UserService} from "./user/user.service";
-import {UserServices} from "./user/user.services";
-import { MyProfileComponent } from './my-profile/my-profile.component';
-import { MyCampaignCardComponent } from './my-campaign-card/my-campaign-card.component';
-import {ApiService} from "./api/api.service";
-import { MakeDonationComponent } from './make-donation/make-donation.component';
-import { AdminCampaignsComponent } from './website/admin-campaigns/admin-campaigns.component';
-import { AdminUsersComponent } from './website/admin-users/admin-users.component';
+
+import * as WebSiteServices from './_services';
+import * as Layout from './_layout';
+import * as AdminContainer from './admin';
+import * as Pages from './pages';
+import * as Components from './_components';
 
 @NgModule({
   declarations: [
-    DonationCardComponent,
     AppComponent,
-    LoginComponent,
-    SignupComponent,
-    CardCampaignComponent,
-    CreateCampaignComponent,
-    CreateCampaign2Component,
-    CreateCampaign3Component,
-    HomeComponent,
-    DashboardComponent,
-    NavbarComponent,
+    ...Components.components,
     ...Layout.layouts,
-    DonateNowBannerComponent,
-    CardComponent,
-    SingleCardComponent,
-    AboutComponent,
-    DonationCardComponent,
-    MyProfileComponent,
-    MyCampaignCardComponent,
-    MakeDonationComponent,
-    AdminCampaignsComponent,
-    AdminUsersComponent,
+   ...AdminContainer.components,
+   ...Pages.pages
 
   ],
   imports: [
@@ -70,15 +37,10 @@ import { AdminUsersComponent } from './website/admin-users/admin-users.component
     AppRoutingModule,
     NgxPageScrollCoreModule,
     NgxPageScrollModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
-    Service.AuthService,
-    CampaignService,
-    UserService,
-    UserServices,
-    DonationService,
-    ApiService,
+  ...WebSiteServices.services,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,

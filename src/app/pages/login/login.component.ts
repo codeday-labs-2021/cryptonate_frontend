@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter ,Output,Input} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -14,8 +14,11 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  @Input() Type: String="0";
   loginForm: FormGroup=new FormGroup({});
   submitted = false;
+
+  @Output() LoginEvent= new EventEmitter<boolean>();
 
   constructor(
     private formBuilder:FormBuilder,
@@ -47,10 +50,15 @@ export class LoginComponent implements OnInit {
     const res = this.AuthSrv.login(values.email,values.password);
 
     res.subscribe(res => {
+      debugger;
       if (res['message'] != "Authentication failed") {
         localStorage.setItem("user",JSON.stringify(res));
-
-        this.router.navigate(["/Dashboard"]);
+        this.LoginEvent.next(true);
+        // if(this.Type=="1"){
+        //   this.LoginEvent.next(true);
+        // }else{
+        //         this.router.navigate(["/Dashboard"]);
+        // }
       }
     })
   }

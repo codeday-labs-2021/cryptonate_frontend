@@ -12,6 +12,9 @@ import { FormGroup, FormControl ,FormBuilder } from '@angular/forms';
 export class CreateCampaignComponent implements OnInit {
 
   submitted = false;
+  Islogin= false;
+  Type="1";
+  Step:string="0";
 
   // wrong
   // occupation = JSON.parse(<string>localStorage.getItem("user"))["user"]["occupation"];
@@ -35,16 +38,18 @@ export class CreateCampaignComponent implements OnInit {
   ngOnInit(): void {
     let userData = JSON.parse(<string>localStorage.getItem('user'));
     if(userData){
-      this.currentUser =userData["user"];
+      this.currentUser = userData["user"];
     }
     else{
       // no user data 
+
+      // redirect to login 
       return;
     }
  // let userData  = JSON.parse(<string>localStorage.getItem("user"))["user"]["_id"];
 
      this.campaignUser = this.formBuilder.group({
-      name: new FormControl( this.currentUser.name?this.currentUser.name:''),
+      name: new FormControl( this.currentUser.name ? this.currentUser.name:''),
       occupation: new FormControl( this.currentUser.occupation?this.currentUser.occupation:''),
       location: new FormControl( this.currentUser.location?this.currentUser.location:''),
       socmed: new FormControl( this.currentUser.socialMediaUrl?this.currentUser.socialMediaUrl:''),
@@ -79,6 +84,11 @@ export class CreateCampaignComponent implements OnInit {
   });
 
 
+  }
+
+  NextStep(event){
+    debugger;
+    console.log("NextStep =========",event);
   }
 
 }

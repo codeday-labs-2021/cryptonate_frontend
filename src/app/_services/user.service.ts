@@ -14,7 +14,9 @@ export class UserService {
   // wrong
 //  _id = JSON.parse(<string>localStorage.getItem("user"))["user"]["_id"];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+
+  }
 
   updateUser(
     first_name:string,

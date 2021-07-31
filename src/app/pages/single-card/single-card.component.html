@@ -1,7 +1,13 @@
-<div *ngIf="campaign">
-<h1>{{campaign.title}}</h1>
+<div class="container" style="margin-top: 60px;">
 
-<div class="my-card">
+<div *ngIf="campaign">
+  <div class="row">
+    <div class="col-md-12" style="    text-align: center;">
+<h1>{{campaign.title}}</h1></div>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8"><div class="my-card">
     <div class="card mb-3" style="max-width: 940px;">
         <div class="row g-0">
           <div class="col-md-6">
@@ -43,6 +49,9 @@
         </div>
       </div>
 </div>
+</div>
+  <div class="col-md-2"></div>
+</div>
 
 
 <div class="description">
@@ -54,5 +63,6 @@
 <h1>ORGANIZER</h1>
 <h3>{{user.first_name}}  {{user.last_name}}</h3>
 <h3 class="detail-name"> {{user.occupation}}</h3>
+</div>
 </div>
 </div>

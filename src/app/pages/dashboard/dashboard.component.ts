@@ -15,7 +15,8 @@ export class DashboardComponent implements OnInit {
   public userDonations:any[] = [];
   campaignMoneySum = 0;
   donationMoneySum = 0;
-  firstName = JSON.parse(<string>localStorage.getItem("user"))["user"]["first_name"];
+  firstName="";
+ // firstName = JSON.parse(<string>localStorage.getItem("user"))["user"]["first_name"];
 
   constructor(private _campaignService: CampaignService, private _donationService: DonationService, private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any) { }
 

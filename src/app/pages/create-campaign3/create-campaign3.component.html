@@ -7,7 +7,7 @@
 
   <div class="p-3 col-md-6 offset-md-3">
     <label for="attachPic" class="form-label">Attach one picture for your campaign’s thumbnail</label>
-    <div class="input-group mb-3">
+    <div id="attachPic" class="input-group mb-3">
       <label for="pic" class="form-label">Please attach the picture in a link format</label>
       <a href="https://imgur.com/upload">Convert your picture here!</a>
       <input [formControl]="pic" type="text" class="form-control" id="pic" required>
@@ -21,6 +21,6 @@
     <a class="btn btn-primary" type="goBack" routerLink="/Fundraise/Details">GO BACK</a>
   </li>
   <li>
-    <a class="btn btn-primary" type="continue" (click)="onSubmit()">CONTINUE</a>
+    <a class="btn btn-primary" (click)="onSubmit()">CONTINUE</a>
   </li>
 </div>

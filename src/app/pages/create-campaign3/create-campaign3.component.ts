@@ -10,14 +10,14 @@ import { AuthService,CampaignService } from '../../_services';
 })
 
 export class CreateCampaign3Component implements OnInit {
+  campaignInfo;
 
-  // improve
-  title = JSON.parse(<string>localStorage.getItem("campaigns"))["title"];
-  date = JSON.parse(<string>localStorage.getItem("campaigns"))["date"];
-  selectedTags =  JSON.parse(<string>localStorage.getItem("campaigns"))["selectedTags"];
-  description = JSON.parse(<string>localStorage.getItem("campaigns"))["description"];
-  goal = JSON.parse(<string>localStorage.getItem("campaigns"))["goal"];
-  pic: FormControl;
+  title = "";
+  date = "";
+  selectedTags =  [];
+  description = "";
+  goal = "";
+  pic: FormControl
 
 
   constructor(private auth: AuthService,
@@ -25,24 +25,32 @@ export class CreateCampaign3Component implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.pic = new FormControl();
-    console.log(this.title);
+    this.campaignInfo = JSON.parse(<string>localStorage.getItem("campaigns"));
+    this.pic = new FormControl(this.campaignInfo.image_url ? this.campaignInfo.image_url : "");
+    if(this.campaignInfo) {
+      this.title = this.campaignInfo.title;
+      this.date = this.campaignInfo.date;
+      this.selectedTags = this.campaignInfo.selectedTags;
+      this.description = this.campaignInfo.description;
+      this.goal = this.campaignInfo.goal;
+    } else {
+      this.router.navigate(['/Dashboard']);
+    }
   }
 
   onSubmit()
   {
-    const res = this.campaignService.createCampaign(
-      this.title,
-      this.description,
-      this.selectedTags,
-      this.date,
-      this.goal,
-      this.pic.value
-    );
+    const res = {
+      title: this.title,
+      description: this.description,
+      selectedTags: this.selectedTags,
+      date: this.date,
+      goal: this.goal,
+      image_url: this.pic.value
+    };
 
-    localStorage.setItem("image_url",JSON.stringify(this.pic.value));
-    console.log(localStorage);
-    this.router.navigate(["/Review"]);
+    localStorage.setItem("campaigns",JSON.stringify(res));
+    this.router.navigate(["/Fundraise/Review"]);
   }
 }
 

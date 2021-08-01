@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/_services';
 import { CampaignService } from 'src/app/_services';
 import { AuthService } from 'src/app/_services';
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-review-campaign',
@@ -12,30 +13,58 @@ import { AuthService } from 'src/app/_services';
   styleUrls: ['./review-campaign.component.css']
 })
 export class ReviewCampaignComponent implements OnInit {
-  title = JSON.parse(<string>localStorage.getItem("campaigns"))["title"];
-  date = JSON.parse(<string>localStorage.getItem("campaigns"))["date"];
-  selectedTags =  JSON.parse(<string>localStorage.getItem("campaigns"))["selectedTags"];
-  description = JSON.parse(<string>localStorage.getItem("campaigns"))["description"];
-  goal = JSON.parse(<string>localStorage.getItem("campaigns"))["goal"];
-  pic = JSON.parse(<string>localStorage.getItem("image_url"));
+  campaignInfo;
+  currentUser;
 
-  firstName = JSON.parse(<string>localStorage.getItem("user"))["user"]["first_name"];
-  lastName = JSON.parse(<string>localStorage.getItem("user"))["user"]["last_name"];
-  occupation = JSON.parse(<string>localStorage.getItem("user"))["user"]["occupation"];
-  organization = JSON.parse(<string>localStorage.getItem("user"))["user"]["organization"];
-  location = JSON.parse(<string>localStorage.getItem("user"))["user"]["location"];
-  socialMediaUrl = JSON.parse(<string>localStorage.getItem("user"))["user"]["social_media_url"];
-  websiteUrl = JSON.parse(<string>localStorage.getItem("user"))["user"]["website_url"];
-  organizationEmail = JSON.parse(<string>localStorage.getItem("user"))["user"]["organization_email"];
-  about = JSON.parse(<string>localStorage.getItem("user"))["user"]["about"];
+  title = "";
+  date = "";
+  selectedTags =  [];
+  description = "";
+  goal = "";
+  pic = "";
 
-  
+  firstName = "";
+  lastName = "";
+  email = "";
+  occupation = "";
+  organization = "";
+  location = "";
+  socialMediaUrl = "";
+  websiteUrl = "";
+  organizationEmail = "";
+  about = "";
+
   constructor(private auth: AuthService,
     private campaignService: CampaignService,
     private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.date);
+    this.campaignInfo = JSON.parse(<string>localStorage.getItem("campaigns"));
+    this.currentUser = JSON.parse(<string>localStorage.getItem("user"))["user"];
+    if(!this.currentUser) {
+      this.router.navigate(["/login"]);
+    } else if(!this.campaignInfo) {
+      this.router.navigate(['/Dashboard']);
+    }
+
+    this.title = this.campaignInfo.title;
+    this.date = this.campaignInfo.date;
+    this.selectedTags = this.campaignInfo.selectedTags;
+    this.description = this.campaignInfo.description;
+    this.goal = this.campaignInfo.goal;
+    this.pic = this.campaignInfo.image_url;
+
+    this.firstName = this.currentUser.first_name;
+    this.lastName = this.currentUser.last_name;
+    this.about = this.currentUser.about;
+    this.email = this.currentUser.email;
+    this.occupation = this.currentUser.occupation;
+    this.organizationEmail = this.currentUser.organization_email;
+    this.socialMediaUrl = this.currentUser.social_media_url;
+    this.websiteUrl = this.currentUser.website_url;
+    this.location = this.currentUser.location;
+    this.organization = this.currentUser.organization;
+
   }
 
   onSubmit()
@@ -44,15 +73,17 @@ export class ReviewCampaignComponent implements OnInit {
       this.title,
       this.description,
       this.selectedTags,
-      this.date,
-      this.goal,
+      new Date(this.date),
+      parseFloat(this.goal),
       this.pic,
     );
     res.subscribe(res =>
-      {if(!res['message']) {
-      this.router.navigate(["/Dashboard"]);
-    }
-  });
+      {
+        if(!res['message']) {
+          localStorage.removeItem("campaigns");
+          this.router.navigate(["/Dashboard"]);
+        }
+      });
   }
 
 }

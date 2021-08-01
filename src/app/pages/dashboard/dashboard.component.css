@@ -13,7 +13,7 @@ h1{
     text-shadow:4px 4px rgba(19, 40, 99, 0.26);
     font-size: 120px;
     letter-spacing:8px;
- 
+
 }
 
 .donation-page{
@@ -21,9 +21,13 @@ h1{
 }
 
 .campaign-page{
-
     background-color: #173F5F;
 }
+
+#no-campaigns{
+  color: white;
+}
+
 
 .background-h
 {
@@ -48,7 +52,7 @@ h1{
     justify-content: space-between;
    align-items: center;
    display: inline;
-   
+
 }
 
 .wallet{
@@ -105,8 +109,8 @@ h3{
     color: #173F5F;
     font-weight: 400;
     font-size: 28px;
-    
-   
+
+
 }
 
 .report{
@@ -116,8 +120,8 @@ h3{
    margin-bottom: 6%;
     width: max-content;
     text-align: center;
-   
-    
+
+
 }
 
 .wallet-info{
@@ -130,7 +134,7 @@ h3{
 }
 
 .wallet-address{
-  
+
   padding-top: 10px;
   font-family: "Montserrat", sans-serif;
   color: #2e475c;
@@ -147,7 +151,7 @@ font-family: "Montserrat", sans-serif;
 
 .campaign-page img{
     padding:10px;
-    
+
 }
 
 .donation-page img{
@@ -159,6 +163,6 @@ font-family: "Montserrat", sans-serif;
     pointer-events: none;
     font-size: 100px;
     color: #173F5F;
-    
+
 
 }

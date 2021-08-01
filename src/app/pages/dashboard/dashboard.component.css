@@ -8,44 +8,29 @@
 
 h1{
     padding-top:3%;
-    padding-bottom:3%;
-    position: absolute;
-    left: 50%;
-    top: 25%;
-    transform: translate(-50%,-50%);
-    color: #3373A7;
+    text-align: center;
+    color: white;
     text-shadow:4px 4px rgba(19, 40, 99, 0.26);
-    font-size: 96px;
-
+    font-size: 120px;
     letter-spacing:8px;
-    transition: 0.5s;
+ 
 }
 
 .donation-page{
-    background-color: #E5E9F2;
-    background-image: linear-gradient(white,#E5E9F2);
-    padding: 3%;
-    margin-top: 6%;
+    background-color: white;
 }
 
 .campaign-page{
 
-    background-color: #f1e1c2e7;
-    background-image: linear-gradient(white,#f1e1c2e7,white);
-    padding: 3%;
+    background-color: #173F5F;
 }
 
 .background-h
 {
-    position: relative;
-    background-color: #d7eafa;
-    background-image: linear-gradient(#d7eafa,white);
-    margin-top: 6%;
-    margin-bottom: 3%;
-
+    background-color: #173F5F;
 }
 .hero{
-    padding-top:20%;
+    padding-top:5%;
   padding-left: 15%;
   padding-bottom: 10%;
 }
@@ -59,13 +44,28 @@ h1{
     transform: scale(1.1);
 }
 
-.campaign{
-    margin-bottom: 2%;
-    pointer-events: none;
-    font-size: 85px;
+.wrapper{
+    justify-content: space-between;
+   align-items: center;
+   display: inline;
+   
+}
 
-    color: #be913c;
-    text-shadow:5px 5px white;
+.wallet{
+    color: #173F5F;
+    font-size: 100px;
+    text-align: center;
+    align-items: center;
+    margin-top: 3%;
+}
+.campaign{
+    margin-top: 3%;
+    margin-bottom: 2%;
+    text-align: center;
+    pointer-events: none;
+    font-size: 100px;
+    color: white;
+
 }
 
 
@@ -103,20 +103,51 @@ a:hover{
 h3{
     font-family: "Montserrat", sans-serif;
     color: #173F5F;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 28px;
-    margin-bottom: 2.7rem;
-    margin-left: -2%;
+    
+   
 }
 
-h4{
+.report{
+    background-color: #f8f1e2e7;
+   padding: 25px;
+   border-radius: 1rem;
+   margin-bottom: 6%;
+    width: max-content;
+    text-align: center;
+   
+    
+}
+
+.wallet-info{
+   background-color: #faf3e4e7;
+   padding: 25px;
+   border-radius: 1rem;
+    width:max-content;
+    margin-bottom: 6%;
+    text-align: left;
+}
+
+.wallet-address{
+  
+  padding-top: 10px;
   font-family: "Montserrat", sans-serif;
+  color: #2e475c;
+  font-weight: 00;
+  font-size: 30px;
+}
+
+p{
+font-family: "Montserrat", sans-serif;
+  color: #2e475c;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 30px;
 }
 
 .campaign-page img{
     padding:10px;
+    
 }
 
 .donation-page img{
@@ -124,9 +155,10 @@ h4{
 }
 
 .donate{
+    text-align: center;
     pointer-events: none;
-    font-size: 85px;
-    color: #3373A7;
-    text-shadow:4px 4px rgba(19, 40, 99, 0.26);
+    font-size: 100px;
+    color: #173F5F;
+    
 
 }

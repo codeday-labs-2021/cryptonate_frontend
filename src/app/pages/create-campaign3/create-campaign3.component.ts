@@ -40,12 +40,9 @@ export class CreateCampaign3Component implements OnInit {
       this.pic.value
     );
 
-    res.subscribe(data =>
-      {if(!res['message']) {
-      localStorage.setItem("user",JSON.stringify(res));
-      this.router.navigate(["/Fundraise/Donate"]);
-    }
-  });
+    localStorage.setItem("image_url",JSON.stringify(this.pic.value));
+    console.log(localStorage);
+    this.router.navigate(["/Review"]);
   }
 }
 

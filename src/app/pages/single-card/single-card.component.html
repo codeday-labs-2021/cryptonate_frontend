@@ -55,14 +55,23 @@
 
 
 <div class="description">
-    <h1>DESCRIPTION</h1>
-    <h2>{{campaign.description}}</h2>
+  <h1>DESCRIPTION</h1>
+  <h2>{{campaign.description}}</h2>
 </div>
 
 <div class="organizer">
-<h1>ORGANIZER</h1>
-<h3>{{user.first_name}}  {{user.last_name}}</h3>
-<h3 class="detail-name"> {{user.occupation}}</h3>
+<h1>GET TO KNOW THE ORGANIZER</h1>
+<div class="wrapper">
+<img class = "organizer-pic" src="assets/images/profile.png" alt="...">
+<div class="organizer-details">
+    <h3 class="organizer-name">{{user.first_name}}  {{user.last_name}}</h3>
+    <h3 class="organizer-occupation"> {{user.occupation}} </h3>
 </div>
+
+</div>
+<h2>ABOUT THE ORGANIZER</h2>
+<h3>{{user.about}}</h3>
+<h3 *ngIf="user.website_url">Visit {{user.organization}}'s website <a href="{{user.website_url}}">here</a></h3>
+<h3 *ngIf="user.social_media_url">{{user.organization}}'s Social Media : {{user.social_media_url}} </h3>
 </div>
 </div>

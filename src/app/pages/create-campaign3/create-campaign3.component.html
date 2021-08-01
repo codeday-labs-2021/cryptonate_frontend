@@ -10,7 +10,7 @@
     <div class="input-group mb-3">
       <label for="pic" class="form-label">Please attach the picture in a link format</label>
       <a href="https://imgur.com/upload">Convert your picture here!</a>
-      <input formControlName="pic" type="text" class="form-control" id="pic" required>
+      <input [formControl]="pic" type="text" class="form-control" id="pic" required>
     </div>
   </div>
 

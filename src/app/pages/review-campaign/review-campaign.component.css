@@ -1,0 +1,48 @@
+h1{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-size: 70px;
+}
+
+dd {
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  dt {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+.container{
+    margin-bottom: 7%;
+    margin-left: 12%;
+}
+
+
+.myButtons{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 7%;
+    margin-bottom:5%;
+    align-items: center;
+  }
+  
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #91AFC8;
+    border-color: #91AFC8;
+  }
+
+  .btn-primary {
+    color: black;
+    background-color: #E5E9F2;
+    border-color: #E5E9F2;
+    border-radius: 10px;
+    font-family: Montserrat;
+    font-size: 13.4px;
+  }

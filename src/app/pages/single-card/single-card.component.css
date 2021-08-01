@@ -123,3 +123,37 @@ a{
     background-color: #91AFC8;
     border-color: #91AFC8;
   }
+
+  .organizer-pic{
+    width: 12%;
+  }
+
+  .wrapper{
+    display: flex;
+    margin-bottom: 2.5%;
+  }
+
+  .organizer-details{
+    margin-left: 30px;
+    margin-top: 2.5%;
+    
+  }
+
+  .organizer-name{
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .organizer-occupation{
+    font-size: 23px;
+    font-weight: 500;
+    color: #173F5F;
+  }
+
+  a{
+    color: #205683;
+  }
+
+  a:hover{
+    color: #91AFC8;
+  }

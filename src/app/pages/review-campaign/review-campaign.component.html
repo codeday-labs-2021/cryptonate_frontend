@@ -1,0 +1,46 @@
+<h1>REVIEW</h1>
+<br>
+<div class="container">
+<div class="row justify-content-around">
+    <div class="col-4">
+    <dt>Name</dt>
+    <dd>{{this.firstName}} {{this.lastName}}</dd>
+    <dt>Occupation</dt>
+    <dd>{{this.occupation}}</dd>
+    <dt>Name of Organization</dt>
+    <dd>{{this.organization}}</dd>
+    <dt>Website</dt>
+    <a href={{this.websiteUrl}}>link to your website</a>
+    <dt>Location</dt>
+    <dd>{{this.location}}</dd>
+    <dt>About Yourself</dt>
+    <dd>{{this.about}}</dd>
+    </div>
+
+    <div class="col-4">
+        <dt>Title</dt>
+        <dd>{{this.title}}</dd>
+        <dt>Description</dt>
+        <dd>{{this.description}}</dd>
+        <dt>End Date</dt>
+        <dd>{{this.date}}</dd>
+        <dt>Goal</dt>
+        <dd>{{this.goal}} ETC</dd>
+        <dt>Social Media</dt>
+        <dd>{{this.socialMediaUrl}}</dd>
+        <dt>Image Url</dt>
+        <a href="{{this.pic}}">click to see preview of your image</a>
+        
+        </div>
+</div>
+</div>
+
+<div class="myButtons">
+    <li>
+      <a class="btn btn-primary" type="goBack" routerLink="/Fundraise/Picture">GO BACK</a>
+    </li>
+    <li>
+      <button class="btn btn-primary" type="submit" (click)="onSubmit()">SUBMIT</button>
+    </li>
+  </div>
+  

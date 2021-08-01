@@ -21,7 +21,8 @@ const routes: Routes = [
           component:Pages.CreateCampaignComponent
       } ,
       { path: 'Details', component:  Pages.CreateCampaign2Component},
-        { path: 'Picture', component:  Pages.CreateCampaign3Component}
+        { path: 'Picture', component:  Pages.CreateCampaign3Component},
+        { path: 'Review', component:  Pages.ReviewCampaignComponent}
       ]},
       {
         path: 'Admin',

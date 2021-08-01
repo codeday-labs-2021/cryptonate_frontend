@@ -21,14 +21,14 @@ import * as AdminContainer from './admin';
 import * as Pages from './pages';
 import * as Components from './_components';
 import {Web3Service} from './_services/web3.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     ...Components.components,
     ...Layout.layouts,
    ...AdminContainer.components,
-   ...Pages.pages
-
+   ...Pages.pages,
   ],
   imports: [
     BrowserModule,

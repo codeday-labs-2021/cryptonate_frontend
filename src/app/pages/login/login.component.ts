@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter ,Output,Input} from '@angular/core';
+import { Component, OnInit, EventEmitter} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -6,7 +6,8 @@ import {
   ValidationErrors,
 } from "@angular/forms";
 import {AuthService} from "../../_services";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-login',
@@ -14,16 +15,15 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  @Input() Type: String="0";
   loginForm: FormGroup=new FormGroup({});
   submitted = false;
-
-  @Output() LoginEvent= new EventEmitter<boolean>();
+  return: string = "";
 
   constructor(
     private formBuilder:FormBuilder,
     private AuthSrv:AuthService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
       email:["", Validators.required],
       password:["",Validators.required],
     });
+    this.route.queryParams
+      .subscribe(params => this.return = params['return'] || '/Dashboard');
   }
 
   get f(){
@@ -41,7 +43,6 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
 
     if(this.loginForm.invalid){
-      //TODO: show error for invalid login or signup on frontend
       return;
     }
 
@@ -50,15 +51,17 @@ export class LoginComponent implements OnInit {
     const res = this.AuthSrv.login(values.email,values.password);
 
     res.subscribe(res => {
-      debugger;
       if (res['message'] != "Authentication failed") {
         localStorage.setItem("user",JSON.stringify(res));
-        this.LoginEvent.next(true);
-        // if(this.Type=="1"){
-        //   this.LoginEvent.next(true);
-        // }else{
-        //         this.router.navigate(["/Dashboard"]);
-        // }
+        this.router.navigateByUrl(this.return);
+      }
+    }, err => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status === 401) { //unauthorized
+          this.loginForm.setErrors({
+            serverError: err,
+          })
+        }
       }
     })
   }

@@ -11,12 +11,8 @@ import {environment} from "../../environments/environment";
 })
 export class UserService {
   private _url: string= `${environment.apiUrl}/api/users`;
-  // wrong
-//  _id = JSON.parse(<string>localStorage.getItem("user"))["user"]["_id"];
 
-  constructor(private http: HttpClient) { 
-
-  }
+  constructor(private http: HttpClient) {}
 
   updateUser(
     first_name:string,
@@ -31,7 +27,6 @@ export class UserService {
     about: string,
     id:string
     ){
-      //wrong
     return this.http.patch<any>(`${environment.apiUrl}/api/users/${id}`,{
       first_name,
       last_name,
@@ -56,7 +51,6 @@ createCampaign(
   about: string,
   id:string
   ){
-    // wrong
   return this.http.patch<any>(`${environment.apiUrl}/api/users/${id}`,{
     occupation,
     organization,

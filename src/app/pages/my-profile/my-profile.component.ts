@@ -9,17 +9,17 @@ import { UserService } from '../../_services';
 })
 export class MyProfileComponent implements OnInit {
 
-  firstName = JSON.parse(<string>localStorage.getItem("user"))["user"]["first_name"];
-  lastName = JSON.parse(<string>localStorage.getItem("user"))["user"]["last_name"];
-  email = JSON.parse(<string>localStorage.getItem("user"))["user"]["email"];
+  firstName = "";
+  lastName = "";
+  email = "";
 
-  occupation = JSON.parse(<string>localStorage.getItem("user"))["user"]["occupation"];
-  organization = JSON.parse(<string>localStorage.getItem("user"))["user"]["organization"];
-  location = JSON.parse(<string>localStorage.getItem("user"))["user"]["location"];
-  socialMediaUrl = JSON.parse(<string>localStorage.getItem("user"))["user"]["social_media_url"];
-  websiteUrl = JSON.parse(<string>localStorage.getItem("user"))["user"]["website_url"];
-  organizationEmail = JSON.parse(<string>localStorage.getItem("user"))["user"]["organization_email"];
-  about = JSON.parse(<string>localStorage.getItem("user"))["user"]["about"];
+  occupation = "";
+  organization = "";
+  location = "";
+  socialMediaUrl = "";
+  websiteUrl = "";
+  organizationEmail = "";
+  about = "";
 
   readonly = true;
   submitted = false;
@@ -35,7 +35,17 @@ export class MyProfileComponent implements OnInit {
   ngOnInit(): void {
     let userData = JSON.parse(<string>localStorage.getItem('user'));
     if(userData){
-      this.currentUser =userData["user"];
+      this.currentUser = userData["user"];
+      this.firstName = this.currentUser.first_name;
+      this.lastName = this.currentUser.last_name;
+      this.about = this.currentUser.about;
+      this.email = this.currentUser.email;
+      this.occupation = this.currentUser.occupation;
+      this.organizationEmail = this.currentUser.organization_email;
+      this.socialMediaUrl = this.currentUser.social_media_url;
+      this.websiteUrl = this.currentUser.website_url;
+      this.location = this.currentUser.location;
+      this.organization = this.currentUser.organization;
     }
 
     this.profileForm = this.formBuilder.group({

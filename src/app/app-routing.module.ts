@@ -34,7 +34,7 @@ const routes: Routes = [
           ]},
   { path: 'Dashboard', component:  Pages.DashboardComponent, canActivate: [AuthGuard]},
   { path: 'Profile', component:  Pages.MyProfileComponent, canActivate: [AuthGuard]},
-  { path: 'MakeDonation/:_id', component: Pages.MakeDonationComponent},
+  { path: 'MakeDonation/:_id', component: Pages.MakeDonationComponent, canActivate: [AuthGuard]},
   { path: 'Home', component:  Pages.HomeComponent},
   { path: 'Single', component:  Pages.SingleCardComponent},
   { path: 'About', component: Pages.AboutComponent},

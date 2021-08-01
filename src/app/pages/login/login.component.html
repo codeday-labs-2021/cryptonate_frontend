@@ -4,6 +4,9 @@
       <div class="Logo">
           <img src="assets/images/Logo.svg" alt="">
       </div>
+      <h1 class="prompt" *ngIf="return != '/Dashboard'">
+        Please login to continue
+      </h1>
       <div class="text-box">
       <input formControlName="email" type="text" placeholder="Enter Email Address" name="email" required
       [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
@@ -15,6 +18,9 @@
         <div class="error-msg" *ngIf="submitted && f.password.errors ">
           Password is required
         </div>
+      </div>
+      <div class="error-msg"  *ngIf="loginForm.getError('serverError')">
+        Email or password incorrect
       </div>
 
       <div class="buttonLogIn">

@@ -1,6 +1,6 @@
 <div class="header-container">
   <div class="hero-container" [formGroup]="makeDonationForm">
-    <h1>Make a donation to: {{campaignToDonateTo.title}}</h1>
+    <h1>Make a donation to: {{campaignToDonateTo.title? campaignToDonateTo.title : "(campaign name)"}}</h1>
     <div class="row">
       <h4>Your account: 0xsdflkadsjlkfad    Balance: 3 ETH</h4>
     </div>

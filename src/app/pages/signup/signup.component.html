@@ -28,6 +28,10 @@
                       </div>
                     </div>
 
+                  <div class="error-msg"  *ngIf="registerForm.getError('serverError')">
+                    Email already taken
+                  </div>
+
                     <div class="buttonSignUp">
                         <a (click)="register()">
                             <img class = "signup" src="assets/images/SignUpButton.svg">

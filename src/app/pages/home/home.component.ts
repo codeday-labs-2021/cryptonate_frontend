@@ -20,6 +20,8 @@ _id !: string;
     // save into campaigns and display campaigns 
     // this._campaignService.getCampaign()
     //   .subscribe(data => this.campaigns = data);
+
+    this._campaignService.getRecentCampaign().subscribe(data=>this.campaigns=data);
   }
 
 }

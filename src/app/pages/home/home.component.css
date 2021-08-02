@@ -68,3 +68,25 @@ ul{
     flex-direction: row;
     text-decoration: none;
 }
+
+
+h1{
+    font-family:'Bebas Neue', cursive;;
+    font-weight: 400;
+    font-size: 90px;
+    align-items: center;
+    margin-top: 4%;
+    margin-bottom: 1%;
+    color:#173F5F;
+}
+
+
+.btn-primary {
+    color: #fff;
+    font-weight: 700;
+    font-family: "Monsterrat",sans-serif;
+    background-color: #3373A7;
+    border-color: #3373A7;
+    margin-bottom:6% ;
+   
+}

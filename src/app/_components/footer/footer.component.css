@@ -1,0 +1,14 @@
+p{
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color:#F5EA92 ;
+}
+
+.footer{
+    background-color:#173F5F ;
+    text-align: center;
+    align-items: center;
+    height: 72px;
+    padding:30px 0;
+}

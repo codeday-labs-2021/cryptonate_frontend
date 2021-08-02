@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-donate-now-banner',
   templateUrl: './donate-now-banner.component.html',
@@ -8,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 
 export class DonateNowBannerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  FindCampaign(){
+    this.router.navigate(["/Donate"]);
+  }
 }

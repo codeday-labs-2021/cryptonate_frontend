@@ -79,6 +79,7 @@ a{
 }
 
 .img{
-  width:524px;
-  height: 356px;
+  height: 337px; 
+  object-fit: cover;
+  
 }

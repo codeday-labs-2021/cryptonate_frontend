@@ -49,19 +49,16 @@
     <h2 class ="wallet">WALLET</h2>
 
     <div class="row justify-content-evenly">
-
-
-    <div class="col-sm-6 wallet-info">
-        <h3 class="wallet-address">Account: 0xsdflkadsjlkfad</h3>
-        <h3 class="wallet-address">Balance: 3 ETH</h3>
+      <div class="col-sm-6 wallet-info">
+          <h3 class="wallet-address">Account: 0xsdflkadsjlkfad</h3>
+          <h3 class="wallet-address">Balance: 3 ETH</h3>
       </div>
-
-        <br>
-        <div class="col-sm-6 report">
+      <br>
+      <div class="col-sm-6 report">
         <p>Total from your campaigns: {{campaignMoneySum}} ETH</p>
         <p>Total of your donations:  {{donationMoneySum}} ETH</p>
-        </div>
       </div>
+    </div>
   </div>
 
 
@@ -69,23 +66,27 @@
   <div id="camp" class="campaign-page">
     <h2 class ="campaign">MY CAMPAIGNS</h2>
 
-    <app-my-campaign-card class="col-md-6 py-4" *ngFor="let campaign of userCampaigns"
-              [campaign]="campaign" [routerLink]="['/Campaign', campaign._id]"
-    >
-    </app-my-campaign-card>
-    <h3 id="no-campaigns" *ngIf="userCampaigns.length === 0">
-      No campaigns to show.
-    </h3>
+    <div class="container">
+      <div class="row justify-content-around">
+        <app-my-campaign-card class="col-lg-6 py-4" *ngFor="let campaign of userCampaigns"
+                              [campaign]="campaign" [routerLink]="['/Campaign', campaign._id]"> </app-my-campaign-card>
+      </div>
+      <h3 id="no-campaigns" *ngIf="userCampaigns.length === 0">
+        No campaigns to show.
+      </h3>
+    </div>
+
   </div>
 
   <div id="don" class="donation-page">
     <h2  class="donate">MY DONATIONS</h2>
 
-    <div class="row">
-      <app-donation-card class="col-md-6 py-4" *ngFor="let donation of userDonations"
-                [donation]="donation"
-      >
-      </app-donation-card>
+    <div class="container">
+      <div class="row justify-content-evenly">
+        <app-donation-card class="col-lg-6 py-4" *ngFor="let donation of userDonations"
+                           [donation]="donation">
+        </app-donation-card>
+      </div>
       <h3 id="no-donations" *ngIf="userDonations.length === 0">
         No donations to show.
       </h3>

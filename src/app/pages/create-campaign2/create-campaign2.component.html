@@ -4,13 +4,21 @@
 
   <div class="p-3 col-md-6 offset-md-3">
     <label for="title" class="form-label">Title</label>
-    <input formControlName="title" type="text" class="form-control" id="title" required>
+    <input formControlName="title" type="text" class="form-control" id="title" required
+         [ngClass]="{ 'is-invalid': submitted && f.title.errors }" >
+    <div class="error-msg" *ngIf="submitted && f.title.errors ">
+      Campaign title is required
+    </div>
   </div>
 
   <div class="p-3 col-md-6 offset-md-3">
 
     <label for="calendar">End Date:</label>
-    <input formControlName="date" type="date" class="form-control" id="calendar" name="calendar">
+    <input formControlName="date" type="date" class="form-control" id="calendar" name="calendar"
+           [ngClass]="{ 'is-invalid': submitted && f.date.errors }" >
+    <div class="error-msg" *ngIf="submitted && f.date.errors ">
+      Campaign end date is required
+    </div>
 
   </div>
 
@@ -18,31 +26,30 @@
     <label for="goal" class="form-label">Goal</label>
     <div class="input-group mb-3">
       <span class="input-group-text">$</span>
-      <input formControlName="goal" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+      <input id="goal" formControlName="goal" type="number" class="form-control" aria-label="Amount (to the nearest dollar)"
+             [ngClass]="{ 'is-invalid': submitted && f.goal.errors }" >
       <span class="input-group-text">.00</span>
+    </div>
+    <div class="error-msg" *ngIf="submitted && f.goal.errors ">
+      Goal amount is required
     </div>
   </div>
 
   <div class="p-3 col-md-6 offset-md-3">
-    <label for= "navbarDarkDropdownMenuLink">Tags</label>
-    <select class="nav-link dropdown-toggle form-select" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    </select>
-    <ul class="dropdown-menu " id="drop" aria-labelledby="navbarDarkDropdownMenuLink">
-
-
-<div *ngFor='let tag of tags' >
-  <input type="checkbox"  [value]="tag.value" (change)='onCheckChange($event,tag.value)' id="tagsCheckbox">
-      <label for="tagsCheckbox"> {{tag.name}}</label>
-</div>
-   
-    
-
-  </ul>
+    <label >Tags</label>
+    <div *ngFor='let tag of tags' >
+      <input type="checkbox"  [value]="tag.value" (change)='onCheckChange($event,tag.value)'>
+      <label > {{tag.name}}</label>
+    </div>
   </div>
 
   <div class="p-3 col-md-6 offset-md-3">
     <label for="Description" class="form-label">Description</label>
-    <textarea formControlName="description" class="form-control" id="description" rows="3"></textarea>
+    <textarea formControlName="description" class="form-control" id="description" rows="3"
+              [ngClass]="{ 'is-invalid': submitted && f.description.errors }" > </textarea>
+    <div class="error-msg" *ngIf="submitted && f.description.errors ">
+      Description of the campaign is required
+    </div>
   </div>
 
 
@@ -52,7 +59,7 @@
     <a class="btn btn-primary" type="goBack" routerLink="/Fundraise">GO BACK</a>
   </li>
   <li>
-    <button class="btn btn-primary" (click)="onSubmit()" type="continue">CONTINUE</button>
+    <button class="btn btn-primary" (click)="onSubmit()">CONTINUE</button>
   </li>
 </div>
 

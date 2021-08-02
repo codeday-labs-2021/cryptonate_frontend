@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService,CampaignService } from '../../_services';
-import { FormGroup, FormControl , FormArray, FormBuilder, Form } from '@angular/forms';
+import {FormGroup, FormControl, FormArray, FormBuilder, Form, Validators} from '@angular/forms';
 import { Tags } from '../../_models/tags.model';
 @Component({
   selector: 'app-create-campaign2',
@@ -11,9 +11,13 @@ import { Tags } from '../../_models/tags.model';
 
 
 export class CreateCampaign2Component implements OnInit {
+  campaignInfo;
+
+  image_url = "";
+
   submitted = false;
   selectedTags: string[];
-  tags: Tags[]= [
+  tags: Tags[] = [
     {name: "Food", value: "food" },
     {name: "Education", value: "education"},
     {name:"Health", value:"health"}
@@ -36,12 +40,18 @@ export class CreateCampaign2Component implements OnInit {
 
   ngOnInit(): void {
     this.selectedTags = new Array<string>();
+    this.campaignInfo = JSON.parse(<string>localStorage.getItem("campaigns"));
     this.campaignDetail = this.formBuilder.group({
-      title: new FormControl(),
-      date: new FormControl(),
-      goal: new FormControl(),
-      description: new FormControl()
+      title: [this.campaignInfo.title ? this.campaignInfo.title : "", Validators.required],
+      date: [this.campaignInfo.date ? this.campaignInfo.date : "", Validators.required],
+      goal: [this.campaignInfo.goal ? parseFloat(this.campaignInfo.goal) : 0, Validators.required],
+      description: [this.campaignInfo.description ? this.campaignInfo.description : "", Validators.required]
     });
+    this.image_url = this.campaignInfo.image_url ? this.campaignInfo.image_url : "";
+  }
+
+  get f() {
+    return this.campaignDetail.controls;
   }
 
   onCheckChange(event, value)
@@ -60,18 +70,26 @@ export class CreateCampaign2Component implements OnInit {
     this.submitted=true;
     let values = this.campaignDetail.value;
 
-    console.log(values);
-    console.log(values.title);
 
-    
-    console.log(this.selectedTags);
+    try{
+      let goal = parseFloat(this.campaignDetail.value.goal);
+    } catch (e) {
+      this.campaignDetail.value.goal.setErrors({
+        "type-error": e
+      });
+    }
+
+    if(this.campaignDetail.invalid){
+      return;
+    }
 
     const res = {
       title: values.title,
       description: values.description,
       selectedTags: this.selectedTags,
       date: values.date,
-      goal: values.goal
+      goal: values.goal,
+      image_url: this.image_url
     };
       localStorage.setItem("campaigns",JSON.stringify(res));
       this.router.navigate(["/Fundraise/Picture"]);

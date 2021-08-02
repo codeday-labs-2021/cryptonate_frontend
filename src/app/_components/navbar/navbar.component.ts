@@ -29,6 +29,7 @@ export class NavbarComponent implements OnInit {
     res.subscribe(result => {
       if (result['message'] == "Log out successful") {
         localStorage.removeItem("user");
+        localStorage.removeItem("campaigns");
 
         this.router.navigate(["/Home"]);
       } else {

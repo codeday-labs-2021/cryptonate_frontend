@@ -33,3 +33,7 @@
     background-color: #91AFC8;
     border-color: #91AFC8;
   }
+
+  .error-msg {
+    color: darkred;
+  }

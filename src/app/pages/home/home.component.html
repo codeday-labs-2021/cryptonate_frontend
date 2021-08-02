@@ -12,23 +12,23 @@
         <div class="row align-items-start">
           <div class="col">
             <a class="find" href="#">
-                <img src="assets/images/create.png" alt="">
+                <img style="height: 200px;" src="assets/images/find.png" alt="">
             </a>
             <h3>Find a Campaign</h3>
-            <h4>Browse campaigns to find one you want to support.</h4>
+            <h4>Browse campaigns to find one you want to support</h4>
           </div>
 
           <div class="col">
             <a class="choose" href="#">
-                <img src="assets/images/create.png" alt="">
+                <img style="height: 200px;" src="assets/images/pay.png" alt="">
             </a>
-            <h3>Choose a donation option</h3>
-            <h4>Pay one-time or monthly with Ethereum wallet.</h4>
+            <h3>Make a donation</h3>
+            <h4>Pay with Ethereum wallet</h4>
           </div>
 
           <div class="col">
           <a class="repeat" href="#">
-                <img src="assets/images/create.png" alt="">
+                <img style="height: 200px;" src="assets/images/repeat.png" alt="">
             </a>
             <h3>Repeat</h3>
             <h4>Keep supporting campaigns</h4>
@@ -37,6 +37,7 @@
     </div>
 </div>
 
+<!--
 <div class="testi">
     <div class="container">
         <div class="row align-items-start">
@@ -57,14 +58,15 @@
         </div>
     </div>
 </div>
+-->
 
 <div class="top-campaigns">
     <h1 class="top">RECENT CAMPAIGNS</h1>
-    <div class="row">           
+    <div class="row">
         <app-card class="col-md-6 py-4" *ngFor="let campaign of campaigns"
-            [campaign]="campaign" 
-        >  
-        </app-card> 
+            [campaign]="campaign"
+        >
+        </app-card>
     </div>
 </div>
 

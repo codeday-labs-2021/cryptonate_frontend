@@ -8,6 +8,7 @@ import {
 
 import {AuthService} from '../../_services';
 import {Router} from "@angular/router";
+import {HttpErrorResponse} from "@angular/common/http";
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -51,6 +52,14 @@ export class SignupComponent implements OnInit {
       res.subscribe(res => {
         if (!res['message']) { //if there is no error message
           this.router.navigate(["/login"]);
+        }
+      }, err => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status === 409) { //email already exists
+            this.registerForm.setErrors({
+              serverError: err,
+            })
+          }
         }
       })
   }

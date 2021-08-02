@@ -1,6 +1,3 @@
-<div >
-    <!-- <app-login [Type]="'Type'" (LoginEvent)="NextStep($event)"></app-login> -->
-</div>
 <div>
 
 <img src="assets/images/circles.svg" alt="" class="center">
@@ -10,13 +7,21 @@
 
     <div class="p-3 col-sm-6">
         <label for="occupation" class="form-label">Occupation</label>
-        <input formControlName="occupation" type="text" class="form-control" id="occupation" required>
-
+        <input formControlName="occupation" type="text" class="form-control" id="occupation" required
+         [ngClass]="{ 'is-invalid': submitted && f.occupation.errors }" >
+        <div class="error-msg" *ngIf="submitted && f.occupation.errors ">
+          Occupation is required
+        </div>
     </div>
 
+
     <div class="p-3 col-sm-6">
-        <label for="name" class="form-label">Name of Organization, School, Company</label>
-        <input formControlName="name"  type="text" class="form-control" id="name" aria-describedby="nameHelp" required>
+        <label for="organization" class="form-label">Name of Organization, School, Company</label>
+        <input formControlName="organization"  type="text" class="form-control" id="organization" aria-describedby="nameHelp" required
+               [ngClass]="{ 'is-invalid': submitted && f.organization.errors }" >
+        <div class="error-msg" *ngIf="submitted && f.organization.errors ">
+          Organization is required
+        </div>
         <div id="nameHelp" class="form-text">Enter your full name if above does not apply to you</div>
     </div>
 
@@ -27,34 +32,42 @@
 
     <div class="p-3 col-sm-6">
         <label for="location" class="form-label">Location</label>
-        <input formControlName="location" type="text" class="form-control" id="location" required>
+        <input formControlName="location" type="text" class="form-control" id="location" required
+               [ngClass]="{ 'is-invalid': submitted && f.location.errors }" >
+      <div class="error-msg" *ngIf="submitted && f.location.errors ">
+        Location is required
+      </div>
     </div>
 
     <div class="p-3 col-sm-6">
         <label for="socmed" class="form-label">Social Media</label>
-        <input formControlName="socmed"  type="text" class="form-control" id="socmed" required>
+        <input formControlName="socmed"  type="text" class="form-control" id="socmed" required
+               [ngClass]="{ 'is-invalid': submitted && f.socmed.errors }" >
+      <div class="error-msg" *ngIf="submitted && f.socmed.errors ">
+        Social media is required
+      </div>
     </div>
 
     <div class="p-3 col-sm-6">
         <label for="organizationEmail" class="form-label">Organization Email</label>
-        <input formControlName="organizationEmail"  type="text" class="form-control" id="organizationEmail"  >
+        <input formControlName="organizationEmail"  type="text" class="form-control" id="organizationEmail" >
     </div>
 
 
 
-    
+
         <div class="p-3 col-md-6 offset-md-3">
-            <label for="aboutYourself" class="form-label">About Yourself</label>
+            <label for="about" class="form-label">About Yourself</label>
             <textarea formControlName="about" class="form-control" id="about" rows="3"></textarea>
         </div>
-    
+
 
     <div class="myButtons">
         <li>
             <a class="btn btn-primary" type="goBack" routerLink="/login">GO BACK TO MY PROFILE</a>
         </li>
         <li>
-            <button class="btn btn-primary" (click)="onSubmit()" type="continue" routerLink="/Fundraise/Details">CONTINUE</button>
+            <button class="btn btn-primary" (click)="onSubmit()">CONTINUE</button>
         </li>
     </div>
 

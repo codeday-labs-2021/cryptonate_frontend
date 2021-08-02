@@ -1,20 +1,17 @@
-<div class="row">
-          
-    <div class="col-sm-6">
-        <a class="card mb-3" style="max-width: 525px; max-height: 150px;">
-        <div class="row g-0">
 
-            <div class="col-sm-3">
-              <img src="assets/images/pic2.svg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-sm-9">
-              <div class="card-body">
-                <h3 class="card-title">{{campaign.title}}</h3>
-                <p class="card-text"><small class="text-muted">0.03 BTC</small></p>
-              </div>
-            </div>
-
-          
+  <div class="card" style="width: 500px; height: 150px">
+    <div class="row no-gutters">
+      <div class="col-sm-5">
+        <img class="card-img" src= "{{campaign.image_url}}" onerror="this.src='assets/images/donation.png'">
+      </div>
+      <div class="col-sm-7">
+        <div class="card-body">
+          <h5 class="card-title">{{campaign.title}}</h5>
+          <p class="card-text">Raised: ${{totalDonationsReceived}} &nbsp; &nbsp; Goal: ${{campaign.goal}}</p>
         </div>
-      </a>
+      </div>
     </div>
+  </div>
+
+
+

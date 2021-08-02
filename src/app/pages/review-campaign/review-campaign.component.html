@@ -10,7 +10,7 @@
     <dt>Name of Organization</dt>
     <dd>{{this.organization}}</dd>
     <dt>Website</dt>
-    <a href={{this.websiteUrl}}>link to your website</a>
+    <a *ngIf="this.websiteUrl != ''" href={{this.websiteUrl}} target="_blank" rel="noopener noreferrer">link to your website</a>
     <dt>Location</dt>
     <dd>{{this.location}}</dd>
     <dt>About Yourself</dt>
@@ -25,12 +25,12 @@
         <dt>End Date</dt>
         <dd>{{this.date}}</dd>
         <dt>Goal</dt>
-        <dd>{{this.goal}} ETC</dd>
+        <dd>${{this.goal}}</dd>
         <dt>Social Media</dt>
         <dd>{{this.socialMediaUrl}}</dd>
         <dt>Image Url</dt>
-        <a href="{{this.pic}}">click to see preview of your image</a>
-        
+        <a *ngIf="this.socialMediaUrl != ''" href="{{this.pic}}" target="_blank" rel="noopener noreferrer">click to see preview of your image</a>
+
         </div>
 </div>
 </div>
@@ -43,4 +43,3 @@
       <button class="btn btn-primary" type="submit" (click)="onSubmit()">SUBMIT</button>
     </li>
   </div>
-  

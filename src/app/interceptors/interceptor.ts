@@ -29,6 +29,8 @@ export class AddHeaderInterceptor implements HttpInterceptor {
           if(err instanceof HttpErrorResponse) {
             if(err.status === 401 ) {
               console.log("==================", "logging user out");
+              localStorage.removeItem("user");
+              localStorage.removeItem("campaigns");
               this.router.navigateByUrl("/login");
             }
           }

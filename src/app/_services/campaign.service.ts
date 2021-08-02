@@ -33,6 +33,10 @@ export class CampaignService{
         return this.http.get<Campaign[]>(this._url);
     }
 
+    getFourCampaigns():Observable<Campaign[]>{
+      return this.http.get<Campaign[]>(`${this._url}/get4`);
+    }
+
     getCampaignById(id:string): Observable<Campaign|undefined>{
         console.log("campaign found");
         return this.getCampaign()

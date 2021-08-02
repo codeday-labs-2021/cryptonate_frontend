@@ -8,18 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
- 
+
   public campaigns:any[] = [];
-_id !: string;
-//campaigns = CAMPAIGNS;
+  _id !: string;
+
   constructor(private _campaignService: CampaignService,
     private router:Router) { }
 
   ngOnInit(): void {
-    //call backend APIs 
-    // save into campaigns and display campaigns 
-    // this._campaignService.getCampaign()
-    //   .subscribe(data => this.campaigns = data);
+    //call backend APIs
+    // save into campaigns and display campaigns
+    this._campaignService.getFourCampaigns()
+      .subscribe(data => this.campaigns = data);
   }
 
 }

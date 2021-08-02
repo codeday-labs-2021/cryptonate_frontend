@@ -1,57 +1,45 @@
 <div class="container" style="margin-top: 60px;">
 
 <div *ngIf="campaign">
-  <div class="row">
-    <div class="col-md-12" style="    text-align: center;">
-<h1>{{campaign.title}}</h1></div>
-</div>
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-8"><div class="my-card">
+ 
+<h1>{{campaign.title}}</h1>
+<div class="my-card">
     <div class="card mb-3" style="max-width: 940px;">
         <div class="row g-0">
-          <div class="col-md-6">
-            <img src={{campaign.image_url}}  onerror="this.src='assets/images/donation.png'" class="img-fluid rounded-start" alt="...">
+          <div class="col-md-5">
+            <img  src={{campaign.image_url}}  onerror="this.src='assets/images/donation.png'"  class="img-fluid" alt="...">
           </div>
-          <div class="col-md-6">
+          <div class="col-md-7">
             <div class="card-body">
                 
                 <div class="info-card">
                     <div class="container">
                         <div class="row align-items-start">
                           <div class="col">
-                            <h2>1.2k</h2>
-                            <h2>donors</h2>
+                           <h2>Start Date:<br>
+                            {{campaign.date_created | date}}</h2>
                           </div>
-                
                           <div class="col">
-                           <h2>6K</h2>
-                            <h2>Shares</h2>
-                          </div>
-                
-                          <div class="col">
-                           <h2>1K</h2>
-                            <h2>favorites</h2>
+                           <h2>End Date: <br>
+                            {{campaign.date_end | date}}</h2>
                           </div>
                         </div>
                     </div>
                 </div>
-              <h5> $ {{campaign.goal}} raised</h5>
+              <h5>  ETH out of {{campaign.goal}} ETH raised</h5>
 
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 
-             <h6>123 more days left</h6>
+             <h6>{{this.days}} more days left</h6>
               <a href="#" class="btn btn-primary">Donate Now</a>
             </div>
           </div>
         </div>
       </div>
-</div>
-</div>
-  <div class="col-md-2"></div>
-</div>
+
+
 
 
 <div class="description">
@@ -69,9 +57,12 @@
 </div>
 
 </div>
-<h2>ABOUT THE ORGANIZER</h2>
-<h3>{{user.about}}</h3>
+<h2 class ="about">ABOUT THE ORGANIZER</h2>
+<h2>{{user.about}}</h2>
+<br>
 <h3 *ngIf="user.website_url">Visit {{user.organization}}'s website <a href="{{user.website_url}}">here</a></h3>
 <h3 *ngIf="user.social_media_url">{{user.organization}}'s Social Media : {{user.social_media_url}} </h3>
+<br>
+<br>
 </div>
 </div>

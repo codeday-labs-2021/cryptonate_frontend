@@ -36,11 +36,13 @@ export class CreateCampaign2Component implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private auth: AuthService,
     private campaignService: CampaignService,
-    private router: Router) { }
+    private router: Router) {
+      this.campaignInfo = JSON.parse(<string>localStorage.getItem("campaigns"));
+     }
 
   ngOnInit(): void {
     this.selectedTags = new Array<string>();
-    this.campaignInfo = JSON.parse(<string>localStorage.getItem("campaigns"));
+    
     this.campaignDetail = this.formBuilder.group({
       title: [this.campaignInfo.title ? this.campaignInfo.title : "", Validators.required],
       date: [this.campaignInfo.date ? this.campaignInfo.date : "", Validators.required],

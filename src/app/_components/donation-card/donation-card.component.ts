@@ -8,7 +8,8 @@ import {Donation} from "../../_models";
 })
 export class DonationCardComponent implements OnInit {
   @Input() donation!: Donation;
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

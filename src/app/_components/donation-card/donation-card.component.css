@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*{
+  font-family:'Bebas Neue', cursive;;
+  font-weight: 400;
+}
+
+.card-img {
+  width: 200px;
+  height: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h5{
+  font-family: "Montserrat", sans-serif;
+  color: #173F5F;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 2.7rem;
+  margin-left: -2%;
+}

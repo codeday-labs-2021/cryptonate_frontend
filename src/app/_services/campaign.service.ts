@@ -1,9 +1,10 @@
 import { Injectable } from "@angular/core";
-import { HttpClient,HttpHeaders} from "@angular/common/http";
+import { HttpClient,HttpHeaders, HttpResponse} from "@angular/common/http";
 import { Campaign } from "../_models/campaigns.model";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import {environment} from "../../environments/environment";
+import { Tags } from "../_models";
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -16,7 +17,7 @@ const httpOptions = {
 export class CampaignService{
     private _url: string= `${environment.apiUrl}/api/campaigns`;
    // _id = JSON.parse(<string>localStorage.getItem("user"))["user"]["_id"];
-
+    campaignTag : Campaign[];
     constructor(private http:HttpClient){}
 
     getEvents(){
@@ -46,6 +47,10 @@ export class CampaignService{
         );
 
     }
+
+   getRecentCampaign():Observable<Campaign[]>{
+    return this.http.get<Campaign[]>(`${environment.apiUrl}/api/campaigns/get4`);
+   }
 
     getUserCampaigns():Observable<Campaign[]>{
       return this.http.get<Campaign[]>(`${environment.apiUrl}/api/users/campaigns`);

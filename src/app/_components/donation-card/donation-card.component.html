@@ -1,21 +1,18 @@
-<div class="donation-card">
-  
-<div class="col-sm-6">
-  <a class="card mb-3" style="max-width: 525px; max-height: 150px;">
-  <div class="row g-0">
 
-      <div class="col-sm-3">
-        <img src="assets/images/pic2.svg" class="img-fluid rounded-start" alt="...">
+  <div class="card" style="width: 500px; height: 150px">
+    <div class="row no-gutters">
+      <div class="col-sm-5">
+        <img class="card-img" src= "{{donation.campaign_id.image_url}}" onerror="this.src='assets/images/donation.png'">
       </div>
-      <div class="col-sm-9">
+      <div class="col-sm-7">
         <div class="card-body">
-          <h3 class="card-title">{{donation.campaign_id.title}}</h3>
-          <p class="card-text"><small class="text-muted">{{donation.amount_donated}}</small></p>
+          <h5 class="card-title">{{donation.campaign_id.title}}</h5>
+          <p class="card-text">
+            Amount: ${{donation.amount_donated}}
+          </p>
         </div>
       </div>
-
-      
     </div>
-  </a>
-</div>
-</div>
+  </div>
+
+

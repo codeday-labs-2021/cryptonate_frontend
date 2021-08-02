@@ -28,41 +28,13 @@
                         FILTER CAUSES
                       </a>
                       <ul class="dropdown-menu " aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                              Cause 1
-                            </label>
-                        </li>
 
-                        <li class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Cause 2
-                            </label>
-                        </li>
 
-                        <li class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Cause 3
-                            </label>
-                        </li>
-
-                        <li class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Cause 4
-                            </label>
-                        </li>
-
-                        <li class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Cause 5
-                            </label>
-                        </li>
-                        
+                            <div *ngFor='let tag of tags' >
+                              <input type="checkbox"  [value]="tag.value" (change)='onCheckChange($event,tag.value)' id="tagsCheckbox">
+                                  <label for="tagsCheckbox"> {{tag.name}}</label>
+                            </div>
+                       
                       </ul>
           
                  
@@ -71,9 +43,9 @@
             </div>
             <div class="col-10">
                 <div class="row">
-                    <app-card class="col-md-6 py-4" *ngFor="let campaign of campaigns"
+                    <app-card class="col-md-6 py-4" *ngFor="let campaign of filteredCampaigns"
                         [campaign]="campaign"  [routerLink]="['/Campaign', campaign._id]"></app-card>
-                    >
+                    
                     
             </div>
           </div>

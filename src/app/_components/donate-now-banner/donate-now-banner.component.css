@@ -10,7 +10,6 @@ h1{
 }
 
 .container-fluid{
-    position: absolute;
     bottom: 10;
     display: block;
     text-align: center;

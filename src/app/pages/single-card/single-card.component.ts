@@ -25,15 +25,7 @@ export class SingleCardComponent implements OnInit {
     private router: Router,
      private _campaignService:CampaignService,
      private _donationService: DonationService,
-     private _userService:UserService) {
-
-    // First get the campaign id from the current route.
-    const routeParams = this.route.snapshot.paramMap;
-    const campaignIdFromRoute = String(routeParams.get('_id'));
-
-    // console.log(campaignIdFromRoute);
-    this.getCampaignById(campaignIdFromRoute);
-  }
+     private _userService:UserService) {}
 
 
   //public campaigns = [];
@@ -85,7 +77,6 @@ export class SingleCardComponent implements OnInit {
 
 
   async calculateCurrentDonationAmountOfCampaign(){
-    console.log(this.campaign);
     this.donations = await this._donationService.getCampaignDonations(this.campaign._id);
     await this.donations.forEach(donationList => {
       donationList.forEach(donation => {
@@ -93,7 +84,7 @@ export class SingleCardComponent implements OnInit {
       })
     });
 
-    this.progress = this.totalDonationsReceived/this.campaign.goal;
+    this.progress = 100*this.totalDonationsReceived/this.campaign.goal;
   }
 
   currentPercentage() {

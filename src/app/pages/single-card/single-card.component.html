@@ -11,6 +11,8 @@
           </div>
           <div class="col-md-7">
             <div class="card-body">
+
+
 <!--                <div class="info-card">-->
 <!--                    <div class="container">-->
 <!--                        <div class="row align-items-start">-->
@@ -31,9 +33,6 @@
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
-              <h5> Raised: ${{totalDonationsReceived}} </h5>
-              <h5> Goal: ${{campaign.goal}} </h5>
-
                 <div class="info-card">
                     <div class="container">
                         <div class="row align-items-start">
@@ -48,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-              <h5>  ETH out of {{campaign.goal}} ETH raised</h5>
+              <h5>${{totalDonationsReceived}} out of ${{campaign.goal}} raised</h5>
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" [style]="currentPercentage()" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>

@@ -20,18 +20,18 @@ export class MakeDonationComponent implements OnInit {
               private _campaignService:CampaignService,
               private _donationService:DonationService,
               private router: Router
-              ) {  }
+              ) {
+
+    const routeParams = this.route.snapshot.paramMap;
+    const campaignIdFromRoute = String(routeParams.get('_id'));
+    this.getCampaignById(campaignIdFromRoute);
+  }
 
   ngOnInit(): void {
     this.makeDonationForm = this.formBuilder.group({
       amount:["", Validators.required],
       recipientAddress:["",Validators.required],
     });
-
-
-    const routeParams = this.route.snapshot.paramMap;
-    const campaignIdFromRoute = String(routeParams.get('_id'));
-    this.getCampaignById(campaignIdFromRoute);
   }
 
   get f(){
@@ -45,15 +45,15 @@ export class MakeDonationComponent implements OnInit {
       return;
     }
 
-    // let values = this.makeDonationForm.value;
-    //
-    // const res = this._donationService.postDonation(this.campaignToDonateTo._id, values.amount);
-    //
-    // res.subscribe(res => {
-    //   if (!res['message']) {
-    //     this.router.navigate(["/Dashboard"]);
-    //   }
-    // })
+    let values = this.makeDonationForm.value;
+
+    const res = this._donationService.postDonation(this.campaignToDonateTo._id, values.amount);
+
+    res.subscribe(res => {
+      if (!res['message']) {
+        this.router.navigate(["/Dashboard"]);
+      }
+    })
   }
 
   getCampaignById(id:string){

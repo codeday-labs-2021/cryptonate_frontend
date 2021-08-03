@@ -22,10 +22,11 @@ export class CreateCampaign3Component implements OnInit {
 
   constructor(private auth: AuthService,
     private campaignService: CampaignService,
-    private router: Router) { }
+    private router: Router) {
+    this.campaignInfo = JSON.parse(<string>localStorage.getItem("campaigns"));
+  }
 
   ngOnInit(): void {
-    this.campaignInfo = JSON.parse(<string>localStorage.getItem("campaigns"));
     this.pic = new FormControl(this.campaignInfo.image_url ? this.campaignInfo.image_url : "");
     if(this.campaignInfo) {
       this.title = this.campaignInfo.title;

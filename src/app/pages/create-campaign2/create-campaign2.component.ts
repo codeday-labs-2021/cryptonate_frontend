@@ -12,6 +12,10 @@ import { Tags } from '../../_models/tags.model';
 
 export class CreateCampaign2Component implements OnInit {
   campaignInfo;
+  title = "";
+  date = "";
+  goal = 0;
+  description = "";
 
   image_url = "";
 
@@ -36,16 +40,23 @@ export class CreateCampaign2Component implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private auth: AuthService,
     private campaignService: CampaignService,
-    private router: Router) { }
+    private router: Router) {
+    this.campaignInfo = JSON.parse(<string>localStorage.getItem("campaigns"));
+  }
 
   ngOnInit(): void {
     this.selectedTags = new Array<string>();
-    this.campaignInfo = JSON.parse(<string>localStorage.getItem("campaigns"));
+    if(this.campaignInfo) {
+      this.title = this.campaignInfo.title;
+      this.date = this.campaignInfo.date;
+      this.goal = parseFloat(this.campaignInfo.goal);
+      this.description = this.campaignInfo.description;
+    }
     this.campaignDetail = this.formBuilder.group({
-      title: [this.campaignInfo.title ? this.campaignInfo.title : "", Validators.required],
-      date: [this.campaignInfo.date ? this.campaignInfo.date : "", Validators.required],
-      goal: [this.campaignInfo.goal ? parseFloat(this.campaignInfo.goal) : 0, Validators.required],
-      description: [this.campaignInfo.description ? this.campaignInfo.description : "", Validators.required]
+      title: [this.title, Validators.required],
+      date: [this.date, Validators.required],
+      goal: [this.goal, Validators.required],
+      description: [this.description, Validators.required]
     });
     this.image_url = this.campaignInfo.image_url ? this.campaignInfo.image_url : "";
   }

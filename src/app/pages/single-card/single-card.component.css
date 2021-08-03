@@ -167,9 +167,13 @@ a{
   .image-single-card{
   max-height: fit-content;
     object-position: 15% 100%;
+    
 
   }
   
   .img-fluid{
-object-fit: cover;
+    height: 424px;
+    object-position: 15% 100%;
+    display: block;
+    object-fit: cover;
   }

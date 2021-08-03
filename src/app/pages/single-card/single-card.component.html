@@ -52,7 +52,7 @@
                     <div class="progress-bar" role="progressbar" [style]="currentPercentage()" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
              <h6>{{daysLeft}} more day(s) left</h6>
-              <a href="#" class="btn btn-primary">Donate Now</a>
+              <a class="btn btn-primary" [routerLink]="['/MakeDonation', campaign._id]">Donate Now</a>
             </div>
           </div>
         </div>

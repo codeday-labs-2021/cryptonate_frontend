@@ -6,6 +6,9 @@
     font-weight: 400;
 }
 
+h2{
+    margin-top: 3%;
+}
 h1{
     padding-top:3%;
     text-align: center;
@@ -18,9 +21,11 @@ h1{
 
 .donation-page{
     background-color: white;
+    margin-bottom: 4%;
 }
 
 .campaign-page{
+  
   background-color: #173F5F;
 }
 

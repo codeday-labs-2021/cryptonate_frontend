@@ -1,18 +1,21 @@
 
-  <div class="card" style="width: 500px; height: 150px">
-    <div class="row no-gutters">
+  <a class="card" style="width: 500px; height: 150px">
+    <div class="row g-0">
       <div class="col-sm-5">
         <img class="card-img" src= "{{donation.campaign_id.image_url}}" onerror="this.src='assets/images/donation.png'">
       </div>
       <div class="col-sm-7">
         <div class="card-body">
           <h5 class="card-title">{{donation.campaign_id.title}}</h5>
-          <p class="card-text">
-            Amount: ${{donation.amount_donated}}
+          <p class="card-text"><small class="text-muted">
+            Amount: ${{donation.amount_donated}}</small>
           </p>
         </div>
       </div>
     </div>
-  </div>
+  </a>
+
+
+
 
 

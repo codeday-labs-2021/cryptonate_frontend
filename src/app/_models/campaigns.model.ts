@@ -4,7 +4,7 @@ export interface Campaign{
     description:string;
     tags: string[];
     image_url:string;
-    date_start:Date;
+    date_created:Date;
     date_end: Date;
     author_id:string;
     goal: number;

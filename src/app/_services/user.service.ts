@@ -1,4 +1,3 @@
-
 import { Injectable } from "@angular/core";
 import { HttpClient,HttpHeaders} from "@angular/common/http";
 import { User } from "../_models/user.model";
@@ -9,6 +8,7 @@ import {environment} from "../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
   private _url: string= `${environment.apiUrl}/api/users`;
 

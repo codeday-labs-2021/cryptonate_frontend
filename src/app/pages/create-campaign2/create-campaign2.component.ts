@@ -51,14 +51,15 @@ export class CreateCampaign2Component implements OnInit {
       this.date = this.campaignInfo.date;
       this.goal = parseFloat(this.campaignInfo.goal);
       this.description = this.campaignInfo.description;
+      this.image_url = this.campaignInfo.image_url;
     }
+
     this.campaignDetail = this.formBuilder.group({
       title: [this.title, Validators.required],
       date: [this.date, Validators.required],
       goal: [this.goal, Validators.required],
       description: [this.description, Validators.required]
     });
-    this.image_url = this.campaignInfo.image_url ? this.campaignInfo.image_url : "";
   }
 
   get f() {

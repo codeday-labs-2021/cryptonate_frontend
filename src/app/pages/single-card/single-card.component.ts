@@ -1,9 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router'
-import {Campaign} from '../../_models';
-import {UserService, CampaignService, DonationService} from "../../_services";
-import {Observable} from "rxjs";
-import {Donation} from "../../_models";
+import {Campaign} from '../../_models/campaigns.model';
+import { UserService, CampaignService} from "../../_services";
+import { DatePipe } from '@angular/common';
+import { DonationService } from 'src/app/_services/donation.service';
+import { Donation } from 'src/app/_models';
 
 @Component({
   selector: 'app-single-card',
@@ -33,13 +35,21 @@ export class SingleCardComponent implements OnInit {
     this.getCampaignById(campaignIdFromRoute);
   }
 
+
   //public campaigns = [];
   //constructor(private _campaignService:CampaignService){}
 
     ngOnInit() {
 
+      // First get the campaign id from the current route.
+      const routeParams = this.route.snapshot.paramMap;
+      const campaignIdFromRoute = String(routeParams.get('_id'));
+
+     // console.log(campaignIdFromRoute);
+      this.getCampaignById(campaignIdFromRoute);
 
      // this.getUserById(this.userId);
+
 
       //this.route.paramMap.subscribe((params: ParamMap) =>
       //  this._id = params.get('_id'));
@@ -58,6 +68,7 @@ export class SingleCardComponent implements OnInit {
   //     data => this.user=data
   //   );
   // }
+
 
   getCampaignById(id:string){
     this._campaignService.getCampaignById(id).subscribe(

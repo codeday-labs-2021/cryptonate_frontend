@@ -11,15 +11,20 @@ import { Router } from '@angular/router';
 export class AdminCampaignsComponent implements OnInit {
   public campaigns:any[] = [];
   _id !: string;
-  //campaigns = CAMPAIGNS;
-    constructor(private _campaignService: CampaignService,
-      private router:Router) { }
+  constructor(private _campaignService: CampaignService,
+    private router:Router) { }
   
-    ngOnInit(): void {
-      //call backend APIs 
-      // save into campaigns and display campaigns 
-      this._campaignService.getCampaign()
-        .subscribe(campaigns => this.campaigns = campaigns);
-    }
+  author_data = [];
+  total_campaigns : number;
+
+  ngOnInit(): void {
+    //call backend APIs 
+    // save into campaigns and display campaigns 
+
+    this._campaignService.getCampaign()
+      .subscribe(campaigns => {
+        this.campaigns = campaigns;
+        this.total_campaigns = Object.keys(campaigns).length
+      });
   }
-  
+}

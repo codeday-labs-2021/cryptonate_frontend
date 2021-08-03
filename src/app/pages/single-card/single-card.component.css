@@ -8,6 +8,12 @@ h1{
 padding-top: 2.8%;
 
 }
+.about{
+  font-family:'Bebas Neue', cursive;;
+    font-weight: 200;
+    font-size:70px;
+    color:#173F5F;
+}
 
 h2{
     color:#173F5F;
@@ -156,4 +162,14 @@ a{
 
   a:hover{
     color: #91AFC8;
+  }
+
+  .image-single-card{
+  max-height: fit-content;
+    object-position: 15% 100%;
+
+  }
+  
+  .img-fluid{
+object-fit: cover;
   }

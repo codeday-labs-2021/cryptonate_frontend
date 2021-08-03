@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     //call backend APIs
     // save into campaigns and display campaigns
-    this._campaignService.getFourCampaigns()
+    this._campaignService.getRecentCampaign()
       .subscribe(data => this.campaigns = data);
   }
 

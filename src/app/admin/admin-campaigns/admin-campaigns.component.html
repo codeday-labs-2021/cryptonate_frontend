@@ -19,76 +19,6 @@
       </div>
     </div>
 
-    <div class="col-md-6 col-lg-3 mb-4">
-      <div class="card border-0 rounded-0">
-        <div class="card-body">
-          <div class="card-innerBody d-flex align-items-center">
-            <div class="card-icon text-light">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            </div>
-            <div class="ml-auto">
-              <p class="card-label text-right text-muted">Orders</p>
-              <h4 class="card-text text-right ">2,200</h4>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer d-flex ">
-          <small class="text-muted">Since last month</small>
-          <small class="text-success ml-auto">
-            <i class="fa fa-caret-up" aria-hidden="true"></i>
-            8,66%
-          </small>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3 mb-4">
-      <div class="card border-0 rounded-0">
-        <div class="card-body">
-          <div class="card-innerBody d-flex align-items-center">
-            <div class="card-icon text-light">
-              <i class="fa fa-users" aria-hidden="true"></i>
-            </div>
-            <div class="ml-auto">
-              <p class="card-label text-right text-muted">Visitors</p>
-              <h4 class="card-text text-right ">702,258</h4>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer d-flex ">
-          <small class="text-muted">Since last month</small>
-          <small class="text-danger ml-auto">
-            <i class="fa fa-caret-down" aria-hidden="true"></i>
-            2,81%
-          </small>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3 mb-4">
-      <div class="card border-0 rounded-0">
-        <div class="card-body">
-          <div class="card-innerBody d-flex align-items-center">
-            <div class="card-icon text-light">
-              <i class="fa fa-heartbeat" aria-hidden="true"></i>
-            </div>
-            <div class="ml-auto">
-              <p class="card-label text-right text-muted">Followers</p>
-              <h4 class="card-text text-right "> +50K</h4>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer d-flex ">
-          <small class="text-muted">Since last month</small>
-          <small class="text-success ml-auto">
-            <i class="fa fa-caret-up" aria-hidden="true"></i>
-            1,74%
-          </small>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="table-responsive-md">
     <div class="table-responsive">
       <table class="table ">
@@ -140,13 +70,13 @@
           <div class="form-group">
             <label for="firstname">First Name</label>
             <div class="input-group">
-              <input id="firstname" class="form-control" value = {{campaign_ind.author_id.firstname}} formControlName="first_name">
+              <input id="firstname" class="form-control" value = {{campaign_ind.author_id.first_name}} formControlName="first_name">
             </div>
           </div>
           <div class="form-group">
             <label for="lastname">Last Name</label>
             <div class="input-group">
-              <input id="lastname" class="form-control" value = {{campaign_ind.author_id.lastname}} formControlName="last_name">
+              <input id="lastname" class="form-control" value = {{campaign_ind.author_id.last_name}} formControlName="last_name">
             </div>
           </div>
           <div class="form-group">

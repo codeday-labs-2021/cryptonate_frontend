@@ -7,14 +7,16 @@
 
   <div class="p-3 col-md-6 offset-md-3">
     <label for="attachPic" class="form-label">Attach one picture for your campaign’s thumbnail</label>
-    <div id="attachPic" class="input-group mb-3">
-      <label for="pic" class="form-label">Please attach the picture in a link format</label>
-      <a href="https://imgur.com/upload">Convert your picture here!</a>
-      <input [formControl]="pic" type="text" class="form-control" id="pic" required>
+    <div class="input-group mb-3">
+      <input [formControl]="pic" type="file" class="form-control" (change)="onSelect($event)" id="inputGroupFile02">
+      <br>
     </div>
+  <h1>PREVIEW</h1>
+    <img [src]="url" >
   </div>
 
 </form>
+
 
 <div class="myButtons">
   <li>
@@ -24,3 +26,12 @@
     <a class="btn btn-primary" (click)="onSubmit()">CONTINUE</a>
   </li>
 </div>
+
+
+
+
+<p></p>
+<p></p>
+
+
+

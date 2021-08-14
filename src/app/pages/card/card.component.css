@@ -81,4 +81,5 @@ a{
 .img{
   height: 337px; 
   object-fit: cover;
+  border-radius: 10px;
 }

@@ -18,7 +18,7 @@ export class CreateCampaign3Component implements OnInit {
   description = "";
   goal = "";
   pic: FormControl
-
+  url="";
 
   constructor(private auth: AuthService,
     private campaignService: CampaignService,
@@ -38,7 +38,16 @@ export class CreateCampaign3Component implements OnInit {
       this.router.navigate(['/Dashboard']);
     }
   }
-
+  onSelect(e)
+  {
+    if(e.target.files){
+      var reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload=(event:any)=>{
+        this.url=event.target.result;
+      }
+    }
+  }
   onSubmit()
   {
     const res = {
@@ -47,7 +56,7 @@ export class CreateCampaign3Component implements OnInit {
       selectedTags: this.selectedTags,
       date: this.date,
       goal: this.goal,
-      image_url: this.pic.value
+      image_url: this.url
     };
 
     localStorage.setItem("campaigns",JSON.stringify(res));

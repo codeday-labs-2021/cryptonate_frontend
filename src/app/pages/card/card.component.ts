@@ -33,8 +33,6 @@ export class CardComponent implements OnInit {
     this.progress = 100 * this.totalDonationsReceived/this.campaign.goal;
   }
 
-
-
   currentPercentage() {
     if(this.progress > 100) this.progress = 100;
     return `width: ${this.progress}%`

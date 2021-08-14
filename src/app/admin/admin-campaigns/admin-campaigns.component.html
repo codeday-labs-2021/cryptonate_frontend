@@ -1,4 +1,4 @@
-<div>
+<div #main>
   <h4 class="mb-4 text-muted">Dashboard </h4>
 
   <div class="row">
@@ -19,98 +19,154 @@
       </div>
     </div>
 
-    <div class="col-md-6 col-lg-3 mb-4">
-      <div class="card border-0 rounded-0">
-        <div class="card-body">
-          <div class="card-innerBody d-flex align-items-center">
-            <div class="card-icon text-light">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            </div>
-            <div class="ml-auto">
-              <p class="card-label text-right text-muted">Orders</p>
-              <h4 class="card-text text-right ">2,200</h4>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer d-flex ">
-          <small class="text-muted">Since last month</small>
-          <small class="text-success ml-auto">
-            <i class="fa fa-caret-up" aria-hidden="true"></i>
-            8,66%
-          </small>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3 mb-4">
-      <div class="card border-0 rounded-0">
-        <div class="card-body">
-          <div class="card-innerBody d-flex align-items-center">
-            <div class="card-icon text-light">
-              <i class="fa fa-users" aria-hidden="true"></i>
-            </div>
-            <div class="ml-auto">
-              <p class="card-label text-right text-muted">Visitors</p>
-              <h4 class="card-text text-right ">702,258</h4>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer d-flex ">
-          <small class="text-muted">Since last month</small>
-          <small class="text-danger ml-auto">
-            <i class="fa fa-caret-down" aria-hidden="true"></i>
-            2,81%
-          </small>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3 mb-4">
-      <div class="card border-0 rounded-0">
-        <div class="card-body">
-          <div class="card-innerBody d-flex align-items-center">
-            <div class="card-icon text-light">
-              <i class="fa fa-heartbeat" aria-hidden="true"></i>
-            </div>
-            <div class="ml-auto">
-              <p class="card-label text-right text-muted">Followers</p>
-              <h4 class="card-text text-right "> +50K</h4>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer d-flex ">
-          <small class="text-muted">Since last month</small>
-          <small class="text-success ml-auto">
-            <i class="fa fa-caret-up" aria-hidden="true"></i>
-            1,74%
-          </small>
-        </div>
-      </div>
+  <div class="table-responsive-md">
+    <div class="table-responsive">
+      <table class="table ">
+        <thead>
+          <tr>
+            <th> ID</th>
+            <th> Tags</th>
+            <th> Author ID</th>
+            <th> Campaign Name</th>
+            <th> Modify</th>
+          </tr>
+        </thead>
+        <tbody class="no-border-x" *ngFor = "let campaign of campaigns">
+          <tr>
+            <td> {{ campaign._id }} </td>
+            <td> {{ campaign.tags }} </td>
+            <td> {{ campaign.author_id._id  }} </td>
+            <td> {{ campaign.title }} </td> 
+            <td> <button type="button" class="btn btn-primary" (click)="open(content, campaign._id)">Edit</button>  </td>
+            <td class="actions"><a class="icon" href="#"><i class="mdi mdi-plus-circle-o"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-          <div class="table-responsive-md">
-            <div class="table-responsive">
-              <table class="table ">
-                <thead>
-                  <tr>
-                    <th> ID</th>
-                    <th> Tags</th>
-                    <th> Author ID</th>
-                    <th> Campaign Name</th>
-                    <th> Modify</th>
-                  </tr>
-                </thead>
-                <tbody class="no-border-x" *ngFor = "let campaign of campaigns">
-                  <tr>
-                    <td> {{ campaign._id }} </td>
-                    <td> {{ campaign.tags }} </td>
-                    <td> {{ campaign.author_id._id  }} </td>
-                    <td> {{ campaign.title }} </td> 
-                    <td class="actions"><a class="icon" href="#"><i class="mdi mdi-plus-circle-o"></i></a></td>
-                  </tr>
-                </tbody>
-              </table>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Modify Campaign Info</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form [formGroup]="data_user" (ngSubmit)="onSubmit()">
+    <div class="modal-body">
+          <div class="form-group">
+            <label for="id">ID</label>
+            <div class="input-group">
+              <input id="id" class="form-control" value = {{campaign_ind._id}} formControlName="_id">
             </div>
           </div>
-        </div>
-        
+          <div class="form-group">
+            <label for="author_id">Author ID</label>
+            <div class="input-group">
+              <input id="author_id" class="form-control" value = {{campaign_ind.author_id._id}} formControlName="author_id">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <div class="input-group">
+              <input id="firstname" class="form-control" value = {{campaign_ind.author_id.first_name}} formControlName="first_name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <div class="input-group">
+              <input id="lastname" class="form-control" value = {{campaign_ind.author_id.last_name}} formControlName="last_name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-group">
+              <input id="email" class="form-control" value = {{campaign_ind.author_id.email}} formControlName="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="about">About</label>
+            <div class="input-group">
+              <input id="about" class="form-control" value = {{campaign_ind.author_id.about}} formControlName="about">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <div class="input-group">
+              <input id="location" class="form-control" value = {{campaign_ind.author_id.location}} formControlName="location">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="occupation">Occupation</label>
+            <div class="input-group">
+              <input id="occupation" class="form-control" value = {{campaign_ind.author_id.occupation}} formControlName="occupation">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="organization">Organization</label>
+            <div class="input-group">
+              <input id="organization" class="form-control" value = {{campaign_ind.author_id.organization}} formControlName="organization">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="organization_email">Organization Email</label>
+            <div class="input-group">
+              <input id="firstname" class="form-control" value = {{campaign_ind.author_id.organization_email}} formControlName="organization_email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="socmed">Social Media URL</label>
+            <div class="input-group">
+              <input id="socmed" class="form-control" value = {{campaign_ind.author_id.social_media_url}} formControlName="socmed">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="website_url">Website URL</label>
+            <div class="input-group">
+              <input id="website_url" class="form-control" value = {{campaign_ind.author_id.website_url}} formControlName="website_url">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <div class="input-group">
+              <input id="title" class="form-control" value = {{campaign_ind.title}} formControlName="title">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="date_created">Date Created</label>
+            <div class="input-group">
+              <input id="date_created" class="form-control" value = {{campaign_ind.date_created}} formControlName="date_created">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="date_end">Date End</label>
+            <div class="input-group">
+              <input id="date_end" class="form-control" value = {{campaign_ind.date_end}} formControlName="date_end">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="image_url">Image URL</label>
+            <div class="input-group">
+              <input id="image_url" class="form-control" value = {{campaign_ind.image_url}} formControlName="image_url">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <div class="input-group">
+              <input id="description" class="form-control" value = {{campaign_ind.description}} formControlName="description">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="goal">Goal</label>
+            <div class="input-group">
+              <input id="goal" class="form-control" value = {{campaign_ind.goal}} formControlName="goal">
+            </div>
+          </div>
+    <div class="border text-center">
+      <button data-dismiss="modal" class="btn btn-info" (click)="onSubmit()">Submit</button>
+    </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Cancel click')">Cancel</button>
+  </div>

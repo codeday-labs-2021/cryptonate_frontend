@@ -81,6 +81,7 @@ export class AdminCampaignsComponent implements OnInit {
       values.location,
       values.socmed,
       values.website_url,
+      values.wallet_address,
       values.organization_email,
       values.about,
       values._id
@@ -92,6 +93,7 @@ export class AdminCampaignsComponent implements OnInit {
       values.occupation,
       values.organization,
       values.location,
+      values.wallet_address,
       values.socmed,
       values.website_url,
       values.organization_email,

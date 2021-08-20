@@ -30,6 +30,7 @@ export class AdminUsersComponent implements OnInit {
         location : [''],
         socmed : [''],
         website_url : [''],
+        wallet_address : [''],
         organization_email : [''],
         about : [''],
         author_id: ['']
@@ -77,6 +78,7 @@ export class AdminUsersComponent implements OnInit {
       values.organization,
       values.location,
       values.socmed,
+      values.wallet_address,
       values.website_url,
       values.organization_email,
       values.about,

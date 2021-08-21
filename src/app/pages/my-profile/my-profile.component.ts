@@ -55,7 +55,6 @@ export class MyProfileComponent implements OnInit {
       profileAddress:[this.address, Validators.required],
       profileFirstName:[this.firstName, Validators.required],
       profileLastName:[this.lastName, Validators.required],
-
       profileOccupation: new FormControl(this.occupation),
       profileOrganization: new FormControl(this.organization),
       profileLocation: new FormControl(this.location),

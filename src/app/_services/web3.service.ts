@@ -108,10 +108,10 @@ export class Web3Service {
   EthToWei(value) {
    // return this.web3.utils.toWei(value, 'ether');
   }
-  // verifyEthAddress(address) {
+  verifyEthAddress(address) {
   //   //return this.web3.utils.isAddress(address);
-  //   return Web3Utils.isAddress(address);
-  // }
+     return Web3Utils.isAddress(address);
+   }
 
   // onEvents(event: string) {
   //   return new Observable((observer) => {

@@ -66,4 +66,9 @@ export class CampaignService{
           return this.http.post<any>(`${environment.apiUrl}/api/campaigns`,formData);
         }
 
+        uploadImage(data) {
+    
+          return this.http.post(`${environment.apiUrl}/api/campaigns/uploadImage`, data);
+      }
+
 }

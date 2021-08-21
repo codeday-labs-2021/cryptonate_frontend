@@ -6,6 +6,7 @@ import { UserService } from 'src/app/_services';
 import { CampaignService } from 'src/app/_services';
 import { AuthService } from 'src/app/_services';
 import {FormControl} from "@angular/forms";
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-review-campaign',
@@ -33,6 +34,7 @@ export class ReviewCampaignComponent implements OnInit {
   websiteUrl = "";
   organizationEmail = "";
   about = "";
+  campaignImage;
 
   constructor(private auth: AuthService,
     private campaignService: CampaignService,
@@ -41,10 +43,14 @@ export class ReviewCampaignComponent implements OnInit {
   ngOnInit(): void {
     this.campaignInfo = JSON.parse(<string>localStorage.getItem("campaigns"));
     this.currentUser = JSON.parse(<string>localStorage.getItem("user"))["user"];
+    this.campaignImage =  localStorage.getItem("image_url");
+
+
     if(!this.currentUser) {
       this.router.navigate(["/login"]);
     } else if(!this.campaignInfo) {
-      this.router.navigate(['/Dashboard']);
+      // no campaign Info 
+     // this.router.navigate(['/Dashboard']);
     }
 
     this.title = this.campaignInfo.title;
@@ -91,16 +97,20 @@ export class ReviewCampaignComponent implements OnInit {
       formData.append("tags", JSON.stringify(this.selectedTags));
       formData.append("date_end", JSON.stringify(new Date(this.date)));
       formData.append("goal", JSON.stringify(parseFloat(this.goal)));
-      formData.append("image", this.pic);
+      formData.append("image", this.campaignImage);
+      formData.append("file", this.campaignImage);
 
       const res = this.campaignService.createCampaign(formData);
       res.subscribe(res =>
           {
+            console.log("=====",res);
             if(!res['message']) {
-              localStorage.removeItem("campaigns");
-              this.router.navigate(["/Dashboard"]);
+              // localStorage.removeItem("campaigns");
+              // this.router.navigate(["/Dashboard"]);
             }
             else{console.log("error found");}
+          },error=>{
+            console.error("=====",error);
           });
       
       

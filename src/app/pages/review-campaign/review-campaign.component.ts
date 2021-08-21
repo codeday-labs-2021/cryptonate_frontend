@@ -91,7 +91,7 @@ export class ReviewCampaignComponent implements OnInit {
       formData.append("tags", JSON.stringify(this.selectedTags));
       formData.append("date_end", JSON.stringify(new Date(this.date)));
       formData.append("goal", JSON.stringify(parseFloat(this.goal)));
-      formData.append("image_url", this.pic);
+      formData.append("image", this.pic);
 
       const res = this.campaignService.createCampaign(formData);
       res.subscribe(res =>

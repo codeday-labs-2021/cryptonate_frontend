@@ -58,6 +58,7 @@ getCampaign(){
       this.newArray.push(this.CampaignArray);
       for(let i=0;i<this.newArray.length;i++){
         var firstArray = this.newArray[i];
+        console.log(firstArray);
         for(let j=0;j<firstArray.length;j++){
           var camp = firstArray[j];
           this.filteredCampaigns.push(camp);

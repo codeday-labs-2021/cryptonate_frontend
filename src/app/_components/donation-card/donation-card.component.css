@@ -5,19 +5,69 @@
   font-weight: 400;
 }
 
-.card-img {
-  width: 200px;
-  height: 150px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 h5{
   font-family: "Montserrat", sans-serif;
   color: #173F5F;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 25px;
   margin-bottom: 2.7rem;
   margin-left: -2%;
 }
+
+.card-img {
+  width: 200px;
+  height: 147px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1rem;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*{
+    font-family:'Bebas Neue', cursive;;
+    font-weight: 400;
+}
+
+.rounded-start {
+    border-bottom-left-radius: 0.25rem !important;
+    border-top-left-radius: 0.25rem !important;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius:1rem;  
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+
+
+a{
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+a:hover{
+    transform: scale(1.05);
+}
+
+p{
+  color: gray;
+  font-size:22px;
+  letter-spacing: 1px;
+  margin-bottom: -1px;
+}
+

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .center {
     display: block;
     margin-left: auto;
@@ -14,6 +16,19 @@
     font-size: 13.4px;
   }
 
+.preview{
+  border-color:  #1f3f8a;
+  border-style: solid;
+}
+
+h1{
+  font-family:'Bebas Neue', cursive;;
+    font-weight: 400;
+    font-size:96px;
+    color:#173F5F;
+    padding-top: 2.8%;
+    text-align: center;
+}
 
 .form-control {
     display: block;

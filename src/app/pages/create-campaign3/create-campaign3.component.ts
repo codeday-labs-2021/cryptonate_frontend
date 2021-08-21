@@ -17,8 +17,8 @@ export class CreateCampaign3Component implements OnInit {
   selectedTags =  [];
   description = "";
   goal = "";
-  pic: FormControl
-
+  //pic: FormControl
+  url="";
 
   constructor(private auth: AuthService,
     private campaignService: CampaignService,
@@ -27,7 +27,7 @@ export class CreateCampaign3Component implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pic = new FormControl(this.campaignInfo.image_url ? this.campaignInfo.image_url : "");
+   // this.pic = new FormControl(this.campaignInfo.image_url ? this.campaignInfo.image_url : "");
     if(this.campaignInfo) {
       this.title = this.campaignInfo.title;
       this.date = this.campaignInfo.date;
@@ -38,7 +38,16 @@ export class CreateCampaign3Component implements OnInit {
       this.router.navigate(['/Dashboard']);
     }
   }
-
+  onSelect(e)
+  {
+    if(e.target.files){
+      var reader:FileReader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload=(event:any)=>{
+        this.url=event.target.result;
+      }
+    }
+  }
   onSubmit()
   {
     const res = {
@@ -47,10 +56,11 @@ export class CreateCampaign3Component implements OnInit {
       selectedTags: this.selectedTags,
       date: this.date,
       goal: this.goal,
-      image_url: this.pic.value
+      image_url: this.url
     };
 
     localStorage.setItem("campaigns",JSON.stringify(res));
+    localStorage.setItem("image_url",this.url);
     this.router.navigate(["/Fundraise/Review"]);
   }
 }

@@ -1,116 +1,137 @@
+<div>
+  <h4 class="mb-4 text-muted">Dashboard </h4>
 
-        <div>
-          <h4 class="mb-4 text-muted">Dashboard </h4>
-        
-          <div class="row">
-        
-            <div class="col-md-6 col-lg-3 mb-4">
-              <div class="card border-0 rounded-0">
-                <div class="card-body">
-                  <div class="card-innerBody d-flex align-items-center">
-                    <div class="card-icon text-light">
-                      <i class="fas fa-dollar-sign" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-auto">
-                      <p class="card-label text-right text-muted">Total Users</p>
-                      <h4 class="card-text text-right "> {{ total_users }}</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        
-            <div class="col-md-6 col-lg-3 mb-4">
-              <div class="card border-0 rounded-0">
-                <div class="card-body">
-                  <div class="card-innerBody d-flex align-items-center">
-                    <div class="card-icon text-light">
-                      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-auto">
-                      <p class="card-label text-right text-muted">Orders</p>
-                      <h4 class="card-text text-right ">2,200</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer d-flex ">
-                  <small class="text-muted">Since last month</small>
-                  <small class="text-success ml-auto">
-                    <i class="fa fa-caret-up" aria-hidden="true"></i>
-                    8,66%
-                  </small>
-                </div>
-              </div>
-            </div>
-        
-            <div class="col-md-6 col-lg-3 mb-4">
-              <div class="card border-0 rounded-0">
-                <div class="card-body">
-                  <div class="card-innerBody d-flex align-items-center">
-                    <div class="card-icon text-light">
-                      <i class="fa fa-users" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-auto">
-                      <p class="card-label text-right text-muted">Visitors</p>
-                      <h4 class="card-text text-right ">702,258</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer d-flex ">
-                  <small class="text-muted">Since last month</small>
-                  <small class="text-danger ml-auto">
-                    <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    2,81%
-                  </small>
-                </div>
-              </div>
-            </div>
-        
-            <div class="col-md-6 col-lg-3 mb-4">
-              <div class="card border-0 rounded-0">
-                <div class="card-body">
-                  <div class="card-innerBody d-flex align-items-center">
-                    <div class="card-icon text-light">
-                      <i class="fa fa-heartbeat" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-auto">
-                      <p class="card-label text-right text-muted">Followers</p>
-                      <h4 class="card-text text-right "> +50K</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer d-flex ">
-                  <small class="text-muted">Since last month</small>
-                  <small class="text-success ml-auto">
-                    <i class="fa fa-caret-up" aria-hidden="true"></i>
-                    1,74%
-                  </small>
-                </div>
-              </div>
+  <div class="row">
+
+  <div class="col-md-6 col-lg-3 mb-4">
+  <div class="card border-0 rounded-0">
+  <div class="card-body">
+    <div class="card-innerBody d-flex align-items-center">
+      <div class="card-icon text-light">
+        <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+      </div>
+      <div class="ml-auto">
+        <p class="card-label text-right text-muted">Total Users</p>
+        <h4 class="card-text text-right "> {{ total_users }}</h4>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="table-responsive-md">
+    <div class="table-responsive">
+      <table class="table ">
+        <thead>
+          <tr>
+            <th> ID</th>
+            <th> First Name</th>
+            <th> Last Name</th>
+            <th> Email</th>
+            <th> Modify</th>
+          </tr>
+        </thead>
+        <tbody class="no-border-x" *ngFor = "let user of users">
+          <tr>
+            <td> {{ user._id }} </td>
+            <td> {{ user.first_name }} </td>
+            <td> {{ user.last_name  }} </td>
+            <td> {{ user.email }} </td> 
+            <td> <button type="button" class="btn btn-primary" (click)="open(content, user._id)">Edit</button>  </td>
+            <td class="actions"><a class="icon" href="#"><i class="mdi mdi-plus-circle-o"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Modify Campaign Info</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form [formGroup]="data_user" (ngSubmit)="onSubmit()">
+    <div class="modal-body">
+          <div class="form-group">
+            <label for="id">ID</label>
+            <div class="input-group">
+              <input id="_id" class="form-control" value = {{user_ind._id}} formControlName="_id">
             </div>
           </div>
-                  <div class="table-responsive-md">
-                    <div class="table-responsive">
-                      <table class="table ">
-                        <thead>
-                          <tr>
-                            <th> ID</th>
-                            <th> First Name</th>
-                            <th> Last Name</th>
-                            <th> Email</th>
-                            <th> Modify</th>
-                          </tr>
-                        </thead>
-                        <tbody class="no-border-x" *ngFor = "let user of users">
-                          <tr>
-                            <td> {{ user._id }} </td>
-                            <td> {{ user.first_name }} </td>
-                            <td> {{ user.second_name  }} </td>
-                            <td> {{ user.email }} </td> 
-                            <td class="actions"><a class="icon" href="#"><i class="mdi mdi-plus-circle-o"></i></a></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <div class="input-group">
+              <input id="firstname" class="form-control" value = {{user_ind.first_name}} formControlName="first_name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <div class="input-group">
+              <input id="lastname" class="form-control" value = {{user_ind.last_name}} formControlName="last_name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="id">Email</label>
+            <div class="input-group">
+              <input id="email" class="form-control" value = {{user_ind.email}} formControlName="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="id">Password</label>
+            <div class="input-group">
+              <input id="password" class="form-control" value = {{user_ind.password}} formControlName="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="id">About</label>
+            <div class="input-group">
+              <input id="about" class="form-control" value = {{user_ind.about}} formControlName="about">
+            </div>
+          </div> 
+          <div class="form-group">
+            <label for="id">Location</label>
+            <div class="input-group">
+              <input id="location" class="form-control" value = {{user_ind.location}} formControlName="location">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="id">Occupation</label>
+            <div class="input-group">
+              <input id="occupation" class="form-control" value = {{user_ind.occupation}} formControlName="occupation">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="id">Organization</label>
+            <div class="input-group">
+              <input id="organization" class="form-control" value = {{user_ind.organization}} formControlName="organization">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="id">Organization Email</label>
+            <div class="input-group">
+              <input id="organization_email" class="form-control" value = {{user_ind.organization_email}} formControlName="organization_email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="id">Social Media URL</label>
+            <div class="input-group">
+              <input id="socmed" class="form-control" value = {{user_ind.socmed}} formControlName="socmed">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="id">Website URL</label>
+            <div class="input-group">
+              <input id="website_url" class="form-control" value = {{user_ind.website_url}} formControlName="website_url">
+            </div>
+          </div>
+
+    <div class="border text-center">
+      <button data-dismiss="modal" class="btn btn-info" (click)="onSubmit()">Submit</button>
+    </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Cancel click')">Cancel</button>
+  </div>

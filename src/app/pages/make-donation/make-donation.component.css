@@ -1,8 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+
+
 *{
   margin: 10px;
   box-sizing: border-box;
 }
 
+h1{
+    font-family:'Bebas Neue', cursive;;
+    font-weight: 400;
+    font-size:84px;
+    color:#173F5F;
+    padding-top: 2.8%;
+
+}
+.info{
+  margin-top: 6%;
+}
+h4{
+  font-family:'Bebas Neue', cursive;;
+    font-weight: 200;
+    font-size:30px;
+    color:#173F5F;
+}
+
 .error-msg{
   color:darkred;
 }
+
+.btn-primary {
+  color: #fff;
+  background-color: #3373A7;
+  border-color: #0d6efd;
+  font-family: "Montserrat";
+  font-weight: 400;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #91AFC8;
+  border-color: #91AFC8;
+}
+.empty{
+  margin-bottom: 10%;
+}
+
+h2{
+  font-family: "Montserrat",sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+

@@ -56,21 +56,14 @@ export class CampaignService{
       return this.http.get<Campaign[]>(`${environment.apiUrl}/api/users/campaigns`);
     }
 
+    // createCampaign(formData: FormData, image_url:string){
+    //   return this.http.post<any>(`${environment.apiUrl}/api/campaigns`,image_url,{formData},{withCredentials: true});
+    // }
+
     createCampaign(
-    title: string,
-    description:string,
-    tags: string[],
-    date_end: Date,
-    goal: number,
-    image_url: string
-        ){
-        return this.http.post<any>(`${environment.apiUrl}/api/campaigns`,{
-          title,
-          description,
-          tags,
-          date_end,
-          goal,
-          image_url
-        },{withCredentials: true});
-      }
+      formData:FormData
+          ){
+          return this.http.post<any>(`${environment.apiUrl}/api/campaigns`,formData);
+        }
+
 }

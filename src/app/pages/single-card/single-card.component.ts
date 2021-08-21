@@ -33,11 +33,10 @@ export class SingleCardComponent implements OnInit {
 
     ngOnInit() {
 
-      // First get the campaign id from the current route.
+      //Get the campaign id from the current route.
       const routeParams = this.route.snapshot.paramMap;
       const campaignIdFromRoute = String(routeParams.get('_id'));
-
-     // console.log(campaignIdFromRoute);
+      //pass id and subscribe to observable
       this.getCampaignById(campaignIdFromRoute);
 
      // this.getUserById(this.userId);
@@ -74,8 +73,6 @@ export class SingleCardComponent implements OnInit {
     if(this.daysLeft < 0) this.daysLeft = 0;
     await this.calculateCurrentDonationAmountOfCampaign()
   }
-
-
   async calculateCurrentDonationAmountOfCampaign(){
     this.donations = await this._donationService.getCampaignDonations(this.campaign._id);
     await this.donations.forEach(donationList => {
@@ -86,7 +83,6 @@ export class SingleCardComponent implements OnInit {
 
     this.progress = 100*this.totalDonationsReceived/this.campaign.goal;
   }
-
   currentPercentage() {
     if(this.progress > 100) this.progress = 100;
     return `width: ${this.progress}%`

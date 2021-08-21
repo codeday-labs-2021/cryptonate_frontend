@@ -20,6 +20,7 @@ export class MyProfileComponent implements OnInit {
   websiteUrl = "";
   organizationEmail = "";
   about = "";
+  address="";
 
   readonly = true;
   submitted = false;
@@ -40,6 +41,7 @@ export class MyProfileComponent implements OnInit {
       this.lastName = this.currentUser.last_name;
       this.about = this.currentUser.about;
       this.email = this.currentUser.email;
+      this.address =this.currentUser.wallet_address;
       this.occupation = this.currentUser.occupation;
       this.organizationEmail = this.currentUser.organization_email;
       this.socialMediaUrl = this.currentUser.social_media_url;
@@ -50,6 +52,7 @@ export class MyProfileComponent implements OnInit {
 
     this.profileForm = this.formBuilder.group({
       profileEmail:[this.email, Validators.required],
+      profileAddress:[this.address, Validators.required],
       profileFirstName:[this.firstName, Validators.required],
       profileLastName:[this.lastName, Validators.required],
 
@@ -85,6 +88,7 @@ export class MyProfileComponent implements OnInit {
       values.profileFirstName,
       values.profileLastName,
       values.profileEmail,
+      values.profileAddress,
       values.profileOccupation,
       values.profileOrganization,
       values.profileLocation,

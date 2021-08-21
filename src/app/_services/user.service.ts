@@ -18,6 +18,7 @@ export class UserService {
     first_name:string,
     last_name:string,
     email:string,
+    wallet_address:string,
     occupation: string,
     organization: string,
     location: string,
@@ -31,6 +32,7 @@ export class UserService {
       first_name,
       last_name,
       email,
+      wallet_address,
       occupation,
       organization,
       location,
@@ -48,6 +50,7 @@ createCampaign(
   social_media_url: string,
   website_url: string,
   organization_email: string,
+  wallet_address:string,
   about: string,
   id:string
   ){
@@ -58,6 +61,7 @@ createCampaign(
     social_media_url,
     website_url,
     organization_email,
+    wallet_address,
     about
   });
 }

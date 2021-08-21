@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CampaignService} from "../../_services/campaign.service";
 import {Campaign} from "../../_models/campaigns.model";
 import {DonationService} from "../../_services/donation.service";
-
+import { Donation } from 'src/app/_models';
 @Component({
   selector: 'app-make-donation',
   templateUrl: './make-donation.component.html',
@@ -14,6 +15,9 @@ export class MakeDonationComponent implements OnInit {
   makeDonationForm: FormGroup=new FormGroup({});
   submitted = false;
   campaignToDonateTo: Campaign;
+  
+  //user:any;
+  _id : string ='';
 
   constructor(private formBuilder:FormBuilder,
               private route: ActivatedRoute,
@@ -59,7 +63,12 @@ export class MakeDonationComponent implements OnInit {
   getCampaignById(id:string){
     this._campaignService.getCampaignById(id).subscribe(
       data => this.campaignToDonateTo = data);
+      
+        
+      
   }
+
+
 
 
 }

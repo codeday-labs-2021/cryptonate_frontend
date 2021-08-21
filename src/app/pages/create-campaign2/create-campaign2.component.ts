@@ -46,6 +46,7 @@ export class CreateCampaign2Component implements OnInit {
 
   ngOnInit(): void {
     this.selectedTags = new Array<string>();
+    
     if(this.campaignInfo) {
       this.title = this.campaignInfo.title;
       this.date = this.campaignInfo.date;

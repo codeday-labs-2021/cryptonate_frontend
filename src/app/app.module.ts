@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule, 
   HttpClient, 
@@ -10,6 +11,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ModalModule } from 'ngx-bootstrap/modal';  
 
 import {AuthGuard} from "./guards/auth.guard";
 import {AddHeaderInterceptor} from "./interceptors/interceptor";
@@ -40,6 +42,8 @@ import {Web3Service} from './_services/web3.service';
     NgxPageScrollCoreModule,
     NgxPageScrollModule,
     HttpClientModule,
+    FormsModule,
+    NgbModule
   ],
   providers: [
   ...WebSiteServices.services,

@@ -1,24 +1,48 @@
-<div class="header-container">
-  <div class="hero-container" [formGroup]="makeDonationForm">
-    <h1>Make a donation to: {{campaignToDonateTo.title? campaignToDonateTo.title : "(campaign name)"}}</h1>
-    <div class="row">
-      <h4>Your account: 0xsdflkadsjlkfad    Balance: 3 ETH</h4>
-    </div>
-    <div class="text-box">
-      <input class="row" formControlName="amount" type="text" placeholder="Amount" required
-             [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" >
-      <div class="error-msg" *ngIf="submitted && f.amount.errors ">
-        Amount is required
-      </div>
-      <input class="row" formControlName="recipientAddress"  placeholder="Recipient address"  required
-             [ngClass]="{ 'is-invalid': submitted && f.recipientAddress.errors }" >
-      <div class="error-msg" *ngIf="submitted && f.recipientAddress.errors ">
-        Recipient address is required
-      </div>
-    </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2"></div>
+ 
 
-    <div class="buttonSendCrypto">
-      <a  class="btn btn-primary me-md-2" type="button" (click)="sendCrypto()">Send Crypto</a>
+  <div class="col-md-8">
+    <div class="wrapper">
+    <div class="header-container">
+      <div class="hero-container" [formGroup]="makeDonationForm">
+        <h1>Make a donation to:<br> {{campaignToDonateTo.title? campaignToDonateTo.title : "(campaign name)"}}</h1>
+        
+       
+          <h4>DESCRIPTION</h4>
+          <h2>{{campaignToDonateTo.description}}</h2>
+        
+
+          <h4>Your account: 0xsdflkadsjlkfad</h4>
+          <h4>Balance: 3 ETH</h4>
+        
+     
+          <input class="row" formControlName="amount" type="text" placeholder=" Amount " required
+                 [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" >
+          <div class="error-msg" *ngIf="submitted && f.amount.errors ">
+            Amount is required
+          </div>
+          <input class="row" formControlName="recipientAddress"  placeholder=" Recipient address "  required
+                 [ngClass]="{ 'is-invalid': submitted && f.recipientAddress.errors }" >
+          <div class="error-msg" *ngIf="submitted && f.recipientAddress.errors ">
+            Recipient address is required
+          </div>
+    
+
+    
+        
+          <a  class="btn btn-primary me-md-2" type="button" (click)="sendCrypto()">Send Crypto</a>
+        
+      </div>
     </div>
+    
   </div>
+
+
+</div>
+
+  <div class="col-md-2"></div>
+  </div>
+  <div class="empty"></div>
 </div>

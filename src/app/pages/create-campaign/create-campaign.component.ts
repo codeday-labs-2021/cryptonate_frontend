@@ -37,6 +37,7 @@ export class CreateCampaignComponent implements OnInit {
       socmed:  [this.currentUser.social_media_url ? this.currentUser.social_media_url:'', Validators.required],
       website: [this.currentUser.website_url ? this.currentUser.website_url:''],
       organizationEmail: [this.currentUser.organization_email ? this.currentUser.organization_email:''],
+      walletAddress: [this.currentUser.wallet_address ? this.currentUser.wallet_address:''],
       about: [this.currentUser.about ? this.currentUser.about:''],
     });
   }
@@ -61,10 +62,10 @@ export class CreateCampaignComponent implements OnInit {
         values.socmed,
         values.website,
         values.organizationEmail,
+        values.wallet_address,
         values.about,
         this.currentUser._id
     );
-
     data.subscribe(data =>
       {if(!data['message']) {
       localStorage.setItem("user",JSON.stringify(data));

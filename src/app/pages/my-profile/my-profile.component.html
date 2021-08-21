@@ -13,11 +13,19 @@
     <div class="error-msg" *ngIf="submitted && f.profileLastName.errors ">
       Last name is required
     </div>
+
     <label for="profileEmail">Email</label>
     <input formControlName="profileEmail" id="profileEmail" type="text" [readonly]="readonly" class="form-control" required
            [ngClass]="{ 'is-invalid': submitted && f.profileEmail.errors }" >
     <div class="error-msg" *ngIf="submitted && f.profileEmail.errors ">
       Email is required
+    </div>
+
+    <label for="profileAddress">ETH Address</label>
+    <input formControlName="profileAddress" id="profileAddress" type="text" [readonly]="readonly" class="form-control" required
+           [ngClass]="{ 'is-invalid': submitted && f.profileAddress.errors }" >
+    <div class="error-msg" *ngIf="submitted && f.profileAddress.errors ">
+      ETH Address is required
     </div>
 
     <label for="profileAbout">About</label>

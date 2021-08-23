@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import Web3 from 'web3';
+import { ValidatorFn, ValidationErrors, AbstractControl} from '@angular/forms';
 import { UserService } from '../../_services';
 @Component({
   selector: 'app-my-profile',
@@ -24,6 +26,7 @@ export class MyProfileComponent implements OnInit {
 
   readonly = true;
   submitted = false;
+  validETH = false;
   profileForm: FormGroup=new FormGroup({});
   currentUser:any = null;
 
@@ -51,8 +54,8 @@ export class MyProfileComponent implements OnInit {
     }
 
     this.profileForm = this.formBuilder.group({
-      profileEmail:[this.email, Validators.required],
-      profileAddress:[this.address, Validators.required],
+      profileEmail:[this.email, Validators.required, Validators.email],
+      profileAddress:[this.address, Validators.required, this.EthereumValidator() ],
       profileFirstName:[this.firstName, Validators.required],
       profileLastName:[this.lastName, Validators.required],
       profileOccupation: new FormControl(this.occupation),
@@ -73,16 +76,20 @@ export class MyProfileComponent implements OnInit {
     this.readonly = !this.readonly;
   }
 
+  EthereumValidator(): ValidatorFn{
+    return (control:AbstractControl) : ValidationErrors | null => {
+      const value = control.value;
+      const ethValid = Web3.utils.isAddress(value);
+      return !ethValid? {ethAddress:true}:null;
+  }
+}
   save() {
     this.submitted = true;
     if(this.profileForm.invalid) {
       return;
     }
-
     let values =this.profileForm.value;
-
     console.log(values);
-
     const res = this.UserSrv.updateUser(
       values.profileFirstName,
       values.profileLastName,

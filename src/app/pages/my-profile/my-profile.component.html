@@ -16,16 +16,21 @@
 
     <label for="profileEmail">Email</label>
     <input formControlName="profileEmail" id="profileEmail" type="text" [readonly]="readonly" class="form-control" required
-           [ngClass]="{ 'is-invalid': submitted && f.profileEmail.errors }" >
+           [ngClass]="{ 'is-invalid': submitted && f.profileEmail.errors} " >
     <div class="error-msg" *ngIf="submitted && f.profileEmail.errors ">
       Email is required
     </div>
 
     <label for="profileAddress">ETH Address</label>
     <input formControlName="profileAddress" id="profileAddress" type="text" [readonly]="readonly" class="form-control" required
-           [ngClass]="{ 'is-invalid': submitted && f.profileAddress.errors }" >
-    <div class="error-msg" *ngIf="submitted && f.profileAddress.errors ">
+           [ngClass]="{ 'is-invalid': submitted && f.profileAddress.errors  }" >
+    <div class="error-msg"> 
+      <div *ngIf="submitted && f.profileAddress.errors  ">
       ETH Address is required
+      </div>
+      <div *ngIf="f.profileAddress.errors?.ethAddress":false>
+        ETH Address is invalid
+        </div>
     </div>
 
     <label for="profileAbout">About</label>

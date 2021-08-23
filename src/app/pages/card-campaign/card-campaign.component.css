@@ -106,3 +106,7 @@ h2{
 .nav-link:hover, .nav-link:focus {
   color: #91AFC8;
 }
+
+label{
+  padding-left: 10px;
+}

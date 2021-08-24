@@ -31,8 +31,9 @@
 
 
                             <div *ngFor='let tag of tags' >
-                              <input type="checkbox"  [value]="tag.value" (change)='onCheckChange($event,tag.value)' id="tagsCheckbox">
+                              <input type="checkbox" tabindex="0" [value]="tag.value" (change)='onCheckChange($event,tag.value)' id="tagsCheckbox">
                                   <label for="tagsCheckbox"> {{tag.name}}</label>
+                             
                             </div>
                        
                       </ul>

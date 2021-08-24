@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { PageScrollService } from 'ngx-page-scroll-core';
+// import { PageScrollService } from 'ngx-page-scroll-core';
 import { DonationService,CampaignService } from '../../_services';
 
 @Component({
@@ -18,14 +18,14 @@ export class DashboardComponent implements OnInit {
   firstName="";
 
 
-  constructor(private _campaignService: CampaignService, private _donationService: DonationService, private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+  constructor(private _campaignService: CampaignService, private _donationService: DonationService, @Inject(DOCUMENT) private document: any) {
     this.firstName = JSON.parse(<string>localStorage.getItem("user"))["user"]["first_name"];
   }
 
   ngOnInit(): void {
-    this.pageScrollService.scroll({
-      document: this.document,
-      scrollTarget: '.theEnd',});
+    // this.pageScrollService.scroll({
+    //   document: this.document,
+    //   scrollTarget: '.theEnd',});
 
     this._campaignService.getUserCampaigns()
       .subscribe(data => {
@@ -52,6 +52,12 @@ export class DashboardComponent implements OnInit {
       });
 
 
+  }
+
+  scroll(targetID:string)
+  {
+      var target = document.getElementById(targetID);
+      target.scrollIntoView();
   }
 
 }
